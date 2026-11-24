@@ -501,6 +501,29 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 }
 
 @media (max-width:760px){.hero-meta .sep{display:none}.hero-meta{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* in the room gallery */
+.room{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:260px 260px;gap:12px}
+.room figure{position:relative;margin:0;border-radius:22px;overflow:hidden;background:var(--s1)}
+.room figure:first-child{grid-column:1/3;grid-row:1/3}
+.room img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.room figure:hover img{transform:scale(1.06)}
+.room figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(8,8,10,.92));display:flex;flex-direction:column;gap:3px}
+.room figcaption small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ac)}
+.room figcaption b{font-family:var(--fd);font-size:17px;line-height:1.25}
+.room figure:first-child figcaption{padding:70px 26px 24px}
+.room figure:first-child figcaption b{font-size:26px}
+.room figure:first-child figcaption span{font-size:14.5px;color:#D0D0CA;line-height:1.5;max-width:460px}
+@media (max-width:900px){
+  .room{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .room figure{aspect-ratio:1/1.05}
+  .room figure:first-child{grid-column:1/3;grid-row:auto;aspect-ratio:1/1}
+}
+@media (max-width:480px){
+  .room figcaption b{font-size:15px}
+  .room figure:first-child figcaption b{font-size:21px}
+  .room figure:first-child figcaption span{font-size:13.5px}
+}
 </style>
 </head>
 <body>
@@ -621,13 +644,25 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="about-p" data-r="l">
 <img class="zoomable" src="assets/mostafa-cafe.jpg" alt="Mostafa Sayed Darwish" loading="lazy" style="object-position:40% 30%">
 <img class="zoomable" src="assets/mostafa-pyramids.jpg" alt="Mostafa at the Giza pyramids at sunset" loading="lazy" style="object-position:30% 40%">
-<img class="zoomable" src="assets/mostafa-night.jpg" alt="Mostafa at an evening event" loading="lazy" style="object-position:50% 35%">
+<img class="zoomable" src="assets/mostafa-sea.jpg" alt="Portrait of Mostafa Sayed Darwish" loading="lazy" style="object-position:50% 30%">
 </div>
 <div class="about-t">
 <p class="eyebrow" data-r>Beyond the dashboards</p>
 <p class="quote" data-r data-d="80">"I treat every pound of your budget like it's mine — <span>if it can't be measured, it can't be scaled.</span>"</p>
 <p class="lead" data-r data-d="160">I'm Mostafa — a Cairo-based growth marketer who started in e-commerce in 2014 and has since run campaigns for restaurants, retailers, developers, hospitals, apps and US businesses. I like messy accounts, clear numbers and teams that want to grow fast.</p>
 <div class="cta-row" data-r data-d="220"><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac mag">Talk to me on WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://www.linkedin.com/in/mostafa-1-done/" target="_blank" rel="noopener" class="btn btn-gh mag">LinkedIn ↗</a></div>
+</div>
+</div></section>
+
+<!-- IN THE ROOM -->
+<section class="sec" id="room" style="padding-top:20px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>In the room</p><h2 class="h2" data-r data-d="80">Where the platforms<br><em>share what's next.</em></h2></div><p class="lead" data-r data-d="160">Great media buying starts before the ad account — at platform briefings, industry events and the tables where deals happen. I show up, so my clients hear about what's next first.</p></div>
+<div class="room">
+<figure data-r="s"><img class="zoomable" src="assets/event-tiktok.jpg" alt="Mostafa at the TikTok for Business and MBC Media Solutions Better Together Ramadan 2025 event" loading="lazy" style="object-position:50% 20%"><figcaption><small>PLATFORM PARTNERS</small><b>TikTok for Business × MBC Media Solutions</b><span>"Better Together" Ramadan 2025 — learning the season's playbook straight from the platform.</span></figcaption></figure>
+<figure data-r data-d="80"><img class="zoomable" src="assets/event-conference.jpg" alt="Mostafa at a business conference" loading="lazy" style="object-position:50% 25%"><figcaption><small>CONFERENCES</small><b>Business conferences &amp; client meetings</b></figcaption></figure>
+<figure data-r data-d="160"><img class="zoomable" src="assets/event-tech.jpg" alt="Mostafa at an outdoor tech and startup event" loading="lazy" style="object-position:50% 60%"><figcaption><small>ECOSYSTEM</small><b>Tech &amp; startup events</b></figcaption></figure>
+<figure data-r data-d="240"><img class="zoomable" src="assets/event-gem.jpg" alt="Mostafa at an event at the Grand Egyptian Museum" loading="lazy" style="object-position:62% 55%"><figcaption><small>EVENTS</small><b>Grand Egyptian Museum</b></figcaption></figure>
+<figure data-r data-d="320"><img class="zoomable" src="assets/event-meetup.jpg" alt="Mostafa at a networking evening" loading="lazy" style="object-position:45% 30%"><figcaption><small>NETWORK</small><b>Partner &amp; industry meetups</b></figcaption></figure>
 </div>
 </div></section>
 
@@ -872,7 +907,7 @@ $$('.mnav a').forEach(function(a){a.addEventListener('click',function(){mnav.cla
 
 /* active nav link */
 var links=$$('.nav-links a');
-var secObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+var secObs=new IntersectionObserver(function(es){es.forEach(function(e){var h='#'+e.target.id;if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')===h)})}else{links.forEach(function(l){if(l.getAttribute('href')===h)l.classList.remove('active')})}})},{rootMargin:'-45% 0px -50% 0px'});
 links.forEach(function(l){var s=$(l.getAttribute('href'));if(s)secObs.observe(s)});
 
 /* cursor glow + portrait tilt */
