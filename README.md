@@ -1,4 +1,4 @@
-# Mostafa Darwish — Personal Website
+# Mostafa Sayed Darwish — Personal Website
 
 Static portfolio site (no build step). Deployed on Cloudflare Pages.
 
