@@ -592,6 +592,11 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .cstep{padding:10px 14px;grid-template-columns:92px 1fr}
 .cstep p{font-size:14.5px;line-height:1.5}
 .slide-v{align-self:center}
+.wins small.src{display:block;margin-top:auto;padding-top:6px;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mut)}
+.wins>div:first-child small.src{color:#3b4200}
+.wins{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.wins{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.wins{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -899,10 +904,12 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <h3>The short version.</h3>
 </div>
 <div class="wins">
-<div><b class="cnt" data-to="3" data-suf="×">0×</b><p><strong>E-commerce sales in 6 months</strong> through funnel optimization</p></div>
-<div><b class="cnt" data-to="1.9" data-dec="1" data-pre="$" data-suf="M+">$0</b><p>Media buying scaled from baseline</p></div>
-<div><b class="cnt" data-to="25" data-pre="+" data-suf="%">0%</b><p>Year-over-year retention via activation campaigns</p></div>
-<div><b class="cnt" data-to="1" data-pre="$" data-suf="M+">$0</b><p>Annual ad budgets with consistent ROI growth</p></div>
+<div><b class="cnt" data-to="1.9" data-dec="1" data-pre="$" data-suf="M">$0</b><p><strong>Ad budget managed</strong> — planned, spent and optimized across platforms</p><small class="src">PEAK SPEND</small></div>
+<div><b class="cnt" data-to="16" data-pre="~" data-suf="×">~0×</b><p>Estimated ROAS — 33 signed contracts from SAR 32.4K in ads</p><small class="src">MUTAHED · RIYADH</small></div>
+<div><b class="cnt" data-to="17.6" data-dec="1" data-pre="×">×0</b><p>Monthly sales growth in 90 days — 0 orders to EGP 178K a month</p><small class="src">FIT FUEL · EGYPT</small></div>
+<div><b class="cnt" data-to="14.84" data-dec="2" data-suf="×">0×</b><p>ROAS with £683K+ in revenue and cost per order down 82%</p><small class="src">COC EYEWEAR</small></div>
+<div><b class="cnt" data-to="23" data-suf="K">0K</b><p>Patients a month, with 57% of revenue from the mobile app</p><small class="src">SGH MAKKAH · KSA</small></div>
+<div><b class="cnt" data-to="59">0</b><p>Orders in the first month of ads — from 4 the month before</p><small class="src">NAYRAH · EGYPT</small></div>
 </div>
 </article>
 
