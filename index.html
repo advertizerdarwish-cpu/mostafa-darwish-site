@@ -543,6 +543,55 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .fnl div:last-child{border-color:var(--ac)}
 .fnl div:last-child b{color:var(--ac)}
 @media (max-width:760px){.bars{height:150px}.viz-h b{font-size:24px}.fnl b{font-size:18px}}
+
+/* case study presentation v2 */
+.cs-tabs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 18px;scroll-snap-type:x proximity}
+.cs-tabs::-webkit-scrollbar{display:none}
+.cs-tab{flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:170px;padding:14px 18px;border-radius:18px;border:1px solid var(--line2);background:var(--s1);cursor:pointer;text-align:left;transition:background .25s,border-color .25s,color .25s,transform .25s}
+.cs-tab:hover{border-color:var(--ac);transform:translateY(-2px)}
+.cs-tab small{font-size:11px;letter-spacing:.12em;font-weight:700;color:var(--mut)}
+.cs-tab b{font-family:var(--fd);font-size:17px;font-weight:700}
+.cs-tab span{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--ac)}
+.cs-tab[aria-selected="true"]{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+.cs-tab[aria-selected="true"] small{color:#3b4200}
+.cs-tab[aria-selected="true"] span{color:var(--bg)}
+.csum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.csum div{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.csum b{display:block;font-family:var(--fd);font-size:34px;line-height:1;color:var(--ac)}
+.csum small{display:block;margin-top:8px;font-size:13px;color:var(--mut)}
+.csteps{display:grid;grid-template-columns:1fr;gap:10px;margin:2px 0}
+.cstep{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.cstep small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--mut);padding-top:3px}
+.cstep p{margin:0;font-size:15px;line-height:1.55;color:#D6D6D0}
+.cstep.res{border-color:var(--ac)}
+.cstep.res small{color:var(--ac)}
+.cstep.res p{color:var(--tx);font-weight:500}
+.cs-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:28px 32px;border-radius:26px;background:var(--ac);color:var(--bg)}
+.cs-cta h3{margin:0;font-family:var(--fd);font-size:clamp(24px,2.8vw,34px);line-height:1.1;letter-spacing:-.01em}
+.cs-cta p{margin:6px 0 0;font-size:15px;font-weight:500}
+.cs-cta .row{display:flex;flex-wrap:wrap;gap:10px}
+.btn-dk{background:var(--bg);color:var(--ac)}
+.btn-dk:hover{background:#000;color:#fff}
+.btn-ol{border-color:var(--bg);color:var(--bg)}
+.btn-ol:hover{background:var(--bg);color:var(--ac)}
+.fnl.f4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.csum{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .cs-tab{min-width:150px;padding:12px 14px}
+  .cs-tab span{font-size:18px}
+  .cstep{grid-template-columns:1fr;gap:4px}
+  .csum b{font-size:28px}
+  .cs-cta{padding:24px}
+  .cs-cta .row .btn{flex:1 1 100%;justify-content:center}
+  .fnl.f4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.cs-track{align-items:flex-start}
+.slide{gap:36px 44px}
+.slide-t{gap:16px}
+.slide-t h3{font-size:clamp(32px,3.6vw,46px)}
+.cstep{padding:10px 14px;grid-template-columns:92px 1fr}
+.cstep p{font-size:14.5px;line-height:1.5}
+.slide-v{align-self:center}
 </style>
 </head>
 <body>
@@ -583,8 +632,8 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="chip a"><b>250+</b><small>brands served</small></div>
 <div class="chip b"><b>$1.9M</b><small style="color:var(--mut)">ad spend managed</small></div>
 <div class="live" aria-hidden="true">
-<span class="lbl"><span class="dot" style="width:6px;height:6px"></span>LIVE ROAS</span>
-<span class="val"><span class="cnt" data-from="4.1" data-to="14.84" data-dec="2" data-suf="×" data-dur="2600">4.10×</span></span>
+<span class="lbl"><span class="dot" style="width:6px;height:6px"></span>PEAK ROAS</span>
+<span class="val"><span class="cnt" data-from="4" data-to="16" data-dec="0" data-suf="×" data-dur="2600">4×</span></span>
 <svg viewBox="0 0 200 52" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#D4FF3A" stop-opacity=".35"/><stop offset="1" stop-color="#D4FF3A" stop-opacity="0"/></linearGradient></defs><path class="spark-a" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4 L200 52 L0 52Z"/><path class="spark" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4"/></svg>
 </div>
 </div>
@@ -754,22 +803,23 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 <!-- CASE STUDIES -->
 <section class="sec" id="work" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>Case studies</p><h2 class="h2" data-r data-d="80">Proof, <em>not promises.</em></h2></div><p class="lead" data-r data-d="160">Eyewear, healthy food, fashion, interior design and a hospital app — across Egypt and Saudi Arabia. Swipe, drag or use the arrows; click any screenshot to see it full size.</p></div>
+<div class="sec-head"><div><p class="eyebrow" data-r>Case studies</p><h2 class="h2" data-r data-d="80">Proof, <em>not promises.</em></h2></div><p class="lead" data-r data-d="160">Five businesses, five different problems — e-commerce, food, fashion, lead generation and a hospital app across Egypt and Saudi Arabia. Pick a case, swipe through, and click any screenshot to zoom in.</p></div>
+<div class="csum" data-r><div><b>5</b><small>Detailed case studies</small></div><div><b>~16×</b><small>Best return on ad spend</small></div><div><b>×17.6</b><small>Fastest sales growth in 90 days</small></div><div><b>EG · KSA</b><small>Meta, Google &amp; TikTok</small></div></div>
 <div class="cs" data-r>
+<div class="cs-tabs" role="tablist" aria-label="Choose a case study"><button class="cs-tab" role="tab" aria-selected="true"><small>E-COMMERCE</small><b>COC Eyewear</b><span>14.8× ROAS</span></button><button class="cs-tab" role="tab" aria-selected="false"><small>HEALTHY FOOD</small><b>Fit Fuel</b><span>×17.6 sales</span></button><button class="cs-tab" role="tab" aria-selected="false"><small>FASHION</small><b>Nayrah</b><span>4 → 59 orders</span></button><button class="cs-tab" role="tab" aria-selected="false"><small>LEAD GEN · KSA</small><b>Mutahed</b><span>33 contracts</span></button><button class="cs-tab" role="tab" aria-selected="false"><small>APP · KSA</small><b>SGH Makkah</b><span>23K patients/mo</span></button><button class="cs-tab" role="tab" aria-selected="false"><small>SUMMARY</small><b>Key wins</b><span>At a glance</span></button></div>
 <div class="cs-track" tabindex="0" aria-label="Case studies, use arrow keys">
 
 <article class="slide">
 <div class="slide-t">
 <div class="tagrow"><span class="no">CASE 01</span><small>E-COMMERCE · EYEWEAR · META ADS</small></div>
 <h3>COC Eyewear:<br>from 4× to <span class="hl">14.8× ROAS</span></h3>
-<p class="lead" style="font-size:16px">High competition and rising acquisition costs. I rebuilt the funnel — UGC and fashion-led creative, carousel ads, smarter retargeting and segmentation — then scaled what performed.</p>
+<div class="csteps"><div class="cstep"><small>CHALLENGE</small><p>Fast-growing eyewear brand facing heavy competition and rising acquisition costs, with ROAS stuck near 4×.</p></div><div class="cstep"><small>STRATEGY</small><p>UGC and fashion-led creative, carousel ads, smarter retargeting and audience segmentation — then scaled the winners.</p></div><div class="cstep res"><small>RESULT</small><p>14.84× ROAS, £683K+ in revenue and cost per order down from £300 to £53.</p></div></div>
 <div class="meter"><div class="top"><span>ROAS</span><span><span class="muted">4.1×</span> → <strong>14.84×</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="27.6%"></i></div></div>
 <div class="meter"><div class="top"><span>Cost per order</span><span><span class="muted">£300</span> → <strong>£53</strong></span></div><div class="trk"><i class="old" data-w="100%"></i><i class="new" data-w="17.7%"></i></div></div>
 <div class="nums"><div><b class="cnt" data-to="683" data-pre="£" data-suf="K+">£0</b><small>Revenue generated</small></div><div><b class="cnt" data-to="532" data-suf="+">0</b><small>Orders</small></div><div><b>−82%</b><small>Cost per order</small></div></div>
 </div>
 <div class="slide-v"><span class="blk"></span><span class="ghost">14.8×</span>
-<div class="frame  zoomable" role="button" tabindex="0" aria-label="Enlarge: COC Eyewear case study: strategy and performance results"><div class="bar"><i></i><i></i><i></i><span>COC Eyewear · Results</span></div><img src="assets/case-coc-results.jpg" alt="COC Eyewear case study: strategy and performance results" loading="lazy" decoding="async" draggable="false"></div>
-<div class="frame sm zoomable" role="button" tabindex="0" aria-label="Enlarge: COC Eyewear case study overview"><div class="bar"><i></i><i></i><i></i><span>Overview</span></div><img src="assets/case-coc-overview.jpg" alt="COC Eyewear case study overview" loading="lazy" decoding="async" draggable="false"></div>
+<div class="frame  zoomable" role="button" tabindex="0" aria-label="Enlarge: COC Eyewear case study: marketing strategy, creative strategy and results — £683,903 revenue, 14.84x ROAS, £53.21 cost per order, 532+ orders"><div class="bar"><i></i><i></i><i></i><span>COC Eyewear · Strategy &amp; results</span></div><img src="assets/case-coc-main.jpg" alt="COC Eyewear case study: marketing strategy, creative strategy and results — £683,903 revenue, 14.84x ROAS, £53.21 cost per order, 532+ orders" loading="lazy" decoding="async" draggable="false"></div>
 </div>
 </article>
 
@@ -777,7 +827,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="slide-t">
 <div class="tagrow"><span class="no">CASE 02</span><small>FIT FUEL BY DIET DELIGHT · HEALTHY FOOD · META ADS</small></div>
 <h3>Fit Fuel: 0 orders to<br><span class="hl">EGP 178K a month</span></h3>
-<p class="lead" style="font-size:16px">A premium healthy-meal brand on a brand-new Shopify store — empty pixel, no sales history, and a product that needs trust. Test small, back the winner, scale broad: UGC reels drove 95% of tracked purchases in 90 days.</p>
+<div class="csteps"><div class="cstep"><small>CHALLENGE</small><p>Brand-new Shopify store, empty pixel, zero orders — and a premium product that needs trust before people buy.</p></div><div class="cstep"><small>STRATEGY</small><p>Test UGC vs. catalogue on a small budget, move the budget to the winner, then scale broad. UGC reels drove 95% of purchases.</p></div><div class="cstep res"><small>RESULT</small><p>Monthly sales from EGP 10K to EGP 178K in 90 days, ×8.5 ROAS and 23% repeat customers.</p></div></div>
 <div class="meter"><div class="top"><span>Monthly sales</span><span><span class="muted">EGP 10.1K</span> → <strong>EGP 178K</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="5.7%"></i></div></div>
 <div class="meter"><div class="top"><span>Return on ad spend</span><span><span class="muted">×4.4</span> → <strong>×8.4</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="52%"></i></div></div>
 <div class="nums"><div><b class="cnt" data-to="17.6" data-dec="1" data-pre="×">×0</b><small>Monthly sales growth</small></div><div><b class="cnt" data-to="8.5" data-dec="1" data-pre="×">×0</b><small>ROAS · EGP 275K on 32.4K</small></div><div><b class="cnt" data-to="23" data-suf="%">0%</b><small>Returning customers</small></div></div>
@@ -792,13 +842,19 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="slide-t">
 <div class="tagrow"><span class="no">CASE 03</span><small>E-COMMERCE · FASHION · SHOPIFY · META ADS</small></div>
 <h3>Nayrah:<br>4 to <span class="hl">59 orders</span> in one month</h3>
-<p class="lead" style="font-size:16px">A new clothing brand with no ads and 4 orders in all of August. First month of ads: a full funnel — catalog sales, product testing and retargeting. The catalog carried 81% of purchases and video creative hit a 6.1% CTR.</p>
+<div class="csteps"><div class="cstep"><small>CHALLENGE</small><p>New clothing brand on Shopify with no ads — just 4 orders and EGP 3,800 in sales in all of August.</p></div><div class="cstep"><small>STRATEGY</small><p>A full funnel instead of one campaign: catalog sales, product testing and retargeting, with three creative angles — product, offer and urgency.</p></div><div class="cstep res"><small>RESULT</small><p>59 orders in the first month, ×20 sales and 7.5× real ROAS. The catalog drove 81% of purchases.</p></div></div>
 <div class="meter"><div class="top"><span>Orders</span><span><span class="muted">4</span> → <strong>59</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="6.8%"></i></div></div>
 <div class="meter"><div class="top"><span>Sales</span><span><span class="muted">EGP 3.8K</span> → <strong>EGP 78.2K</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="4.9%"></i></div></div>
 <div class="nums"><div><b class="cnt" data-to="7.5" data-dec="1" data-suf="×">0×</b><small>Real ROAS (Shopify)</small></div><div><b class="cnt" data-to="20" data-pre="×">×0</b><small>Sales in one month</small></div><div><b>EGP 177</b><small>Cost per order</small></div></div>
 </div>
 <div class="slide-v navy"><span class="blk"></span><span class="ghost">×15</span>
-<div class="frame  zoomable" role="button" tabindex="0" aria-label="Enlarge: Nayrah case study: 59 orders, 7.5x ROAS, EGP 78,175 in sales in September"><div class="bar"><i></i><i></i><i></i><span>Nayrah · September results</span></div><img src="assets/case-nayrah-results.jpg" alt="Nayrah case study: 59 orders, 7.5x ROAS, EGP 78,175 in sales in September" loading="lazy" decoding="async" draggable="false"></div>
+<div class="frame"><div class="bar"><i></i><i></i><i></i><span>Nayrah · Shopify + Meta Ads · Aug vs. Sep 2026</span></div>
+<div class="viz">
+<div class="viz-h"><b>EGP 78,175</b><small>sales on EGP 10,472 ad spend · 7.5× ROAS</small></div>
+<div class="bars" aria-hidden="true"><div><em>4 orders</em><i class="vbar" data-h="7%"></i></div><div><em>59 orders</em><i class="vbar" data-h="100%"></i></div></div>
+<div class="bars-l"><span>August · no ads · EGP 3,800</span><span>September · first month of ads</span></div>
+<div class="fnl f4"><div><b>67K</b><small>Impressions</small></div><div><b>2,606</b><small>Store visits</small></div><div><b>166</b><small>Adds to cart</small></div><div><b>59</b><small>Orders</small></div></div>
+</div></div>
 </div>
 </article>
 
@@ -806,7 +862,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="slide-t">
 <div class="tagrow"><span class="no">CASE 04</span><small>LEAD GEN · INTERIOR DESIGN · GOOGLE + TIKTOK · RIYADH</small></div>
 <h3>Mutahed: <span class="hl">33 contracts</span><br>from SAR 32K in ads</h3>
-<p class="lead" style="font-size:16px">A Riyadh interior design firm serving homes and businesses. The goal was signed contracts, not cheap leads. Google captured real search intent, TikTok created demand, and weekly sales feedback reshaped keywords, captions and targeting.</p>
+<div class="csteps"><div class="cstep"><small>CHALLENGE</small><p>Cheap leads that didn't sign — a 2.5% close rate, off-target searches and price-sensitive buyers comparing quotes.</p></div><div class="cstep"><small>STRATEGY</small><p>Google to capture real intent, TikTok to create demand, and a weekly sales feedback loop that reshaped keywords, captions and targeting.</p></div><div class="cstep res"><small>RESULT</small><p>33 signed contracts from SAR 32.4K in ads, close rate doubled to 5.2%, ~16× estimated ROAS.</p></div></div>
 <div class="meter"><div class="top"><span>Lead-to-contract rate</span><span><span class="muted">2.5%</span> → <strong>5.2%</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="48%"></i></div></div>
 <div class="meter"><div class="top"><span>Signed contracts per period</span><span><span class="muted">7</span> → <strong>26</strong></span></div><div class="trk"><i class="new" data-w="100%"></i><i class="old" data-w="27%"></i></div></div>
 <div class="nums"><div><b class="cnt" data-to="16" data-pre="~" data-suf="×">~0×</b><small>Estimated ROAS</small></div><div><b>SAR 39</b><small>Cost per lead</small></div><div><b>6.3%</b><small>Ad cost of deal value</small></div></div>
@@ -826,7 +882,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="slide-t">
 <div class="tagrow"><span class="no">CASE 05</span><small>MOBILE APP + LEAD GEN · KSA · 2023–2025</small></div>
 <h3>From near-zero digital<br>to <span class="hl">23,000 patients/month</span></h3>
-<p class="lead" style="font-size:16px">Saudi German Hospital Makkah — a full-funnel engine: Meta and Google, retargeting layers, app-install campaigns, landing pages and CRM / call-center integration. The mobile app became the main revenue channel.</p>
+<div class="csteps"><div class="cstep"><small>CHALLENGE</small><p>Saudi German Hospital Makkah had almost no digital patient acquisition.</p></div><div class="cstep"><small>STRATEGY</small><p>Full-funnel Meta and Google, retargeting layers, app-install campaigns, landing pages and CRM / call-center integration.</p></div><div class="cstep res"><small>RESULT</small><p>23,000 patients a month, 57% of revenue from the mobile app and cost per acquisition down 39%.</p></div></div>
 <div class="meter"><div class="top"><span>Monthly patients</span><span><span class="muted">near zero</span> → <strong>23,000</strong></span></div><div class="trk"><i class="new" data-w="100%"></i></div></div>
 <div class="meter"><div class="top"><span>Revenue from the mobile app</span><span><strong>57%</strong></span></div><div class="trk"><i class="new" data-w="57%"></i></div></div>
 <div class="nums"><div><b>$0.31</b><small>Cost per install</small></div><div><b>25 SAR</b><small>Cost per lead</small></div><div><b>−39%</b><small>Cost per acquisition</small></div></div>
@@ -857,6 +913,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="cs-arr"><button class="cs-prev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="cs-next" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
 </div>
 </div>
+<div class="cs-cta" data-r><div><h3>Want numbers like these for your brand?</h3><p>Tell me your goal and budget — I'll show you where the growth is.</p></div><div class="row"><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-dk mag">Book a consultation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-gh btn-ol mag">Request an audit</a></div></div>
 </div></section>
 
 <!-- DASHBOARDS -->
@@ -1021,7 +1078,7 @@ function tlUpdate(){if(!tlBox)return;var r=tlBox.getBoundingClientRect(),mid=inn
 var FUN=[
  {t:'Awareness',s:'Get seen by the right people',d:'Reach and video campaigns that put the brand in front of high-intent audiences — built on creative that stops the scroll, not just budget.',c:['Meta Reels','TikTok','Snapchat','YouTube','Programmatic','X Ads'],k:[['CPM','efficiency'],['Reach','qualified'],['Thumb-stop','rate']]},
  {t:'Consideration',s:'Turn attention into interest',d:'Search capture, engagement and lead-magnet funnels. Landing pages and messaging tested until the click-through and landing conversion move.',c:['Google Search','Microsoft Ads','LinkedIn','Meta Lead Ads','Landing pages'],k:[['CTR','& CPC'],['CPL','cost per lead'],['LP CVR','conversion']]},
- {t:'Conversion',s:'Make the sale or the booking',d:'Sales and app-install campaigns optimised to real revenue events — catalog ads, PMax, retargeting layers and CRM / call-center integration.',c:['Meta Sales','Performance Max','Catalog ads','Apple Search Ads','CAPI & GA4'],k:[['ROAS','up to 14.8×'],['CPA','−39%'],['CPI','$0.31']]},
+ {t:'Conversion',s:'Make the sale or the booking',d:'Sales and app-install campaigns optimised to real revenue events — catalog ads, PMax, retargeting layers and CRM / call-center integration.',c:['Meta Sales','Performance Max','Catalog ads','Apple Search Ads','CAPI & GA4'],k:[['ROAS','up to ~16×'],['CPA','−39%'],['CPI','$0.31']]},
  {t:'Retention',s:'Bring them back, grow LTV',d:'Lifecycle remarketing and in-app re-engagement with Mixpanel and AppsFlyer audiences, so customers come back and spend more.',c:['Mixpanel','AppsFlyer','Custom audiences','CRM / WhatsApp','Email & push'],k:[['Retention','+25% YoY'],['LTV','growth'],['Repeat','rate']]}
 ];
 var stages=$$('.stage'), fr=$('.fun-r');
@@ -1050,7 +1107,9 @@ rng.addEventListener('input',budSet);budSet();
 /* case slider */
 var trk=$('.cs-track'), slides=$$('.slide'), dots=$$('.cs-dots button'), cur=$('.cs-count b'), csI=0;
 function goto(i){i=Math.max(0,Math.min(slides.length-1,i));trk.scrollTo({left:slides[i].offsetLeft-trk.offsetLeft,behavior:RM?'auto':'smooth'})}
-function csActive(i){csI=i;dots.forEach(function(d,j){d.setAttribute('aria-current',j===i)});cur.textContent='0'+(i+1);
+var cstabs=$$('.cs-tab'), cstabBox=$('.cs-tabs');
+cstabs.forEach(function(t,i){t.addEventListener('click',function(){goto(i)})});
+function csActive(i){csI=i;dots.forEach(function(d,j){d.setAttribute('aria-current',j===i)});cstabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i)});if(cstabs[i]&&cstabBox){var t=cstabs[i];cstabBox.scrollTo({left:t.offsetLeft-cstabBox.offsetLeft-12,behavior:RM?'auto':'smooth'})}cur.textContent='0'+(i+1);
   $$('.trk i',slides[i]).forEach(function(b){b.style.width=b.dataset.w});$$('.vbar',slides[i]).forEach(function(b){b.style.height=b.dataset.h});$$('.cnt',slides[i]).forEach(count)}
 var sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>.6)csActive(slides.indexOf(e.target))})},{root:trk,threshold:[.6]});
 slides.forEach(function(s){sio.observe(s)});
