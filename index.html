@@ -17,14 +17,16 @@
 <link rel="alternate" hreflang="ar" href="ar.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="preload" as="image" href="assets/mostafa-portrait.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mostafa Sayed Darwish","jobTitle":"Digital Marketing Consultant & Growth Marketer","address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"email":"mailto:Advertizer.darwish@gmail.com","sameAs":["https://www.linkedin.com/in/mostafa-1-done/"],"alumniOf":["Cairo University","Arab Academy for Science, Technology & Maritime Transport"]}</script>
 <style>:root{
-  --bg:#0B0B0D; --s1:#121215; --s2:#18181C; --line:#24242A; --line2:#2E2E35;
-  --tx:#F2F2EE; --mut:#A6A6A0; --mut2:#7E7E78; --ac:#D4FF3A; --ac2:#B8E61F; --navy:#1E2A3A;
-  --r:22px; --max:1240px;
-  --fd:'Space Grotesk',system-ui,sans-serif; --fb:Inter,system-ui,sans-serif;
+  --navy:#121A2E; --navy-deep:#0A1020; --card:#1E2840; --slate:#97A1B4;
+  --green:#3DF58A; --green-hover:#2EE07A; --green-dark:#0B9E55; --gold:#D4AF6A; --light:#F5F7FA;
+  --bg:#121A2E; --s1:#1E2840; --s2:#243050; --line:#2A3550; --line2:#34405E;
+  --tx:#FFFFFF; --mut:#97A1B4; --mut2:#7C879C; --ac:#3DF58A; --ac2:#2EE07A; --body:#C3CAD8;
+  --r:12px; --rb:8px; --max:1200px;
+  --fd:Inter,system-ui,sans-serif; --fb:Inter,system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
@@ -38,7 +40,7 @@ button{font:inherit;color:inherit}
 .eyebrow{margin:0;font-size:13px;letter-spacing:.22em;color:var(--ac);font-weight:600;text-transform:uppercase}
 .h2{margin:0;font-family:var(--fd);font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em;font-weight:700}
 .h2 em,.hl{font-style:normal;color:var(--ac)}
-.lead{margin:0;font-size:18px;line-height:1.65;color:#C4C4BE}
+.lead{margin:0;font-size:18px;line-height:1.65;color:var(--body)}
 .muted{color:var(--mut)}
 .sec{padding:110px 0}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
@@ -56,22 +58,22 @@ button{font:inherit;color:inherit}
 
 /* progress + cursor glow */
 #progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--ac);z-index:100}
-.glow{position:fixed;pointer-events:none;width:520px;height:520px;border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,58,.09),rgba(212,255,58,0) 60%);z-index:0;transition:opacity .4s;opacity:0}
+.glow{position:fixed;pointer-events:none;width:520px;height:520px;border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(61,245,138,.09),rgba(61,245,138,0) 60%);z-index:0;transition:opacity .4s;opacity:0}
 body.has-mouse .glow{opacity:1}
 
 /* nav */
 header.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,border-color .3s,transform .35s}
-header.nav.scrolled{background:rgba(11,11,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.nav.scrolled{background:rgba(18,26,46,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 header.nav.hide{transform:translateY(-100%)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
 .logo{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:-.01em;white-space:nowrap}
 .logo span{color:var(--ac)}
 .nav-links{display:flex;gap:4px;font-size:14.5px}
-.nav-links a{padding:8px 12px;border-radius:999px;color:#B8B8B2;transition:color .2s,background .2s}
+.nav-links a{padding:8px 12px;border-radius:999px;color:var(--body);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--tx)}
 .nav-links a.active{color:var(--bg);background:var(--ac)}
 .burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);background:transparent;cursor:pointer;align-items:center;justify-content:center}
-.mnav{position:fixed;inset:72px 0 auto 0;background:rgba(11,11,13,.97);border-bottom:1px solid var(--line);padding:16px 24px 28px;display:none;flex-direction:column;gap:4px;z-index:59}
+.mnav{position:fixed;inset:72px 0 auto 0;background:rgba(18,26,46,.97);border-bottom:1px solid var(--line);padding:16px 24px 28px;display:none;flex-direction:column;gap:4px;z-index:59}
 .mnav a{padding:14px 4px;font-family:var(--fd);font-size:24px;border-bottom:1px solid var(--line)}
 .mnav.open{display:flex}
 
@@ -82,8 +84,8 @@ header.nav.hide{transform:translateY(-100%)}
 .hero-l{flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .hero-r{flex:1 1 360px;min-width:0;position:relative}
 .status{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.2em;color:var(--ac);font-weight:600}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(212,255,58,.6);animation:ping 2s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(212,255,58,.55)}80%,100%{box-shadow:0 0 0 12px rgba(212,255,58,0)}}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(61,245,138,.6);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(61,245,138,.55)}80%,100%{box-shadow:0 0 0 12px rgba(61,245,138,0)}}
 .name{margin:0;font-family:var(--fd);font-weight:700;font-size:clamp(54px,9vw,118px);line-height:.88;letter-spacing:-.04em}
 .name .ln{display:block;overflow:hidden;padding-bottom:.04em}
 .name .ln>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.75,.2,1) forwards}
@@ -107,7 +109,7 @@ header.nav.hide{transform:translateY(-100%)}
 .chip.b{left:-18px;bottom:120px;background:var(--s2);border:1px solid var(--line2);animation-delay:-2s}
 .chip.b b{color:var(--ac)}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.live{position:absolute;left:-30px;right:24px;bottom:-26px;background:rgba(18,18,21,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.live{position:absolute;left:-30px;right:24px;bottom:-26px;background:rgba(30,40,64,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;box-shadow:0 24px 50px rgba(0,0,0,.55)}
 .live .lbl{font-size:11px;color:var(--mut);letter-spacing:.12em;font-weight:600;display:flex;align-items:center;gap:6px}
 .live .val{font-family:var(--fd);font-size:30px;font-weight:700;line-height:1}
 .live svg{grid-row:1/3;grid-column:2;width:100%;height:52px}
@@ -138,7 +140,7 @@ header.nav.hide{transform:translateY(-100%)}
 /* bridges */
 .bridge{display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 24px}
 .bridge i{width:1px;height:46px;background:linear-gradient(transparent,var(--ac))}
-.bridge p{margin:0;display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--s1);border-radius:999px;padding:10px 20px;font-size:14px;color:#B8B8B2;text-align:center}
+.bridge p{margin:0;display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--s1);border-radius:999px;padding:10px 20px;font-size:14px;color:var(--body);text-align:center}
 .bridge p strong{color:var(--tx);font-weight:600}
 .bridge p svg{color:var(--ac)}
 
@@ -175,7 +177,7 @@ header.nav.hide{transform:translateY(-100%)}
 .mba-t p{margin:0;font-size:17px;line-height:1.6;font-weight:500}
 .mba-t .tags{display:flex;flex-wrap:wrap;gap:8px}
 .mba-t .tags span{border:1.5px solid var(--bg);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
-.mba-t .mfoot{margin-top:auto;padding-top:16px;border-top:1.5px solid rgba(11,11,13,.25);font-size:14px;font-weight:600}
+.mba-t .mfoot{margin-top:auto;padding-top:16px;border-top:1.5px solid rgba(18,26,46,.25);font-size:14px;font-weight:600}
 .mba-p{flex:1 1 480px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg)}
 .mba-p img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 .mba-p img:first-child{grid-column:1/3;aspect-ratio:16/10;object-position:60% 40%}
@@ -270,7 +272,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .meter .top strong{color:var(--ac);font-size:15px}
 .meter .trk{height:10px;background:var(--line);border-radius:99px;position:relative;overflow:hidden}
 .meter .trk i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;width:0;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
-.meter .trk i.old{background:#5A5A62}
+.meter .trk i.old{background:#5D6880}
 .meter .trk i.new{background:var(--ac)}
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:14px;border-top:1px solid var(--line);padding-top:18px}
 .nums b{display:block;font-family:var(--fd);font-size:34px;line-height:1}
@@ -280,9 +282,9 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .slide-v.navy .blk{background:var(--navy)}
 .slide-v .ghost{position:absolute;right:22px;top:16px;font-family:var(--fd);font-size:96px;font-weight:700;line-height:1;color:var(--bg);opacity:.14}
 .slide-v.navy .ghost{color:#fff;opacity:.08}
-.frame{position:relative;background:#1A1A1F;border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.frame{position:relative;background:#1E2840;border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55)}
 .frame .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line2);font-size:12px;color:var(--mut)}
-.frame .bar i{width:9px;height:9px;border-radius:50%;background:#3E3E46}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#3A4664}
 .frame .bar span{margin-left:8px}
 .frame.sm{position:absolute;left:-10px;bottom:0;width:46%;border-radius:14px}
 .zoomable{cursor:zoom-in}
@@ -303,7 +305,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 /* dashboards */
 .dtabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
-.dtab{min-height:46px;padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--s1);color:#E6E6E0;cursor:pointer;font-weight:600;font-size:14px;position:relative;overflow:hidden;transition:background .25s,color .25s,border-color .25s}
+.dtab{min-height:46px;padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--s1);color:#E3E7EF;cursor:pointer;font-weight:600;font-size:14px;position:relative;overflow:hidden;transition:background .25s,color .25s,border-color .25s}
 .dtab:hover{border-color:var(--ac)}
 .dtab[aria-selected="true"]{background:var(--ac);color:var(--bg);border-color:var(--ac)}
 .dtab .pb{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--bg);opacity:.4}
@@ -315,13 +317,13 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 /* big players */
 .bigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
-.big{background:#F6F6F1;color:#141417;border-radius:22px;padding:22px;min-height:210px;display:flex;flex-direction:column;gap:12px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;transform-style:preserve-3d}
+.big{background:#F5F7FA;color:#17203A;border-radius:22px;padding:22px;min-height:210px;display:flex;flex-direction:column;gap:12px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;transform-style:preserve-3d}
 .big:hover{box-shadow:0 26px 50px rgba(0,0,0,.45)}
 .big .lg{flex:1;display:flex;align-items:center;justify-content:center;min-height:110px}
 .big .lg img{max-width:85%;max-height:104px;object-fit:contain}
-.big .cap{border-top:1px solid #DEDED6;padding-top:12px}
+.big .cap{border-top:1px solid #E3E7EF;padding-top:12px}
 .big .cap b{display:block;font-size:15px}
-.big .cap small{font-size:11.5px;color:#55554F;letter-spacing:.08em;font-weight:600}
+.big .cap small{font-size:11.5px;color:#5D6880;letter-spacing:.08em;font-weight:600}
 .big.more{background:var(--ac);justify-content:space-between}
 .big.more b{font-family:var(--fd);font-size:60px;line-height:1}
 
@@ -330,7 +332,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .us-t{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px;position:relative}
 .us-t h3{margin:0;font-family:var(--fd);font-size:clamp(34px,4vw,46px);line-height:1.02;letter-spacing:-.02em}
 .us-l{flex:1 1 480px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;position:relative}
-.tile{background:#F6F6F1;border-radius:16px;height:104px;padding:18px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.tile{background:#F5F7FA;border-radius:16px;height:104px;padding:18px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .tile:hover{transform:translateY(-4px)}
 .tile img{max-width:80%;max-height:66px;object-fit:contain}
 .route{position:absolute;inset:0;pointer-events:none;opacity:.28}
@@ -359,7 +361,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .fmq{display:block;background:var(--ac);color:var(--bg);overflow:hidden;padding:24px 0}
 .fmq .mq{font-size:48px;animation-duration:20s}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 24px;font-size:14px;color:var(--mut2);max-width:var(--max);margin:0 auto}
-.foot a{color:#B8B8B2}
+.foot a{color:var(--body)}
 
 /* floating cta */
 .fcta{position:fixed;right:24px;bottom:24px;z-index:70;display:inline-flex;align-items:center;gap:10px;min-height:58px;padding:14px 24px 14px 18px;border-radius:999px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:18px;font-weight:700;box-shadow:0 16px 40px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
@@ -369,7 +371,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 @keyframes pl{50%{opacity:.3}}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:200;background:rgba(5,5,7,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(10,16,32,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lb.open{display:flex;animation:fade .3s forwards;opacity:0}
 .lb img{max-width:min(1400px,96vw);max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .lb button{position:absolute;top:18px;right:18px;width:50px;height:50px;border-radius:50%;border:1px solid var(--line2);background:var(--s1);cursor:pointer;display:grid;place-items:center}
@@ -404,7 +406,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 }
 
 /* services */
-.why{display:flex;flex-wrap:wrap;gap:10px 22px;margin:-18px 0 34px;font-size:15px;color:#D6D6D0}
+.why{display:flex;flex-wrap:wrap;gap:10px 22px;margin:-18px 0 34px;font-size:15px;color:var(--body)}
 .why span{display:inline-flex;gap:8px;align-items:center}
 .why svg{stroke:var(--ac)}
 .svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:16px}
@@ -418,7 +420,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .svc li::before{content:"";flex:0 0 7px;height:7px;margin-top:7px;border-radius:50%;background:var(--ac)}
 .svc .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ac);padding-top:8px;min-height:44px}
 .svc.hot{background:var(--ac);color:var(--bg);border-color:var(--ac)}
-.svc.hot p{color:#22220f}
+.svc.hot p{color:#0A2A1A}
 .svc.hot .ic{background:var(--bg);border-color:var(--bg)}
 .svc.hot li::before{background:var(--bg)}
 .svc.hot .go{color:var(--bg)}
@@ -449,7 +451,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";flex:0 0 32px;height:32px;border-radius:50%;background:var(--s2);display:grid;place-items:center;color:var(--ac);font-size:22px;transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{margin:0;padding:0 24px 22px;color:#C4C4BE;line-height:1.65;font-size:16px}
+.faq details p{margin:0;padding:0 24px 22px;color:var(--body);line-height:1.65;font-size:16px}
 
 /* final cta */
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -510,12 +512,12 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .room figure:first-child{grid-column:1/3;grid-row:1/3}
 .room img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .room figure:hover img{transform:scale(1.06)}
-.room figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(8,8,10,.92));display:flex;flex-direction:column;gap:3px}
+.room figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(10,16,32,.92));display:flex;flex-direction:column;gap:3px}
 .room figcaption small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ac)}
 .room figcaption b{font-family:var(--fd);font-size:17px;line-height:1.25}
 .room figure:first-child figcaption{padding:70px 26px 24px}
 .room figure:first-child figcaption b{font-size:26px}
-.room figure:first-child figcaption span{font-size:14.5px;color:#D0D0CA;line-height:1.5;max-width:460px}
+.room figure:first-child figcaption span{font-size:14.5px;color:var(--body);line-height:1.5;max-width:460px}
 @media (max-width:900px){
   .room{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .room figure{aspect-ratio:1/1.05}
@@ -528,13 +530,13 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 }
 
 /* nayrah results viz */
-.viz{padding:22px;display:flex;flex-direction:column;gap:18px;background:#141418}
+.viz{padding:22px;display:flex;flex-direction:column;gap:18px;background:#17203A}
 .viz-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .viz-h b{font-family:var(--fd);font-size:30px;color:var(--ac)}
 .viz-h small{color:var(--mut);font-size:12.5px}
 .bars{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;height:190px;padding:0 6px;border-bottom:1px solid var(--line2)}
 .bars div{display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
-.bars i{display:block;width:72%;border-radius:12px 12px 4px 4px;background:#5A5A62;height:0;transition:height 1.4s cubic-bezier(.2,.7,.2,1)}
+.bars i{display:block;width:72%;border-radius:12px 12px 4px 4px;background:#5D6880;height:0;transition:height 1.4s cubic-bezier(.2,.7,.2,1)}
 .bars div:last-child i{background:var(--ac)}
 .bars em{font-style:normal;font-family:var(--fd);font-weight:700;font-size:17px}
 .bars-l{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;font-size:12.5px;color:var(--mut);margin-top:-8px}
@@ -555,7 +557,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .cs-tab b{font-family:var(--fd);font-size:17px;font-weight:700}
 .cs-tab span{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--ac)}
 .cs-tab[aria-selected="true"]{background:var(--ac);border-color:var(--ac);color:var(--bg)}
-.cs-tab[aria-selected="true"] small{color:#3b4200}
+.cs-tab[aria-selected="true"] small{color:#063D22}
 .cs-tab[aria-selected="true"] span{color:var(--bg)}
 .csum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
 .csum div{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
@@ -564,7 +566,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .csteps{display:grid;grid-template-columns:1fr;gap:10px;margin:2px 0}
 .cstep{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
 .cstep small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--mut);padding-top:3px}
-.cstep p{margin:0;font-size:15px;line-height:1.55;color:#D6D6D0}
+.cstep p{margin:0;font-size:15px;line-height:1.55;color:var(--body)}
 .cstep.res{border-color:var(--ac)}
 .cstep.res small{color:var(--ac)}
 .cstep.res p{color:var(--tx);font-weight:500}
@@ -595,14 +597,125 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .cstep p{font-size:14.5px;line-height:1.5}
 .slide-v{align-self:center}
 .wins small.src{display:block;margin-top:auto;padding-top:6px;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mut)}
-.wins>div:first-child small.src{color:#3b4200}
+.wins>div:first-child small.src{color:#063D22}
 .wins{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.wins{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.wins{grid-template-columns:1fr}}
-.wins-note{margin-top:10px;max-width:640px;color:var(--mut,#9a9aa2);font-size:15px;line-height:1.55}
+.wins-note{margin-top:10px;max-width:640px;color:var(--mut,var(--mut));font-size:15px;line-height:1.55}
 .lang-sw{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:999px;color:var(--tx);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
 .lang-sw:hover{border-color:var(--ac);color:var(--ac)}
 .nav-act{display:flex;align-items:center;gap:10px}
+
+/* ================= THEME v2 — navy / growth green / leadership gold ================= */
+body{font-size:17px;line-height:1.65;color:var(--tx)}
+.lead{font-size:clamp(16px,1.25vw,18px);color:var(--body)}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--slate);font-weight:600}
+.h2{font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-.015em;font-weight:700}
+.h2 em,.hl{color:var(--slate);font-weight:700}
+.card{border-radius:12px;box-shadow:none}
+.btn{border-radius:8px;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn-ac{background:var(--ac);color:#0A1020}
+.btn-ac:hover{background:var(--green-hover);color:#0A1020;transform:translateY(-2px)}
+.btn-gh:hover{border-color:var(--slate);transform:translateY(-2px)}
+.glow{display:none!important}
+.hero-grid{background-image:linear-gradient(rgba(42,53,80,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(42,53,80,.55) 1px,transparent 1px)!important;background-size:56px 56px!important;opacity:.6}
+.status{color:var(--slate)!important}
+.status .dot{background:var(--ac)}
+.name{font-family:var(--fd);font-size:clamp(36px,4.4vw,56px)!important;line-height:1.1!important;letter-spacing:-.02em!important;text-transform:none!important;font-weight:700;margin:18px 0 0;display:inline-block;padding-bottom:14px;position:relative}
+.name::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:3px;border-radius:3px;background:var(--gold)}
+.headline{margin:22px 0 0;font-size:clamp(24px,2.6vw,36px);line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.headline span{color:var(--slate)}
+.hero-sub{margin-top:16px!important;max-width:600px}
+.gold-badge{display:inline-flex;align-items:center;gap:8px;margin:22px 0 0;padding:7px 14px;border:1px solid rgba(212,175,106,.45);border-radius:999px;color:var(--gold);font-size:14px;font-weight:600;background:rgba(212,175,106,.06)}
+.gold-badge svg{width:15px;height:15px;fill:var(--gold)}
+.portrait{transform:none!important;border-radius:16px!important}
+.chip b,.live .val{color:var(--ac)}
+/* stats as dashboard cards */
+.stats{border:0!important;background:transparent!important}
+.stats-in{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px!important;display:flex!important;flex-direction:column;gap:8px;text-align:start!important;border-left:1px solid var(--line)!important}
+.stat span{order:0;font-size:13px;color:var(--slate)}
+.stat b{order:1;font-size:clamp(32px,3.2vw,48px)!important;font-weight:600!important;color:var(--ac)!important;line-height:1}
+@media (max-width:900px){.stats-in{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child{grid-column:1/-1}}
+/* numbered services */
+.svc .num{font-size:14px;font-weight:700;color:var(--green-dark);letter-spacing:.06em;display:inline-block;border-bottom:2px solid var(--green-dark);padding-bottom:4px}
+.svc .badge{border-radius:6px}
+/* light sections */
+.lt{--bg:#F5F7FA;--s1:#FFFFFF;--s2:#EEF1F6;--card:#FFFFFF;--line:#DDE3EC;--line2:#C9D1DD;--tx:#121A2E;--mut:#56617A;--mut2:#6F7A90;--slate:#56617A;--body:#3D4760;--ac:#0B9E55;--ac2:#098a4a;
+  background:var(--bg);color:var(--tx)}
+.lt .card,.lt .svc,.lt details{background:#fff;border-color:var(--line)}
+.lt .svc.hot{background:var(--navy)!important;color:#fff;--tx:#fff;--mut:#97A1B4;--body:#C3CAD8;--ac:#3DF58A;border-color:var(--navy)}
+.lt .svc.hot .num{color:#3DF58A;border-color:#3DF58A}
+.lt .svc.hot h3,.lt .svc.hot p,.lt .svc.hot li{color:#fff}
+.lt .btn-ac{background:var(--green-dark);color:#fff}
+.lt .btn-ac:hover{background:#098a4a;color:#fff}
+.lt .btn-gh{color:var(--tx);border-color:var(--line2)}
+.lt .why span{color:var(--tx)}
+.lt .why svg{color:var(--green-dark);stroke:var(--green-dark)}
+/* the system — the heart of the page */
+.deep{background:var(--navy-deep);--bg:#0A1020}
+.sys{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.sys-line{position:absolute;left:10%;right:10%;top:27px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.sys-line i{position:absolute;inset:0;background:linear-gradient(90deg,var(--ac),var(--green-dark));transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.2,.7,.2,1) .2s}
+.sys.in .sys-line i{transform:scaleX(1)}
+.sys-st{position:relative;display:flex;flex-direction:column;gap:8px;padding:0 4px}
+.sys-n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--navy-deep);border:2px solid var(--ac);color:var(--ac);font-weight:700;font-size:17px;position:relative;z-index:1;margin-bottom:10px}
+.sys-st small{font-size:12px;letter-spacing:.12em;color:var(--slate);font-weight:600}
+.sys-st h3{margin:0;font-size:21px;font-weight:700}
+.sys-st p{margin:0;color:var(--body);font-size:15px;line-height:1.6}
+.sys-st em{font-style:normal;margin-top:6px;font-size:13px;color:var(--slate);border-top:1px solid var(--line);padding-top:10px}
+.sys-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);color:var(--slate);font-size:15px}
+.sys-foot span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ac);margin-inline-end:8px;vertical-align:middle}
+.sys-foot .btn{margin-inline-start:auto}
+@media (max-width:900px){
+ .sys{grid-template-columns:1fr;gap:28px}
+ .sys-line{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}
+ .sys-line i{transform:scaleY(0);transform-origin:top;background:linear-gradient(180deg,var(--ac),var(--green-dark))}
+ .sys.in .sys-line i{transform:scaleY(1)}
+ .sys-st{display:grid;grid-template-columns:56px 1fr;column-gap:18px;row-gap:6px}
+ .sys-n{grid-row:1/span 4;margin:0}
+ .sys-foot .btn{margin-inline-start:0;width:100%;justify-content:center}
+}
+/* logos monochrome */
+.lt .tile img,.lt .logo-wall img{filter:grayscale(1);opacity:.62;transition:filter .3s,opacity .3s}
+.lt .tile:hover img{filter:none;opacity:1}
+.lt .tile{background:transparent;border-color:var(--line)}
+/* contact */
+.big-t{font-size:clamp(32px,4.6vw,56px)!important;line-height:1.1!important}
+.big-t .hl{color:var(--ac)}
+.fcta{border-radius:10px!important}
+.wins b{color:var(--ac)}
+[data-r]{transform:translateY(18px)}
+.chip,.live{border-radius:12px!important;box-shadow:0 10px 24px rgba(0,0,0,.25)!important;animation:none!important}
+.chip.a b,.chip.a small{color:#0A1020!important}
+.lt .h2,.lt h3,.lt h4{color:var(--tx)}
+.slide-t h3 .hl{color:var(--green-dark)}
+.slide-t h3{font-size:clamp(28px,3vw,40px)!important;line-height:1.12!important}
+.lt .big .lg img{filter:grayscale(1);opacity:.65;transition:filter .3s,opacity .3s}
+.lt .big:hover .lg img{filter:none;opacity:1}
+.big{transform:none!important}
+.gold-badge{align-self:flex-start;width:fit-content}
+.sys-line{left:28px;right:calc((100% - 64px)/5 - 28px)}
+@media (max-width:900px){.sys-line{left:27px;right:auto}}
+.lt .big.more{background:var(--navy);color:#fff}.lt .big.more b{color:#3DF58A}.lt .big.more span{color:#fff}
+.mba{background:var(--navy)!important;color:#fff!important;border-radius:16px!important}
+.mba h3,.mba p,.mba b,.mba span,.mba small{color:#fff}
+.mba .eyebrow,.mba .tagrow small{color:var(--gold)!important}
+.mba .pill,.mba li{border-color:#3A4664!important;color:#E3E7EF!important}
+.mq-band,.fmq{background:var(--card)!important;color:#E3E7EF!important;transform:none!important;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.slide-v .blk{background:#E3E8F0!important;border-radius:16px!important}
+.sector::after{background:var(--line)!important}
+.cs-cta{background:var(--navy)!important;color:#fff;border-radius:12px!important}
+.cs-cta h3,.cs-cta p{color:#fff}
+.mba-t>p:first-child,.mba-t .kick{color:var(--gold)!important}
+.mba-t h3{font-size:clamp(28px,3vw,40px)!important;line-height:1.1!important}
+.mba-t .mfoot{border-color:#2A3550!important;color:#97A1B4!important}
+.mba-p{background:var(--navy)!important}
+.cs-cta .btn-dk{background:#3DF58A!important;color:#0A1020!important}
+.cs-cta .btn-ol{color:#fff!important;border-color:#3A4664!important}
+.mba-t .eyebrow,.mba-t>.k,.mba-t .k{color:var(--gold)!important}
+figcaption .k{color:var(--gold)!important}
+.mba-t>span:first-child{color:var(--gold)!important}
 </style>
 </head>
 <body>
@@ -613,14 +726,14 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <header class="nav"><div class="wrap nav-in">
 <a href="#top" class="logo">Mostafa Sayed Darwish<span>.</span></a>
 <nav class="nav-links" aria-label="Sections">
-<a href="#services">Services</a><a href="#experience">Experience</a><a href="#mba">MBA</a><a href="#funnel">Funnel</a><a href="#work">Case studies</a><a href="#clients">Clients</a><a href="#faq">FAQ</a>
+<a href="#services">Services</a><a href="#system">The system</a><a href="#work">Case studies</a><a href="#clients">Clients</a><a href="#experience">Experience</a><a href="#faq">FAQ</a>
 </nav>
 <div class="nav-act"><a href="ar.html" class="lang-sw" lang="ar" hreflang="ar">عربي</a>
-<a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac nav-cta mag" style="min-height:44px;padding:10px 20px;font-size:15px">Book a call</a>
+<a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac nav-cta" style="min-height:44px;padding:10px 20px;font-size:15px">Book a call</a>
 <button class="burger" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
 </div></header>
 <nav class="mnav" aria-label="Mobile">
-<a href="#services">Services</a><a href="#experience">Experience</a><a href="#mba">MBA &amp; awards</a><a href="#funnel">Growth funnel</a><a href="#range">Range</a><a href="#work">Case studies</a><a href="#clients">Clients</a><a href="#us">US market</a><a href="#process">How we'll work</a><a href="#faq">FAQ</a><a href="#contact" style="color:var(--ac)">Let's talk →</a><a href="ar.html" lang="ar" hreflang="ar">النسخة العربية</a>
+<a href="#services">Services</a><a href="#system">The system</a><a href="#work">Case studies</a><a href="#clients">Clients</a><a href="#experience">Experience</a><a href="#mba">MBA &amp; awards</a><a href="#funnel">Growth funnel</a><a href="#us">US market</a><a href="#faq">FAQ</a><a href="#contact" style="color:var(--ac)">Let's talk →</a><a href="ar.html" lang="ar" hreflang="ar">النسخة العربية</a>
 </nav>
 
 <main id="main">
@@ -630,12 +743,13 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="wrap hero-in">
 <div class="hero-l">
 <p class="status"><span class="dot"></span>DIGITAL MARKETING CONSULTANT · GROWTH MARKETER</p>
-<h1 class="name" aria-label="Mostafa Sayed Darwish"><span class="ln"><span>MOSTAFA</span></span><span class="ln"><span>SAYED</span></span><span class="ln"><span>DARWISH</span></span></h1>
-<p class="role">I scale brands with <span class="rot" aria-live="polite"><span class="on">performance media.</span><span>growth funnels.</span><span>data &amp; testing.</span><span>creative that sells.</span></span></p>
-<p class="lead" style="max-width:640px">Digital marketing consultant and growth &amp; performance marketing lead. 11 years and 250+ brands across e-commerce, B2B, F&amp;B, FMCG, mobile apps and healthcare — from lean test budgets to $1.9M in managed spend, for clients in Egypt, the GCC and the US.</p>
+<h1 class="name">Mostafa Sayed Darwish</h1>
+<p class="headline">I build growth systems, <span>not campaigns.</span></p>
+<p class="lead hero-sub">I turn your ad budget into real sales — with a clear system from audit to scale. 11+ years, 250+ brands and up to $1.9M in managed ad spend across Egypt, the GCC and the US.</p>
+<p class="gold-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>Best Marketer 2025 — Saudi German Hospitals</p>
 <div class="hero-cta">
-<a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac mag">Book a consultation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<a href="#services" class="btn btn-gh mag">How I can help</a>
+<a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac">Book a consultation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<a href="#services" class="btn btn-gh">How I can help</a>
 </div>
 <div class="hero-meta"><span>Cairo, EG</span><span class="sep">·</span><span>Available for consulting, projects &amp; full-time roles</span><span class="sep">·</span><a href="https://www.linkedin.com/in/mostafa-1-done/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
 </div>
@@ -646,7 +760,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="live" aria-hidden="true">
 <span class="lbl"><span class="dot" style="width:6px;height:6px"></span>PEAK ROAS</span>
 <span class="val"><span class="cnt" data-from="4" data-to="16" data-dec="0" data-suf="×" data-dur="2600">4×</span></span>
-<svg viewBox="0 0 200 52" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#D4FF3A" stop-opacity=".35"/><stop offset="1" stop-color="#D4FF3A" stop-opacity="0"/></linearGradient></defs><path class="spark-a" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4 L200 52 L0 52Z"/><path class="spark" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4"/></svg>
+<svg viewBox="0 0 200 52" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3DF58A" stop-opacity=".35"/><stop offset="1" stop-color="#3DF58A" stop-opacity="0"/></linearGradient></defs><path class="spark-a" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4 L200 52 L0 52Z"/><path class="spark" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4"/></svg>
 </div>
 </div>
 </div>
@@ -655,166 +769,38 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 <!-- STATS -->
 <section class="stats" aria-label="Key numbers"><div class="wrap stats-in">
-<div class="stat" data-r><b class="cnt" data-to="11">0</b><span>Years of experience</span></div>
-<div class="stat" data-r data-d="80"><b class="cnt" data-to="250" data-suf="+">0</b><span>Brands &amp; clients</span></div>
-<div class="stat" data-r data-d="160"><b class="cnt" data-to="1.9" data-dec="1" data-pre="$" data-suf="M">$0</b><span>Peak ad spend managed</span></div>
-<div class="stat" data-r data-d="240"><b class="cnt" data-to="10" data-suf="+">0</b><span>Ad platforms</span></div>
-<div class="stat" data-r data-d="320"><b class="cnt" data-to="4">0</b><span>Markets · EG · KSA · UAE · US</span></div>
+<div class="stat" data-r><span>Years of experience</span><b class="cnt" data-to="11" data-suf="+">0</b></div>
+<div class="stat" data-r data-d="80"><span>Brands &amp; clients</span><b class="cnt" data-to="250" data-suf="+">0</b></div>
+<div class="stat" data-r data-d="160"><span>Ad budget under management</span><b class="cnt" data-to="1.9" data-dec="1" data-pre="$" data-suf="M">$0</b></div>
+<div class="stat" data-r data-d="240"><span>Ad platforms</span><b class="cnt" data-to="10" data-suf="+">0</b></div>
+<div class="stat" data-r data-d="320"><span>Markets · EG · KSA · UAE · US</span><b class="cnt" data-to="4">0</b></div>
 </div></section>
 
 <!-- SERVICES -->
-<section class="sec" id="services" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>Work with me</p><h2 class="h2" data-r data-d="80">Hire a growth marketer<br><em>who's done it 250+ times.</em></h2></div><p class="lead" data-r data-d="160">Pick what you need — a one-off audit, hands-on campaign management, a strategy your team can execute, or someone to lead growth.</p></div>
+<section class="sec lt" id="services" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>Services</p><h2 class="h2" data-r data-d="80">Four ways to work together.<br><em>One system behind all of them.</em></h2></div><p class="lead" data-r data-d="160">Pick what you need — a one-off audit, hands-on campaign management, a strategy your team can execute, or a growth partner who owns the numbers.</p></div>
 <div class="why" data-r><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Hands-on in the ad accounts, not just slides</span><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Every sector, every budget</span><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Results reported in revenue, not likes</span><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>MBA-trained strategy</span></div>
 <div class="svcs">
-<div class="card svc" data-r><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></span><h3>Growth &amp; Ads Audit</h3><p>Find exactly where your budget leaks and what to fix first.</p><ul><li>Ad account &amp; tracking audit (Meta, Google, TikTok)</li><li>Funnel, landing page &amp; offer review</li><li>Prioritized action plan with quick wins</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Request an audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
-<div class="card svc hot" data-r data-d="80"><span class="badge">MOST REQUESTED</span><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><h3>Performance Marketing Management</h3><p>I plan, launch and scale your paid media — and report what it earned.</p><ul><li>Meta, Google, TikTok, Snapchat &amp; LinkedIn</li><li>Creative &amp; audience testing every week</li><li>Monthly report with clear next moves</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Start a project <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
-<div class="card svc" data-r data-d="160"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Digital Marketing Consultation</h3><p>A strategy and media plan your team can actually execute.</p><ul><li>SOSTAC digital marketing strategy</li><li>Media plan, budget split &amp; KPIs</li><li>1:1 sessions with your team or founders</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Book a session <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
-<div class="card svc" data-r data-d="240"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/></svg></span><h3>Growth Lead — Fractional or Full-time</h3><p>Someone to own growth, lead the team and report to leadership.</p><ul><li>Team leadership &amp; agency management</li><li>Acquisition, retention &amp; LTV ownership</li><li>C-suite reporting and budget pacing</li></ul><a class="go" href="#contact">Let's discuss the role <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<div class="card svc" data-r><span class="num">01</span><h3>Growth &amp; Ads Audit</h3><p>Find exactly where your budget leaks and what to fix first.</p><ul><li>Ad account &amp; tracking audit (Meta, Google, TikTok)</li><li>Funnel, landing page &amp; offer review</li><li>Prioritized action plan with quick wins</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Request an audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<div class="card svc hot" data-r data-d="80"><span class="badge">MOST REQUESTED</span><span class="num">02</span><h3>Performance Marketing Management</h3><p>I plan, launch and scale your paid media — and report what it earned.</p><ul><li>Meta, Google, TikTok, Snapchat &amp; LinkedIn</li><li>Creative &amp; audience testing every week</li><li>Monthly report with clear next moves</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Start a project <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<div class="card svc" data-r data-d="160"><span class="num">03</span><h3>Digital Marketing Consultation</h3><p>A strategy and media plan your team can actually execute.</p><ul><li>SOSTAC digital marketing strategy</li><li>Media plan, budget split &amp; KPIs</li><li>1:1 sessions with your team or founders</li></ul><a class="go" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener">Book a session <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<div class="card svc" data-r data-d="240"><span class="num">04</span><h3>Growth Partner — Fractional or Full-time</h3><p>Someone who owns growth end to end and reports results to leadership.</p><ul><li>Works with your in-house team and agencies</li><li>Acquisition, retention &amp; LTV ownership</li><li>Leadership reporting and budget pacing</li></ul><a class="go" href="#contact">Let's discuss the role <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
 </div>
 </div></section>
 
-<div class="bridge" data-r><i></i><p><span>What I offer</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>backed by 11 years of experience</strong></p></div>
+<div class="bridge" data-r><i></i><p><span>What I offer</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>runs on one clear system</strong></p></div>
 
-<!-- EXPERIENCE -->
-<section class="sec" id="experience" style="padding-top:60px"><div class="wrap xp">
-<div class="xp-l">
-<p class="eyebrow" data-r>Experience</p>
-<h2 class="h2" data-r data-d="80">11 years.<br><em>Agency, in-house &amp; SaaS.</em></h2>
-<p class="lead" data-r data-d="160">I lead digital teams and stay hands-on in the ad accounts — planning, targeting, creative, landing pages and tracking — so every pound of spend traces back to revenue.</p>
-<div class="mini">
-<div class="card" data-r data-d="200"><b>Team leadership</b><span>Built and led cross-functional and analytics teams</span></div>
-<div class="card" data-r data-d="280"><b>P&amp;L ownership</b><span>Acquisition, retention and LTV across 3 markets</span></div>
-<div class="card" data-r data-d="360"><b>C-suite reporting</b><span>Monthly and quarterly business reviews</span></div>
-</div>
-</div>
-<div class="xp-r"><span class="tl-line"></span><span class="tl-fill"></span>
-<ol class="tl"><li data-r data-d="0"><span class="yr">2026 – Now</span><h4>Senior Marketing Specialist — Brand &amp; Performance</h4><p>Idea Network · multi-sector agency · KSA, UAE &amp; Egypt</p></li><li data-r data-d="60"><span class="yr">2021 – 2025</span><h4>Senior Marketing Specialist — Growth &amp; Brand</h4><p>Saudi German Health · regional, 3 markets · Best Marketer 2025</p></li><li data-r data-d="120"><span class="yr">2019 – 2021</span><h4>Digital Marketing Specialist</h4><p>Sahl Solutions · SaaS, fintech &amp; mobile apps</p></li><li data-r data-d="180"><span class="yr">2019</span><h4>Digital Marketing Specialist</h4><p>Magnet Marketing Agency · retail &amp; hospitality</p></li><li data-r data-d="240"><span class="yr">2018 – 2019</span><h4>Digital Marketing Specialist &amp; Analytics Lead</h4><p>Advertizer · agency</p></li><li data-r data-d="300"><span class="yr">2017 – 2018</span><h4>E-Commerce Specialist</h4><p>o2morny.com · e-commerce</p></li><li data-r data-d="360"><span class="yr">2014 – 2017</span><h4>Digital Marketing roles</h4><p>Campaigns, content &amp; performance</p></li></ol>
-</div>
+<!-- SYSTEM -->
+<section class="sec deep" id="system"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>The system</p><h2 class="h2" data-r data-d="80">SOSTAC Strategic Marketing Strategy.<br><em>Growth as a process, not luck.</em></h2></div><p class="lead" data-r data-d="160">Every engagement runs through the same five stages. You always know what happens this week, what it costs and what it should return.</p></div>
+<ol class="sys" data-r aria-label="Growth system stages"><span class="sys-line" aria-hidden="true"><i></i></span><li class="sys-st" data-r data-d="0"><span class="sys-n">01</span><small>WEEK 1</small><h3>Audit</h3><p>Accounts, tracking, funnel and competitors. Where is the budget leaking?</p><em>Audit report + quick wins</em></li><li class="sys-st" data-r data-d="90"><span class="sys-n">02</span><small>WEEK 2</small><h3>Strategy</h3><p>SOSTAC plan: objectives, audience, channels, budget split and KPIs.</p><em>Strategy &amp; media plan</em></li><li class="sys-st" data-r data-d="180"><span class="sys-n">03</span><small>WEEK 3</small><h3>Launch</h3><p>Campaigns, creative angles, landing pages and tracking go live.</p><em>Live campaigns, clean tracking</em></li><li class="sys-st" data-r data-d="270"><span class="sys-n">04</span><small>WEEKLY</small><h3>Optimize</h3><p>Tests on creative, audiences and bids. Cut what loses, fund what wins.</p><em>Weekly test log</em></li><li class="sys-st" data-r data-d="360"><span class="sys-n">05</span><small>MONTH 2+</small><h3>Scale</h3><p>Push budget into what works, add channels and markets, protect ROAS.</p><em>Monthly growth report</em></li></ol>
+<div class="sys-foot" data-r><span>Weekly optimization</span><span>Monthly reporting</span><span>Clear next moves</span><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac">Start with an audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
 </div></section>
 
-<div class="bridge" data-r><i></i><p><span>11 years of work</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>recognized along the way</strong></p></div>
-
-<!-- MBA & AWARDS -->
-<section class="sec" id="mba" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>MBA · Awards · Certifications</p><h2 class="h2" data-r data-d="80">Practitioner by day.<br><em>Strategist by training.</em></h2></div></div>
-<article class="mba" data-r="s">
-<div class="mba-t">
-<span style="font-size:13px;font-weight:700;letter-spacing:.16em">MBA CANDIDATE · CLASS OF 2027</span>
-<h3>MBA in Marketing Management</h3>
-<p>Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT). Expected April 2027 — pairing 11 years in the ad accounts with formal strategy, research and leadership training.</p>
-<div class="tags"><span>Advanced Marketing Management</span><span>Marketing Research</span><span>SOSTAC strategy</span><span>Global market expansion</span></div>
-<p class="mfoot">Bachelor of Commerce · Cairo University · 2017</p>
-</div>
-<div class="mba-p">
-<img class="zoomable" src="assets/mba-presenting.jpg" alt="Mostafa presenting a global market expansion strategy" loading="lazy">
-<img class="zoomable" src="assets/mba-professor.jpg" alt="Mostafa with a professor at AASTMT" loading="lazy" style="object-position:50% 25%">
-<img class="zoomable" src="assets/mba-cohort.jpg" alt="Mostafa with his MBA cohort" loading="lazy">
-</div>
-</article>
-<div class="awards">
-<figure class="card award" style="margin:0" data-r><div class="ph"><img class="zoomable" src="assets/award-trophy.jpg" alt="Mostafa holding the Best Marketer trophy" loading="lazy" style="object-position:50% 20%"></div><figcaption><span class="k">AWARD · 2025</span><b>Best Marketer</b><span class="muted" style="font-size:14px">Saudi German Hospitals, Middle East</span></figcaption></figure>
-<figure class="card award" style="margin:0" data-r data-d="100"><div class="ph"><img class="zoomable" src="assets/award-ceremony.jpg" alt="Mostafa receiving a certificate of recognition" loading="lazy"></div><figcaption><span class="k">RECOGNITION</span><b>Honored by leadership</b><span class="muted" style="font-size:14px">Certificate for performance &amp; growth impact</span></figcaption></figure>
-<div class="card certs" data-r data-d="200"><span class="k">CERTIFICATIONS &amp; WINS</span><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Advanced Media Buying · Pearson · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Media Buying · Pearson · 2021</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Data Analysis · ITIDA · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Power BI · Pro Marquee · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Direct-Response Copywriting · Digital Marketer · 2017</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Winner · Money Experts Club · 2017</span></li></ul></div>
-</div>
-</div></section>
-
-<!-- ABOUT -->
-<section class="sec" id="about" style="padding-top:60px"><div class="wrap about">
-<div class="about-p" data-r="l">
-<img class="zoomable" src="assets/mostafa-cafe.jpg" alt="Mostafa Sayed Darwish" loading="lazy" style="object-position:40% 30%">
-<img class="zoomable" src="assets/mostafa-pyramids.jpg" alt="Mostafa at the Giza pyramids at sunset" loading="lazy" style="object-position:30% 40%">
-<img class="zoomable" src="assets/mostafa-sea.jpg" alt="Portrait of Mostafa Sayed Darwish" loading="lazy" style="object-position:50% 30%">
-</div>
-<div class="about-t">
-<p class="eyebrow" data-r>Beyond the dashboards</p>
-<p class="quote" data-r data-d="80">"I treat every pound of your budget like it's mine — <span>if it can't be measured, it can't be scaled.</span>"</p>
-<p class="lead" data-r data-d="160">I'm Mostafa — a Cairo-based growth marketer who started in e-commerce in 2014 and has since run campaigns for restaurants, retailers, developers, hospitals, apps and US businesses. I like messy accounts, clear numbers and teams that want to grow fast.</p>
-<div class="cta-row" data-r data-d="220"><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac mag">Talk to me on WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://www.linkedin.com/in/mostafa-1-done/" target="_blank" rel="noopener" class="btn btn-gh mag">LinkedIn ↗</a></div>
-</div>
-</div></section>
-
-<!-- IN THE ROOM -->
-<section class="sec" id="room" style="padding-top:20px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>In the room</p><h2 class="h2" data-r data-d="80">Where the platforms<br><em>share what's next.</em></h2></div><p class="lead" data-r data-d="160">Great media buying starts before the ad account — at platform briefings, industry events and the tables where deals happen. I show up, so my clients hear about what's next first.</p></div>
-<div class="room">
-<figure data-r="s"><img class="zoomable" src="assets/event-tiktok.jpg" alt="Mostafa at the TikTok for Business and MBC Media Solutions Better Together Ramadan 2025 event" loading="lazy" style="object-position:50% 20%"><figcaption><small>PLATFORM PARTNERS</small><b>TikTok for Business × MBC Media Solutions</b><span>"Better Together" Ramadan 2025 — learning the season's playbook straight from the platform.</span></figcaption></figure>
-<figure data-r data-d="80"><img class="zoomable" src="assets/event-conference.jpg" alt="Mostafa at a business conference" loading="lazy" style="object-position:50% 25%"><figcaption><small>CONFERENCES</small><b>Business conferences &amp; client meetings</b></figcaption></figure>
-<figure data-r data-d="160"><img class="zoomable" src="assets/event-tech.jpg" alt="Mostafa at an outdoor tech and startup event" loading="lazy" style="object-position:50% 60%"><figcaption><small>ECOSYSTEM</small><b>Tech &amp; startup events</b></figcaption></figure>
-<figure data-r data-d="240"><img class="zoomable" src="assets/event-gem.jpg" alt="Mostafa at an event at the Grand Egyptian Museum" loading="lazy" style="object-position:62% 55%"><figcaption><small>EVENTS</small><b>Grand Egyptian Museum</b></figcaption></figure>
-<figure data-r data-d="320"><img class="zoomable" src="assets/event-meetup.jpg" alt="Mostafa at a networking evening" loading="lazy" style="object-position:45% 30%"><figcaption><small>NETWORK</small><b>Partner &amp; industry meetups</b></figcaption></figure>
-</div>
-</div></section>
-
-<div class="mq-band mq-wrap" aria-label="Ad platforms"><div class="mq"><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span></div></div>
-
-<div class="bridge" data-r><i></i><p><span>Credentials</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>how I actually grow brands</strong></p></div>
-
-<!-- FUNNEL -->
-<section class="sec" id="funnel" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>The growth funnel</p><h2 class="h2" data-r data-d="80">One system.<br><em>Every stage covered.</em></h2></div><p class="lead" data-r data-d="160">Hover or tap a stage to see the channels, tactics and KPIs I run at each step of the customer journey.</p></div>
-<div class="fun">
-<div class="fun-l" role="tablist" aria-label="Funnel stages" data-r="l">
-<button class="stage" role="tab" style="--w:100%"><span><b>Awareness</b><br><small>Reach the right people</small></span><span>01</span></button>
-<button class="stage" role="tab" style="--w:88%"><span><b>Consideration</b><br><small>Turn attention into interest</small></span><span>02</span></button>
-<button class="stage" role="tab" style="--w:76%"><span><b>Conversion</b><br><small>Make the sale</small></span><span>03</span></button>
-<button class="stage" role="tab" style="--w:64%"><span><b>Retention</b><br><small>Grow lifetime value</small></span><span>04</span></button>
-</div>
-<div class="card fun-r" role="tabpanel" aria-live="polite" data-r="r"></div>
-</div>
-</div></section>
-
-<div class="bridge" data-r><i></i><p><span>The system</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>works in every market</strong></p></div>
-
-<!-- RANGE -->
-<section class="sec" id="range" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>The range</p><h2 class="h2" data-r data-d="80">Not one niche.<br><em>Every market.</em></h2></div><p class="lead" data-r data-d="160">Different sectors need different funnels. I've built them for online stores, B2B pipelines, restaurants, consumer goods, apps, developers and clinics.</p></div>
-<div class="sectors"><div class="card sector" data-r data-d="0"><span class="n">01</span><b>E-commerce</b><p>Sales &amp; ROAS campaigns, catalog ads, retargeting and conversion-rate work.</p></div><div class="card sector" data-r data-d="70"><span class="n">02</span><b>B2B</b><p>High-intent search, LinkedIn targeting and qualified lead pipelines for sales teams.</p></div><div class="card sector" data-r data-d="140"><span class="n">03</span><b>Food &amp; beverage</b><p>Orders, delivery and branch traffic — creative-led campaigns built on ROAS.</p></div><div class="card sector" data-r data-d="210"><span class="n">04</span><b>FMCG</b><p>Reach, frequency and brand-to-shelf campaigns for consumer goods.</p></div><div class="card sector" data-r data-d="0"><span class="n">05</span><b>Mobile apps</b><p>Install, activation and in-app retargeting with Mixpanel &amp; AppsFlyer.</p></div><div class="card sector" data-r data-d="70"><span class="n">06</span><b>Real estate</b><p>Lead generation for projects, showrooms and developers.</p></div><div class="card sector" data-r data-d="140"><span class="n">07</span><b>SaaS &amp; fintech</b><p>Go-to-market, sign-ups and activation for software products.</p></div><div class="card sector" data-r data-d="210"><span class="n">08</span><b>Healthcare</b><p>Patient acquisition and retention for hospitals and clinics.</p></div></div>
-</div></section>
-
-<div class="bridge" data-r><i></i><p><span>Every market</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>any budget</strong></p></div>
-
-<!-- BUDGET -->
-<section class="sec" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>Any budget</p><h2 class="h2" data-r data-d="80">From lean tests<br>to <em>$1.9M</em> in spend.</h2></div><p class="lead" data-r data-d="160">Drag the slider — this is how my approach changes as the budget grows.</p></div>
-<div class="card bud" data-r="s">
-<div class="bud-l">
-<span class="bud-tier">GROWTH</span>
-<label for="bud" class="muted" style="font-size:14px">Ad budget</label>
-<div class="bud-amt">$50K</div>
-<input type="range" id="bud" min="0" max="100" value="58" aria-label="Ad budget">
-<div class="bud-scale"><span>$500</span><span>$30K</span><span>$1.9M</span></div>
-<ul class="bud-plan"></ul>
-</div>
-<div class="bud-r">
-<p class="k">TYPICAL CHANNEL MIX</p>
-<div class="mix">
-<div class="mix-row"><span>Meta</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>Google</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>TikTok / Snap</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>LinkedIn / other</span><span class="bar"><i></i></span><em>0%</em></div>
-</div>
-<p class="muted" style="font-size:13px;margin:6px 0 0">Illustrative — every plan is built on the brand's own data.</p>
-</div>
-</div>
-</div></section>
-
-<div class="bridge" data-r><i></i><p><span>Any budget</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>every platform</strong></p></div>
-
-<!-- PLATFORMS -->
-<section class="sec" id="platforms" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>The toolkit</p><h2 class="h2" data-r data-d="80">10+ ad platforms.<br><em>Hands-on in all of them.</em></h2></div></div>
-<div class="plats"><div class="card plat" data-r data-d="0"><b>Facebook Ads</b><small>Leads, sales, catalog</small></div><div class="card plat" data-r data-d="60"><b>Instagram Ads</b><small>Reels, stories, shopping</small></div><div class="card plat" data-r data-d="120"><b>Google Ads</b><small>Search, PMax, YouTube</small></div><div class="card plat" data-r data-d="180"><b>Microsoft Ads</b><small>Bing search &amp; audiences</small></div><div class="card plat" data-r data-d="240"><b>LinkedIn Ads</b><small>B2B decision-makers</small></div><div class="card plat" data-r data-d="0"><b>X Ads</b><small>Conversation &amp; reach</small></div><div class="card plat" data-r data-d="60"><b>TikTok Ads</b><small>Short-form performance</small></div><div class="card plat" data-r data-d="120"><b>Snapchat Ads</b><small>GCC youth reach</small></div><div class="card plat" data-r data-d="180"><b>Programmatic</b><small>Display &amp; video at scale</small></div><div class="card plat" data-r data-d="240"><b>Apple Search Ads</b><small>App installs on search</small></div></div>
-<div class="app">
-<div class="ac" data-r><p class="k" style="color:var(--bg)">MOBILE APP GROWTH</p><h4>Retargeting app users with Mixpanel &amp; AppsFlyer</h4><p style="margin:0;line-height:1.6">Event-based audiences, attribution and re-engagement campaigns that turn installs into active, paying customers.</p></div>
-<div class="card" data-r data-d="120"><p class="k">ANALYTICS &amp; MARTECH</p><div class="tags"><span>GA4</span><span>GTM</span><span>Mixpanel</span><span>AppsFlyer</span><span>Power BI</span><span>HubSpot</span><span>Salesforce</span><span>Zoho</span><span>Zapier</span><span>Unbounce</span><span>Meta CAPI</span><span>A/B testing &amp; CRO</span></div></div>
-</div>
-</div></section>
-
-<div class="bridge" data-r><i></i><p><span>The toolkit</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>the results it delivered</strong></p></div>
+<div class="bridge" data-r><i></i><p><span>The system</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>and the results it delivered</strong></p></div>
 
 <!-- CASE STUDIES -->
-<section class="sec" id="work" style="padding-top:60px"><div class="wrap">
+<section class="sec lt" id="work" style="padding-top:60px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r>Selected case studies</p><h2 class="h2" data-r data-d="80">Proof, <em>not promises.</em></h2></div><p class="lead" data-r data-d="160">A small sample from 250+ brands — five businesses, five different problems across e-commerce, food, fashion, lead generation and healthcare. Pick a case, swipe through, and click any screenshot to zoom in.</p></div>
 <div class="csum" data-r><div><b>250+</b><small>Brands served · 5 shown here</small></div><div><b>~16×</b><small>Best return on ad spend</small></div><div><b>×17.6</b><small>Fastest sales growth in 90 days</small></div><div><b>EG · KSA</b><small>Meta, Google &amp; TikTok</small></div></div>
 <div class="cs" data-r>
@@ -943,12 +929,148 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <div class="bridge" data-r><i></i><p><span>Results like these</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>earned the trust of big players</strong></p></div>
 
 <!-- BIG PLAYERS -->
-<section class="sec" id="clients" style="padding-top:60px"><div class="wrap">
+<section class="sec lt" id="clients" style="padding-top:60px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r>Trusted by big players</p><h2 class="h2" data-r data-d="80">Hospital groups, universities,<br><em>industry leaders.</em></h2></div><p class="lead" data-r data-d="160">Regional and international organizations that trusted me with their growth — healthcare, education, industry, retail, hospitality and US financial services.</p></div>
 <div class="bigs"><div class="big tilt" data-r data-d="0"><div class="lg"><img src="assets/logo-m-sgh.png" alt="Saudi German Hospital" loading="lazy"></div><div class="cap"><b>Saudi German Hospital</b><small>HEALTHCARE · KSA</small></div></div><div class="big tilt" data-r data-d="70"><div class="lg"><img src="assets/logo-s21-03.png" alt="Arab Open University" loading="lazy"></div><div class="cap"><b>Arab Open University</b><small>EDUCATION · MENA</small></div></div><div class="big tilt" data-r data-d="140"><div class="lg"><img src="assets/logo-s20-09.png" alt="General Elevators" loading="lazy"></div><div class="cap"><b>General Elevators</b><small>INDUSTRIAL · EGYPT</small></div></div><div class="big tilt" data-r data-d="210"><div class="lg"><img src="assets/logo-s20-03.png" alt="Hölzer" loading="lazy"></div><div class="cap"><b>Hölzer</b><small>RETAIL · EGYPT</small></div></div><div class="big tilt" data-r data-d="0"><div class="lg"><img src="assets/logo-s23-03.png" alt="The Guard Hotel" loading="lazy"></div><div class="cap"><b>The Guard Hotel</b><small>HOSPITALITY · EGYPT</small></div></div><div class="big tilt" data-r data-d="70"><div class="lg"><img src="assets/logo-s23-04.png" alt="Experts Care Medical Group" loading="lazy"></div><div class="cap"><b>Experts Care Medical Group</b><small>HEALTHCARE GROUP · KSA</small></div></div><div class="big tilt" data-r data-d="140"><div class="lg"><img src="assets/logo-m-integrity.png" alt="Integrity Home Mortgage" loading="lazy"></div><div class="cap"><b>Integrity Home Mortgage</b><small>MORTGAGE · USA</small></div></div><a href="#us" class="big more tilt" data-r data-d="210"><b>250+</b><span style="font-weight:600">brands across Egypt, the GCC and the US →</span></a></div>
 </div></section>
 
-<div class="bridge" data-r><i></i><p><span>From Egypt &amp; the Gulf</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>to the United States</strong></p></div>
+<!-- LOGO WALL -->
+<section class="sec lt" aria-label="Client logos" style="padding-top:20px">
+<div class="wrap"><div class="sec-head" style="margin-bottom:28px"><div><h2 class="h2" style="font-size:clamp(30px,3.6vw,42px)" data-r>And many more <em>brands I've grown.</em></h2></div><p class="muted" data-r>F&amp;B · Retail · Real estate · E-commerce · Healthcare · Travel</p></div></div>
+<div class="lw">
+<div class="lw-wrap"><div class="mq"><div class="tile"><img src="assets/logo-fitfuel.png" alt="Fit Fuel by Diet Delight" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-nayrah.png" alt="Nayrah" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-01.png" alt="What The Truck" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-m-steakery.png" alt="Steakery" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-03.png" alt="CAI" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-04.png" alt="Little Ocean" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-05.png" alt="Brisk &amp; Brew" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-06.png" alt="B7rini Shop" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-02.png" alt="COC Cairo Optical Center" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-01.png" alt="German Pest Control Co." loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-04.png" alt="Terra" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-05.png" alt="Doctor Textile" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-06.png" alt="Noor Al Qamar" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-07.png" alt="Balkan's" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-08.png" alt="Imola" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-fitfuel.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-nayrah.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-m-steakery.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-07.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-08.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div></div>
+<div class="lw-wrap"><div class="mq rev"><div class="tile"><img src="assets/logo-s21-01.png" alt="Rose" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-02.png" alt="Mutahed" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-05.png" alt="Misr Modern Clinics" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-06.png" alt="Techno Build Group" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-07.png" alt="Ghina" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-12.png" alt="Spider Bees" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-11.png" alt="Al Sokkaria" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-02.png" alt="Shop Design" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-03.png" alt="Experts Opticals" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-04.png" alt="Al Share3 Al Sharqi" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-05.png" alt="Tickets &amp; Hotels" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-06.png" alt="El-Khayyat Red Bricks" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-08.png" alt="Meras" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-10.png" alt="Hicare" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-01.png" alt="eSehha" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-02.png" alt="Ramla Terraza" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-06.png" alt="Anaqa" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-07.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-12.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-11.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-08.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-10.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div></div>
+</div>
+</section>
+
+<div class="bridge" data-r><i></i><p><span>Behind the results</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>11+ years of experience</strong></p></div>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience" style="padding-top:60px"><div class="wrap xp">
+<div class="xp-l">
+<p class="eyebrow" data-r>Experience</p>
+<h2 class="h2" data-r data-d="80">11 years.<br><em>Agency, in-house &amp; SaaS.</em></h2>
+<p class="lead" data-r data-d="160">I manage multi-market budgets and stay hands-on in the ad accounts — planning, targeting, creative, landing pages and tracking — so every pound of spend traces back to revenue.</p>
+<div class="mini">
+<div class="card" data-r data-d="200"><b>$1.9M budget</b><span>Peak ad spend planned, managed and optimized</span></div>
+<div class="card" data-r data-d="280"><b>4 markets</b><span>Egypt, Saudi Arabia, UAE and the US</span></div>
+<div class="card" data-r data-d="360"><b>Leadership reporting</b><span>Monthly and quarterly business reviews</span></div>
+</div>
+</div>
+<div class="xp-r"><span class="tl-line"></span><span class="tl-fill"></span>
+<ol class="tl"><li data-r data-d="0"><span class="yr">2026 – Now</span><h4>Senior Marketing Specialist — Brand &amp; Performance</h4><p>Idea Network · multi-sector agency · KSA, UAE &amp; Egypt</p></li><li data-r data-d="60"><span class="yr">2021 – 2025</span><h4>Senior Marketing Specialist — Growth &amp; Brand</h4><p>Saudi German Health · regional, 3 markets · Best Marketer 2025</p></li><li data-r data-d="120"><span class="yr">2019 – 2021</span><h4>Digital Marketing Specialist</h4><p>Sahl Solutions · SaaS, fintech &amp; mobile apps</p></li><li data-r data-d="180"><span class="yr">2019</span><h4>Digital Marketing Specialist</h4><p>Magnet Marketing Agency · retail &amp; hospitality</p></li><li data-r data-d="240"><span class="yr">2018 – 2019</span><h4>Digital Marketing Specialist &amp; Analytics Lead</h4><p>Advertizer · agency</p></li><li data-r data-d="300"><span class="yr">2017 – 2018</span><h4>E-Commerce Specialist</h4><p>o2morny.com · e-commerce</p></li><li data-r data-d="360"><span class="yr">2014 – 2017</span><h4>Digital Marketing roles</h4><p>Campaigns, content &amp; performance</p></li></ol>
+</div>
+</div></section>
+
+<!-- MBA & AWARDS -->
+<section class="sec lt" id="mba" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>MBA · Awards · Certifications</p><h2 class="h2" data-r data-d="80">Practitioner by day.<br><em>Strategist by training.</em></h2></div></div>
+<article class="mba" data-r="s">
+<div class="mba-t">
+<span style="font-size:13px;font-weight:700;letter-spacing:.16em">MBA CANDIDATE · CLASS OF 2027</span>
+<h3>MBA in Marketing Management</h3>
+<p>Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT). Expected April 2027 — pairing 11 years in the ad accounts with formal strategy, research and leadership training.</p>
+<div class="tags"><span>Advanced Marketing Management</span><span>Marketing Research</span><span>SOSTAC strategy</span><span>Global market expansion</span></div>
+<p class="mfoot">Bachelor of Commerce · Cairo University · 2017</p>
+</div>
+<div class="mba-p">
+<img class="zoomable" src="assets/mba-presenting.jpg" alt="Mostafa presenting a global market expansion strategy" loading="lazy">
+<img class="zoomable" src="assets/mba-professor.jpg" alt="Mostafa with a professor at AASTMT" loading="lazy" style="object-position:50% 25%">
+<img class="zoomable" src="assets/mba-cohort.jpg" alt="Mostafa with his MBA cohort" loading="lazy">
+</div>
+</article>
+<div class="awards">
+<figure class="card award" style="margin:0" data-r><div class="ph"><img class="zoomable" src="assets/award-trophy.jpg" alt="Mostafa holding the Best Marketer trophy" loading="lazy" style="object-position:50% 20%"></div><figcaption><span class="k">AWARD · 2025</span><b>Best Marketer</b><span class="muted" style="font-size:14px">Saudi German Hospitals, Middle East</span></figcaption></figure>
+<figure class="card award" style="margin:0" data-r data-d="100"><div class="ph"><img class="zoomable" src="assets/award-ceremony.jpg" alt="Mostafa receiving a certificate of recognition" loading="lazy"></div><figcaption><span class="k">RECOGNITION</span><b>Honored by leadership</b><span class="muted" style="font-size:14px">Certificate for performance &amp; growth impact</span></figcaption></figure>
+<div class="card certs" data-r data-d="200"><span class="k">CERTIFICATIONS &amp; WINS</span><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Advanced Media Buying · Pearson · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Media Buying · Pearson · 2021</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Data Analysis · ITIDA · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Power BI · Pro Marquee · 2022</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Direct-Response Copywriting · Digital Marketer · 2017</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Winner · Money Experts Club · 2017</span></li></ul></div>
+</div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="sec" id="about" style="padding-top:60px"><div class="wrap about">
+<div class="about-p" data-r="l">
+<img class="zoomable" src="assets/mostafa-cafe.jpg" alt="Mostafa Sayed Darwish" loading="lazy" style="object-position:40% 30%">
+<img class="zoomable" src="assets/mostafa-pyramids.jpg" alt="Mostafa at the Giza pyramids at sunset" loading="lazy" style="object-position:30% 40%">
+<img class="zoomable" src="assets/mostafa-sea.jpg" alt="Portrait of Mostafa Sayed Darwish" loading="lazy" style="object-position:50% 30%">
+</div>
+<div class="about-t">
+<p class="eyebrow" data-r>Beyond the dashboards</p>
+<p class="quote" data-r data-d="80">"I treat every pound of your budget like it's mine — <span>if it can't be measured, it can't be scaled.</span>"</p>
+<p class="lead" data-r data-d="160">I'm Mostafa — a Cairo-based growth marketer who started in e-commerce in 2014 and has since run campaigns for restaurants, retailers, developers, hospitals, apps and US businesses. I like messy accounts, clear numbers and teams that want to grow fast.</p>
+<div class="cta-row" data-r data-d="220"><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac mag">Talk to me on WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://www.linkedin.com/in/mostafa-1-done/" target="_blank" rel="noopener" class="btn btn-gh mag">LinkedIn ↗</a></div>
+</div>
+</div></section>
+
+<!-- IN THE ROOM -->
+<section class="sec" id="room" style="padding-top:20px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>In the room</p><h2 class="h2" data-r data-d="80">Where the platforms<br><em>share what's next.</em></h2></div><p class="lead" data-r data-d="160">Great media buying starts before the ad account — at platform briefings, industry events and the tables where deals happen. I show up, so my clients hear about what's next first.</p></div>
+<div class="room">
+<figure data-r="s"><img class="zoomable" src="assets/event-tiktok.jpg" alt="Mostafa at the TikTok for Business and MBC Media Solutions Better Together Ramadan 2025 event" loading="lazy" style="object-position:50% 20%"><figcaption><small>PLATFORM PARTNERS</small><b>TikTok for Business × MBC Media Solutions</b><span>"Better Together" Ramadan 2025 — learning the season's playbook straight from the platform.</span></figcaption></figure>
+<figure data-r data-d="80"><img class="zoomable" src="assets/event-conference.jpg" alt="Mostafa at a business conference" loading="lazy" style="object-position:50% 25%"><figcaption><small>CONFERENCES</small><b>Business conferences &amp; client meetings</b></figcaption></figure>
+<figure data-r data-d="160"><img class="zoomable" src="assets/event-tech.jpg" alt="Mostafa at an outdoor tech and startup event" loading="lazy" style="object-position:50% 60%"><figcaption><small>ECOSYSTEM</small><b>Tech &amp; startup events</b></figcaption></figure>
+<figure data-r data-d="240"><img class="zoomable" src="assets/event-gem.jpg" alt="Mostafa at an event at the Grand Egyptian Museum" loading="lazy" style="object-position:62% 55%"><figcaption><small>EVENTS</small><b>Grand Egyptian Museum</b></figcaption></figure>
+<figure data-r data-d="320"><img class="zoomable" src="assets/event-meetup.jpg" alt="Mostafa at a networking evening" loading="lazy" style="object-position:45% 30%"><figcaption><small>NETWORK</small><b>Partner &amp; industry meetups</b></figcaption></figure>
+</div>
+</div></section>
+
+<div class="mq-band mq-wrap" aria-label="Ad platforms"><div class="mq"><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span></div></div>
+
+<div class="bridge" data-r><i></i><p><span>Credentials</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><strong>how I grow brands</strong></p></div>
+
+<!-- FUNNEL -->
+<section class="sec" id="funnel" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>The growth funnel</p><h2 class="h2" data-r data-d="80">One system.<br><em>Every stage covered.</em></h2></div><p class="lead" data-r data-d="160">Hover or tap a stage to see the channels, tactics and KPIs I run at each step of the customer journey.</p></div>
+<div class="fun">
+<div class="fun-l" role="tablist" aria-label="Funnel stages" data-r="l">
+<button class="stage" role="tab" style="--w:100%"><span><b>Awareness</b><br><small>Reach the right people</small></span><span>01</span></button>
+<button class="stage" role="tab" style="--w:88%"><span><b>Consideration</b><br><small>Turn attention into interest</small></span><span>02</span></button>
+<button class="stage" role="tab" style="--w:76%"><span><b>Conversion</b><br><small>Make the sale</small></span><span>03</span></button>
+<button class="stage" role="tab" style="--w:64%"><span><b>Retention</b><br><small>Grow lifetime value</small></span><span>04</span></button>
+</div>
+<div class="card fun-r" role="tabpanel" aria-live="polite" data-r="r"></div>
+</div>
+</div></section>
+
+<!-- RANGE -->
+<section class="sec lt" id="range" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>The range</p><h2 class="h2" data-r data-d="80">Not one niche.<br><em>Every market.</em></h2></div><p class="lead" data-r data-d="160">Different sectors need different funnels. I've built them for online stores, B2B pipelines, restaurants, consumer goods, apps, developers and clinics.</p></div>
+<div class="sectors"><div class="card sector" data-r data-d="0"><span class="n">01</span><b>E-commerce</b><p>Sales &amp; ROAS campaigns, catalog ads, retargeting and conversion-rate work.</p></div><div class="card sector" data-r data-d="70"><span class="n">02</span><b>B2B</b><p>High-intent search, LinkedIn targeting and qualified lead pipelines for sales teams.</p></div><div class="card sector" data-r data-d="140"><span class="n">03</span><b>Food &amp; beverage</b><p>Orders, delivery and branch traffic — creative-led campaigns built on ROAS.</p></div><div class="card sector" data-r data-d="210"><span class="n">04</span><b>FMCG</b><p>Reach, frequency and brand-to-shelf campaigns for consumer goods.</p></div><div class="card sector" data-r data-d="0"><span class="n">05</span><b>Mobile apps</b><p>Install, activation and in-app retargeting with Mixpanel &amp; AppsFlyer.</p></div><div class="card sector" data-r data-d="70"><span class="n">06</span><b>Real estate</b><p>Lead generation for projects, showrooms and developers.</p></div><div class="card sector" data-r data-d="140"><span class="n">07</span><b>SaaS &amp; fintech</b><p>Go-to-market, sign-ups and activation for software products.</p></div><div class="card sector" data-r data-d="210"><span class="n">08</span><b>Healthcare</b><p>Patient acquisition and retention for hospitals and clinics.</p></div></div>
+</div></section>
+
+<!-- BUDGET -->
+<section class="sec lt" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>Any budget</p><h2 class="h2" data-r data-d="80">From lean tests<br>to <em>$1.9M</em> in spend.</h2></div><p class="lead" data-r data-d="160">Drag the slider — this is how my approach changes as the budget grows.</p></div>
+<div class="card bud" data-r="s">
+<div class="bud-l">
+<span class="bud-tier">GROWTH</span>
+<label for="bud" class="muted" style="font-size:14px">Ad budget</label>
+<div class="bud-amt">$50K</div>
+<input type="range" id="bud" min="0" max="100" value="58" aria-label="Ad budget">
+<div class="bud-scale"><span>$500</span><span>$30K</span><span>$1.9M</span></div>
+<ul class="bud-plan"></ul>
+</div>
+<div class="bud-r">
+<p class="k">TYPICAL CHANNEL MIX</p>
+<div class="mix">
+<div class="mix-row"><span>Meta</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>Google</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>TikTok / Snap</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>LinkedIn / other</span><span class="bar"><i></i></span><em>0%</em></div>
+</div>
+<p class="muted" style="font-size:13px;margin:6px 0 0">Illustrative — every plan is built on the brand's own data.</p>
+</div>
+</div>
+</div></section>
+
+<!-- PLATFORMS -->
+<section class="sec" id="platforms" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r>The toolkit</p><h2 class="h2" data-r data-d="80">10+ ad platforms.<br><em>Hands-on in all of them.</em></h2></div></div>
+<div class="plats"><div class="card plat" data-r data-d="0"><b>Facebook Ads</b><small>Leads, sales, catalog</small></div><div class="card plat" data-r data-d="60"><b>Instagram Ads</b><small>Reels, stories, shopping</small></div><div class="card plat" data-r data-d="120"><b>Google Ads</b><small>Search, PMax, YouTube</small></div><div class="card plat" data-r data-d="180"><b>Microsoft Ads</b><small>Bing search &amp; audiences</small></div><div class="card plat" data-r data-d="240"><b>LinkedIn Ads</b><small>B2B decision-makers</small></div><div class="card plat" data-r data-d="0"><b>X Ads</b><small>Conversation &amp; reach</small></div><div class="card plat" data-r data-d="60"><b>TikTok Ads</b><small>Short-form performance</small></div><div class="card plat" data-r data-d="120"><b>Snapchat Ads</b><small>GCC youth reach</small></div><div class="card plat" data-r data-d="180"><b>Programmatic</b><small>Display &amp; video at scale</small></div><div class="card plat" data-r data-d="240"><b>Apple Search Ads</b><small>App installs on search</small></div></div>
+<div class="app">
+<div class="ac" data-r><p class="k" style="color:var(--bg)">MOBILE APP GROWTH</p><h4>Retargeting app users with Mixpanel &amp; AppsFlyer</h4><p style="margin:0;line-height:1.6">Event-based audiences, attribution and re-engagement campaigns that turn installs into active, paying customers.</p></div>
+<div class="card" data-r data-d="120"><p class="k">ANALYTICS &amp; MARTECH</p><div class="tags"><span>GA4</span><span>GTM</span><span>Mixpanel</span><span>AppsFlyer</span><span>Power BI</span><span>HubSpot</span><span>Salesforce</span><span>Zoho</span><span>Zapier</span><span>Unbounce</span><span>Meta CAPI</span><span>A/B testing &amp; CRO</span></div></div>
+</div>
+</div></section>
 
 <!-- US -->
 <section class="sec" id="us" style="padding-top:60px"><div class="wrap">
@@ -964,35 +1086,15 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 </div>
 </div></section>
 
-<!-- LOGO WALL -->
-<section class="sec" aria-label="Client logos" style="padding-top:20px">
-<div class="wrap"><div class="sec-head" style="margin-bottom:28px"><div><h2 class="h2" style="font-size:clamp(30px,3.6vw,42px)" data-r>And many more <em>brands I've grown.</em></h2></div><p class="muted" data-r>F&amp;B · Retail · Real estate · E-commerce · Healthcare · Travel</p></div></div>
-<div class="lw">
-<div class="lw-wrap"><div class="mq"><div class="tile"><img src="assets/logo-fitfuel.png" alt="Fit Fuel by Diet Delight" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-nayrah.png" alt="Nayrah" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-01.png" alt="What The Truck" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-m-steakery.png" alt="Steakery" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-03.png" alt="CAI" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-04.png" alt="Little Ocean" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-05.png" alt="Brisk &amp; Brew" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-06.png" alt="B7rini Shop" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-02.png" alt="COC Cairo Optical Center" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-01.png" alt="German Pest Control Co." loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-04.png" alt="Terra" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-05.png" alt="Doctor Textile" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-06.png" alt="Noor Al Qamar" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-07.png" alt="Balkan's" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-08.png" alt="Imola" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-fitfuel.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-nayrah.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-m-steakery.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s19-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-07.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s20-08.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div></div>
-<div class="lw-wrap"><div class="mq rev"><div class="tile"><img src="assets/logo-s21-01.png" alt="Rose" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-02.png" alt="Mutahed" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-05.png" alt="Misr Modern Clinics" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-06.png" alt="Techno Build Group" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-07.png" alt="Ghina" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-12.png" alt="Spider Bees" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-11.png" alt="Al Sokkaria" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-02.png" alt="Shop Design" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-03.png" alt="Experts Opticals" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-04.png" alt="Al Share3 Al Sharqi" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-05.png" alt="Tickets &amp; Hotels" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-06.png" alt="El-Khayyat Red Bricks" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-08.png" alt="Meras" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-10.png" alt="Hicare" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-01.png" alt="eSehha" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-02.png" alt="Ramla Terraza" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-06.png" alt="Anaqa" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-07.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-12.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s21-11.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-05.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-08.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s22-10.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-02.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div class="tile"><img src="assets/logo-s23-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div></div>
-</div>
-</section>
-
-<!-- PROCESS -->
-<section class="sec" id="process" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r>How we'll work</p><h2 class="h2" data-r data-d="80">From first call<br><em>to scale.</em></h2></div><p class="lead" data-r data-d="160">Simple, transparent, and built around your numbers.</p></div>
-<div class="steps">
-<div class="card step" data-r><span class="n">01</span><small>WEEK 0</small><b>Discovery call</b><p>30 minutes on your goals, numbers, market and what's been tried.</p></div>
-<div class="card step" data-r data-d="80"><span class="n">02</span><small>WEEK 1</small><b>Audit &amp; opportunities</b><p>I review your accounts, tracking and funnel, and show where the growth is.</p></div>
-<div class="card step" data-r data-d="160"><span class="n">03</span><small>WEEK 2</small><b>Strategy &amp; media plan</b><p>Channels, budget split, creative angles and the KPIs we'll be judged on.</p></div>
-<div class="card step" data-r data-d="240"><span class="n">04</span><small>ONGOING</small><b>Launch, test, scale</b><p>Weekly optimization, monthly reporting, and scaling what works.</p></div>
-</div>
-</div></section>
-
 <!-- FAQ -->
-<section class="sec" id="faq" style="padding-top:20px"><div class="wrap">
+<section class="sec lt" id="faq" style="padding-top:20px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r>FAQ</p><h2 class="h2" data-r data-d="80">Questions before<br><em>we start?</em></h2></div></div>
 <div class="faq" data-r>
 <details open><summary>Do you work with businesses outside Egypt?</summary><p>Yes. I've run campaigns for clients in Egypt, Saudi Arabia, the UAE and the United States, and I work remotely with teams anywhere.</p></details>
 <details><summary>What budget do I need to start?</summary><p>There's no fixed minimum. I've managed everything from lean test budgets to $1.9M in spend — we'll size the plan to your goals and margins on the first call.</p></details>
 <details><summary>Which platforms do you manage?</summary><p>Meta (Facebook &amp; Instagram), Google, TikTok, Snapchat, LinkedIn, Microsoft, X, programmatic and Apple Search Ads — plus GA4, GTM, Mixpanel and AppsFlyer for tracking.</p></details>
-<details><summary>Can you work with my in-house team or agency?</summary><p>Yes. I can lead the team, consult alongside them, or audit and coach an existing agency — whatever gets results fastest.</p></details>
-<details><summary>Are you open to full-time roles?</summary><p>Yes — for growth or performance marketing leadership roles. Reach out on WhatsApp, email or LinkedIn.</p></details>
+<details><summary>Can you work with my in-house team or agency?</summary><p>Yes. I can run the accounts with your team, consult alongside them, or audit and steer an existing agency — whatever gets results fastest.</p></details>
+<details><summary>Are you open to full-time roles?</summary><p>Yes — for senior growth and performance marketing roles. Reach out on WhatsApp, email or LinkedIn.</p></details>
 <details><summary>How do we get started?</summary><p>Send me a message on WhatsApp or email with your website and goal. We'll book a discovery call and go from there.</p></details>
 </div>
 </div></section>
@@ -1003,7 +1105,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <section class="contact" id="contact" style="margin-top:40px"><div class="wrap">
 <p class="eyebrow" data-r>Get in touch</p>
 <h2 class="big-t" data-r data-d="80" style="margin-top:20px">ANY SECTOR.<br><span class="hl">LET'S SCALE.</span></h2>
-<p class="lead" data-r data-d="160" style="margin-top:28px;max-width:640px">Need a digital marketing consultant, someone to fix and scale your paid media, or a growth lead for your team? Send a message — I reply fast.</p>
+<p class="lead" data-r data-d="160" style="margin-top:28px;max-width:640px">Need a digital marketing consultant, someone to fix and scale your paid media, or a growth partner who owns the numbers? Send a message.</p>
 <div class="cta-row" data-r data-d="200"><a href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" class="btn btn-ac mag">Book a consultation on WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="mailto:Advertizer.darwish@gmail.com?subject=Digital%20marketing%20consultation" class="btn btn-gh mag">Email me</a></div>
 <div class="cgrid">
 <a class="cg" href="https://wa.me/201055577669?text=Hi%20Mostafa%2C%20I%27d%20like%20to%20book%20a%20digital%20marketing%20consultation." target="_blank" rel="noopener" data-r><small>WhatsApp · fastest reply</small><b>+20 105 557 7669</b></a>

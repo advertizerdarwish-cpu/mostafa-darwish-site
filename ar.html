@@ -18,14 +18,16 @@
 <link href="ar.html" hreflang="ar" rel="alternate"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;600&amp;family=Cairo:wght@600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Cairo:wght@700&amp;display=swap" rel="stylesheet"/>
 <link as="image" href="assets/mostafa-portrait.jpg" rel="preload"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mostafa Sayed Darwish","jobTitle":"Digital Marketing Consultant & Growth Marketer","address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"email":"mailto:Advertizer.darwish@gmail.com","sameAs":["https://www.linkedin.com/in/mostafa-1-done/"],"alumniOf":["Cairo University","Arab Academy for Science, Technology & Maritime Transport"]}</script>
 <style>:root{
-  --bg:#0B0B0D; --s1:#121215; --s2:#18181C; --line:#24242A; --line2:#2E2E35;
-  --tx:#F2F2EE; --mut:#A6A6A0; --mut2:#7E7E78; --ac:#D4FF3A; --ac2:#B8E61F; --navy:#1E2A3A;
-  --r:22px; --max:1240px;
-  --fd:'Space Grotesk','Cairo',system-ui,sans-serif; --fb:Inter,'IBM Plex Sans Arabic',system-ui,sans-serif;
+  --navy:#121A2E; --navy-deep:#0A1020; --card:#1E2840; --slate:#97A1B4;
+  --green:#3DF58A; --green-hover:#2EE07A; --green-dark:#0B9E55; --gold:#D4AF6A; --light:#F5F7FA;
+  --bg:#121A2E; --s1:#1E2840; --s2:#243050; --line:#2A3550; --line2:#34405E;
+  --tx:#FFFFFF; --mut:#97A1B4; --mut2:#7C879C; --ac:#3DF58A; --ac2:#2EE07A; --body:#C3CAD8;
+  --r:12px; --rb:8px; --max:1200px;
+  --fd:Inter,'IBM Plex Sans Arabic','Cairo',system-ui,sans-serif; --fb:Inter,'IBM Plex Sans Arabic','Cairo',system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
@@ -39,7 +41,7 @@ button{font:inherit;color:inherit}
 .eyebrow{margin:0;font-size:13px;letter-spacing:.22em;color:var(--ac);font-weight:600;text-transform:uppercase}
 .h2{margin:0;font-family:var(--fd);font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em;font-weight:700}
 .h2 em,.hl{font-style:normal;color:var(--ac)}
-.lead{margin:0;font-size:18px;line-height:1.65;color:#C4C4BE}
+.lead{margin:0;font-size:18px;line-height:1.65;color:var(--body)}
 .muted{color:var(--mut)}
 .sec{padding:110px 0}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
@@ -57,22 +59,22 @@ button{font:inherit;color:inherit}
 
 /* progress + cursor glow */
 #progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--ac);z-index:100}
-.glow{position:fixed;pointer-events:none;width:520px;height:520px;border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,58,.09),rgba(212,255,58,0) 60%);z-index:0;transition:opacity .4s;opacity:0}
+.glow{position:fixed;pointer-events:none;width:520px;height:520px;border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(61,245,138,.09),rgba(61,245,138,0) 60%);z-index:0;transition:opacity .4s;opacity:0}
 body.has-mouse .glow{opacity:1}
 
 /* nav */
 header.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,border-color .3s,transform .35s}
-header.nav.scrolled{background:rgba(11,11,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.nav.scrolled{background:rgba(18,26,46,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 header.nav.hide{transform:translateY(-100%)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
 .logo{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:-.01em;white-space:nowrap}
 .logo span{color:var(--ac)}
 .nav-links{display:flex;gap:4px;font-size:14.5px}
-.nav-links a{padding:8px 12px;border-radius:999px;color:#B8B8B2;transition:color .2s,background .2s}
+.nav-links a{padding:8px 12px;border-radius:999px;color:var(--body);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--tx)}
 .nav-links a.active{color:var(--bg);background:var(--ac)}
 .burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);background:transparent;cursor:pointer;align-items:center;justify-content:center}
-.mnav{position:fixed;inset:72px 0 auto 0;background:rgba(11,11,13,.97);border-bottom:1px solid var(--line);padding:16px 24px 28px;display:none;flex-direction:column;gap:4px;z-index:59}
+.mnav{position:fixed;inset:72px 0 auto 0;background:rgba(18,26,46,.97);border-bottom:1px solid var(--line);padding:16px 24px 28px;display:none;flex-direction:column;gap:4px;z-index:59}
 .mnav a{padding:14px 4px;font-family:var(--fd);font-size:24px;border-bottom:1px solid var(--line)}
 .mnav.open{display:flex}
 
@@ -83,8 +85,8 @@ header.nav.hide{transform:translateY(-100%)}
 .hero-l{flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .hero-r{flex:1 1 360px;min-width:0;position:relative}
 .status{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.2em;color:var(--ac);font-weight:600}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(212,255,58,.6);animation:ping 2s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(212,255,58,.55)}80%,100%{box-shadow:0 0 0 12px rgba(212,255,58,0)}}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(61,245,138,.6);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(61,245,138,.55)}80%,100%{box-shadow:0 0 0 12px rgba(61,245,138,0)}}
 .name{margin:0;font-family:var(--fd);font-weight:700;font-size:clamp(54px,9vw,118px);line-height:.88;letter-spacing:-.04em}
 .name .ln{display:block;overflow:hidden;padding-bottom:.04em}
 .name .ln>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.75,.2,1) forwards}
@@ -108,7 +110,7 @@ header.nav.hide{transform:translateY(-100%)}
 .chip.b{left:-18px;bottom:120px;background:var(--s2);border:1px solid var(--line2);animation-delay:-2s}
 .chip.b b{color:var(--ac)}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.live{position:absolute;left:-30px;right:24px;bottom:-26px;background:rgba(18,18,21,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.live{position:absolute;left:-30px;right:24px;bottom:-26px;background:rgba(30,40,64,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;box-shadow:0 24px 50px rgba(0,0,0,.55)}
 .live .lbl{font-size:11px;color:var(--mut);letter-spacing:.12em;font-weight:600;display:flex;align-items:center;gap:6px}
 .live .val{font-family:var(--fd);font-size:30px;font-weight:700;line-height:1}
 .live svg{grid-row:1/3;grid-column:2;width:100%;height:52px}
@@ -139,7 +141,7 @@ header.nav.hide{transform:translateY(-100%)}
 /* bridges */
 .bridge{display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 24px}
 .bridge i{width:1px;height:46px;background:linear-gradient(transparent,var(--ac))}
-.bridge p{margin:0;display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--s1);border-radius:999px;padding:10px 20px;font-size:14px;color:#B8B8B2;text-align:center}
+.bridge p{margin:0;display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--s1);border-radius:999px;padding:10px 20px;font-size:14px;color:var(--body);text-align:center}
 .bridge p strong{color:var(--tx);font-weight:600}
 .bridge p svg{color:var(--ac)}
 
@@ -176,7 +178,7 @@ header.nav.hide{transform:translateY(-100%)}
 .mba-t p{margin:0;font-size:17px;line-height:1.6;font-weight:500}
 .mba-t .tags{display:flex;flex-wrap:wrap;gap:8px}
 .mba-t .tags span{border:1.5px solid var(--bg);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
-.mba-t .mfoot{margin-top:auto;padding-top:16px;border-top:1.5px solid rgba(11,11,13,.25);font-size:14px;font-weight:600}
+.mba-t .mfoot{margin-top:auto;padding-top:16px;border-top:1.5px solid rgba(18,26,46,.25);font-size:14px;font-weight:600}
 .mba-p{flex:1 1 480px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg)}
 .mba-p img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 .mba-p img:first-child{grid-column:1/3;aspect-ratio:16/10;object-position:60% 40%}
@@ -271,7 +273,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .meter .top strong{color:var(--ac);font-size:15px}
 .meter .trk{height:10px;background:var(--line);border-radius:99px;position:relative;overflow:hidden}
 .meter .trk i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;width:0;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
-.meter .trk i.old{background:#5A5A62}
+.meter .trk i.old{background:#5D6880}
 .meter .trk i.new{background:var(--ac)}
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:14px;border-top:1px solid var(--line);padding-top:18px}
 .nums b{display:block;font-family:var(--fd);font-size:34px;line-height:1}
@@ -281,9 +283,9 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .slide-v.navy .blk{background:var(--navy)}
 .slide-v .ghost{position:absolute;right:22px;top:16px;font-family:var(--fd);font-size:96px;font-weight:700;line-height:1;color:var(--bg);opacity:.14}
 .slide-v.navy .ghost{color:#fff;opacity:.08}
-.frame{position:relative;background:#1A1A1F;border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.frame{position:relative;background:#1E2840;border:1px solid var(--line2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55)}
 .frame .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line2);font-size:12px;color:var(--mut)}
-.frame .bar i{width:9px;height:9px;border-radius:50%;background:#3E3E46}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#3A4664}
 .frame .bar span{margin-left:8px}
 .frame.sm{position:absolute;left:-10px;bottom:0;width:46%;border-radius:14px}
 .zoomable{cursor:zoom-in}
@@ -304,7 +306,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 /* dashboards */
 .dtabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
-.dtab{min-height:46px;padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--s1);color:#E6E6E0;cursor:pointer;font-weight:600;font-size:14px;position:relative;overflow:hidden;transition:background .25s,color .25s,border-color .25s}
+.dtab{min-height:46px;padding:10px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--s1);color:#E3E7EF;cursor:pointer;font-weight:600;font-size:14px;position:relative;overflow:hidden;transition:background .25s,color .25s,border-color .25s}
 .dtab:hover{border-color:var(--ac)}
 .dtab[aria-selected="true"]{background:var(--ac);color:var(--bg);border-color:var(--ac)}
 .dtab .pb{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--bg);opacity:.4}
@@ -316,13 +318,13 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 /* big players */
 .bigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
-.big{background:#F6F6F1;color:#141417;border-radius:22px;padding:22px;min-height:210px;display:flex;flex-direction:column;gap:12px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;transform-style:preserve-3d}
+.big{background:#F5F7FA;color:#17203A;border-radius:22px;padding:22px;min-height:210px;display:flex;flex-direction:column;gap:12px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;transform-style:preserve-3d}
 .big:hover{box-shadow:0 26px 50px rgba(0,0,0,.45)}
 .big .lg{flex:1;display:flex;align-items:center;justify-content:center;min-height:110px}
 .big .lg img{max-width:85%;max-height:104px;object-fit:contain}
-.big .cap{border-top:1px solid #DEDED6;padding-top:12px}
+.big .cap{border-top:1px solid #E3E7EF;padding-top:12px}
 .big .cap b{display:block;font-size:15px}
-.big .cap small{font-size:11.5px;color:#55554F;letter-spacing:.08em;font-weight:600}
+.big .cap small{font-size:11.5px;color:#5D6880;letter-spacing:.08em;font-weight:600}
 .big.more{background:var(--ac);justify-content:space-between}
 .big.more b{font-family:var(--fd);font-size:60px;line-height:1}
 
@@ -331,7 +333,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .us-t{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px;position:relative}
 .us-t h3{margin:0;font-family:var(--fd);font-size:clamp(34px,4vw,46px);line-height:1.02;letter-spacing:-.02em}
 .us-l{flex:1 1 480px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;position:relative}
-.tile{background:#F6F6F1;border-radius:16px;height:104px;padding:18px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.tile{background:#F5F7FA;border-radius:16px;height:104px;padding:18px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .tile:hover{transform:translateY(-4px)}
 .tile img{max-width:80%;max-height:66px;object-fit:contain}
 .route{position:absolute;inset:0;pointer-events:none;opacity:.28}
@@ -360,7 +362,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .fmq{display:block;background:var(--ac);color:var(--bg);overflow:hidden;padding:24px 0}
 .fmq .mq{font-size:48px;animation-duration:20s}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 24px;font-size:14px;color:var(--mut2);max-width:var(--max);margin:0 auto}
-.foot a{color:#B8B8B2}
+.foot a{color:var(--body)}
 
 /* floating cta */
 .fcta{position:fixed;right:24px;bottom:24px;z-index:70;display:inline-flex;align-items:center;gap:10px;min-height:58px;padding:14px 24px 14px 18px;border-radius:999px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:18px;font-weight:700;box-shadow:0 16px 40px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
@@ -370,7 +372,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 @keyframes pl{50%{opacity:.3}}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:200;background:rgba(5,5,7,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(10,16,32,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lb.open{display:flex;animation:fade .3s forwards;opacity:0}
 .lb img{max-width:min(1400px,96vw);max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .lb button{position:absolute;top:18px;right:18px;width:50px;height:50px;border-radius:50%;border:1px solid var(--line2);background:var(--s1);cursor:pointer;display:grid;place-items:center}
@@ -405,7 +407,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 }
 
 /* services */
-.why{display:flex;flex-wrap:wrap;gap:10px 22px;margin:-18px 0 34px;font-size:15px;color:#D6D6D0}
+.why{display:flex;flex-wrap:wrap;gap:10px 22px;margin:-18px 0 34px;font-size:15px;color:var(--body)}
 .why span{display:inline-flex;gap:8px;align-items:center}
 .why svg{stroke:var(--ac)}
 .svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:16px}
@@ -419,7 +421,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .svc li::before{content:"";flex:0 0 7px;height:7px;margin-top:7px;border-radius:50%;background:var(--ac)}
 .svc .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ac);padding-top:8px;min-height:44px}
 .svc.hot{background:var(--ac);color:var(--bg);border-color:var(--ac)}
-.svc.hot p{color:#22220f}
+.svc.hot p{color:#0A2A1A}
 .svc.hot .ic{background:var(--bg);border-color:var(--bg)}
 .svc.hot li::before{background:var(--bg)}
 .svc.hot .go{color:var(--bg)}
@@ -450,7 +452,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";flex:0 0 32px;height:32px;border-radius:50%;background:var(--s2);display:grid;place-items:center;color:var(--ac);font-size:22px;transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{margin:0;padding:0 24px 22px;color:#C4C4BE;line-height:1.65;font-size:16px}
+.faq details p{margin:0;padding:0 24px 22px;color:var(--body);line-height:1.65;font-size:16px}
 
 /* final cta */
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -511,12 +513,12 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .room figure:first-child{grid-column:1/3;grid-row:1/3}
 .room img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .room figure:hover img{transform:scale(1.06)}
-.room figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(8,8,10,.92));display:flex;flex-direction:column;gap:3px}
+.room figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(10,16,32,.92));display:flex;flex-direction:column;gap:3px}
 .room figcaption small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ac)}
 .room figcaption b{font-family:var(--fd);font-size:17px;line-height:1.25}
 .room figure:first-child figcaption{padding:70px 26px 24px}
 .room figure:first-child figcaption b{font-size:26px}
-.room figure:first-child figcaption span{font-size:14.5px;color:#D0D0CA;line-height:1.5;max-width:460px}
+.room figure:first-child figcaption span{font-size:14.5px;color:var(--body);line-height:1.5;max-width:460px}
 @media (max-width:900px){
   .room{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .room figure{aspect-ratio:1/1.05}
@@ -529,13 +531,13 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 }
 
 /* nayrah results viz */
-.viz{padding:22px;display:flex;flex-direction:column;gap:18px;background:#141418}
+.viz{padding:22px;display:flex;flex-direction:column;gap:18px;background:#17203A}
 .viz-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .viz-h b{font-family:var(--fd);font-size:30px;color:var(--ac)}
 .viz-h small{color:var(--mut);font-size:12.5px}
 .bars{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;height:190px;padding:0 6px;border-bottom:1px solid var(--line2)}
 .bars div{display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
-.bars i{display:block;width:72%;border-radius:12px 12px 4px 4px;background:#5A5A62;height:0;transition:height 1.4s cubic-bezier(.2,.7,.2,1)}
+.bars i{display:block;width:72%;border-radius:12px 12px 4px 4px;background:#5D6880;height:0;transition:height 1.4s cubic-bezier(.2,.7,.2,1)}
 .bars div:last-child i{background:var(--ac)}
 .bars em{font-style:normal;font-family:var(--fd);font-weight:700;font-size:17px}
 .bars-l{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;font-size:12.5px;color:var(--mut);margin-top:-8px}
@@ -556,7 +558,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .cs-tab b{font-family:var(--fd);font-size:17px;font-weight:700}
 .cs-tab span{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--ac)}
 .cs-tab[aria-selected="true"]{background:var(--ac);border-color:var(--ac);color:var(--bg)}
-.cs-tab[aria-selected="true"] small{color:#3b4200}
+.cs-tab[aria-selected="true"] small{color:#063D22}
 .cs-tab[aria-selected="true"] span{color:var(--bg)}
 .csum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
 .csum div{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
@@ -565,7 +567,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .csteps{display:grid;grid-template-columns:1fr;gap:10px;margin:2px 0}
 .cstep{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
 .cstep small{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--mut);padding-top:3px}
-.cstep p{margin:0;font-size:15px;line-height:1.55;color:#D6D6D0}
+.cstep p{margin:0;font-size:15px;line-height:1.55;color:var(--body)}
 .cstep.res{border-color:var(--ac)}
 .cstep.res small{color:var(--ac)}
 .cstep.res p{color:var(--tx);font-weight:500}
@@ -596,14 +598,125 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .cstep p{font-size:14.5px;line-height:1.5}
 .slide-v{align-self:center}
 .wins small.src{display:block;margin-top:auto;padding-top:6px;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mut)}
-.wins>div:first-child small.src{color:#3b4200}
+.wins>div:first-child small.src{color:#063D22}
 .wins{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.wins{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.wins{grid-template-columns:1fr}}
-.wins-note{margin-top:10px;max-width:640px;color:var(--mut,#9a9aa2);font-size:15px;line-height:1.55}
+.wins-note{margin-top:10px;max-width:640px;color:var(--mut,var(--mut));font-size:15px;line-height:1.55}
 .lang-sw{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:999px;color:var(--tx);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
 .lang-sw:hover{border-color:var(--ac);color:var(--ac)}
 .nav-act{display:flex;align-items:center;gap:10px}
+
+/* ================= THEME v2 — navy / growth green / leadership gold ================= */
+body{font-size:17px;line-height:1.65;color:var(--tx)}
+.lead{font-size:clamp(16px,1.25vw,18px);color:var(--body)}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--slate);font-weight:600}
+.h2{font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-.015em;font-weight:700}
+.h2 em,.hl{color:var(--slate);font-weight:700}
+.card{border-radius:12px;box-shadow:none}
+.btn{border-radius:8px;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn-ac{background:var(--ac);color:#0A1020}
+.btn-ac:hover{background:var(--green-hover);color:#0A1020;transform:translateY(-2px)}
+.btn-gh:hover{border-color:var(--slate);transform:translateY(-2px)}
+.glow{display:none!important}
+.hero-grid{background-image:linear-gradient(rgba(42,53,80,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(42,53,80,.55) 1px,transparent 1px)!important;background-size:56px 56px!important;opacity:.6}
+.status{color:var(--slate)!important}
+.status .dot{background:var(--ac)}
+.name{font-family:var(--fd);font-size:clamp(36px,4.4vw,56px)!important;line-height:1.1!important;letter-spacing:-.02em!important;text-transform:none!important;font-weight:700;margin:18px 0 0;display:inline-block;padding-bottom:14px;position:relative}
+.name::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:3px;border-radius:3px;background:var(--gold)}
+.headline{margin:22px 0 0;font-size:clamp(24px,2.6vw,36px);line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.headline span{color:var(--slate)}
+.hero-sub{margin-top:16px!important;max-width:600px}
+.gold-badge{display:inline-flex;align-items:center;gap:8px;margin:22px 0 0;padding:7px 14px;border:1px solid rgba(212,175,106,.45);border-radius:999px;color:var(--gold);font-size:14px;font-weight:600;background:rgba(212,175,106,.06)}
+.gold-badge svg{width:15px;height:15px;fill:var(--gold)}
+.portrait{transform:none!important;border-radius:16px!important}
+.chip b,.live .val{color:var(--ac)}
+/* stats as dashboard cards */
+.stats{border:0!important;background:transparent!important}
+.stats-in{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px!important;display:flex!important;flex-direction:column;gap:8px;text-align:start!important;border-left:1px solid var(--line)!important}
+.stat span{order:0;font-size:13px;color:var(--slate)}
+.stat b{order:1;font-size:clamp(32px,3.2vw,48px)!important;font-weight:600!important;color:var(--ac)!important;line-height:1}
+@media (max-width:900px){.stats-in{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child{grid-column:1/-1}}
+/* numbered services */
+.svc .num{font-size:14px;font-weight:700;color:var(--green-dark);letter-spacing:.06em;display:inline-block;border-bottom:2px solid var(--green-dark);padding-bottom:4px}
+.svc .badge{border-radius:6px}
+/* light sections */
+.lt{--bg:#F5F7FA;--s1:#FFFFFF;--s2:#EEF1F6;--card:#FFFFFF;--line:#DDE3EC;--line2:#C9D1DD;--tx:#121A2E;--mut:#56617A;--mut2:#6F7A90;--slate:#56617A;--body:#3D4760;--ac:#0B9E55;--ac2:#098a4a;
+  background:var(--bg);color:var(--tx)}
+.lt .card,.lt .svc,.lt details{background:#fff;border-color:var(--line)}
+.lt .svc.hot{background:var(--navy)!important;color:#fff;--tx:#fff;--mut:#97A1B4;--body:#C3CAD8;--ac:#3DF58A;border-color:var(--navy)}
+.lt .svc.hot .num{color:#3DF58A;border-color:#3DF58A}
+.lt .svc.hot h3,.lt .svc.hot p,.lt .svc.hot li{color:#fff}
+.lt .btn-ac{background:var(--green-dark);color:#fff}
+.lt .btn-ac:hover{background:#098a4a;color:#fff}
+.lt .btn-gh{color:var(--tx);border-color:var(--line2)}
+.lt .why span{color:var(--tx)}
+.lt .why svg{color:var(--green-dark);stroke:var(--green-dark)}
+/* the system — the heart of the page */
+.deep{background:var(--navy-deep);--bg:#0A1020}
+.sys{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.sys-line{position:absolute;left:10%;right:10%;top:27px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.sys-line i{position:absolute;inset:0;background:linear-gradient(90deg,var(--ac),var(--green-dark));transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.2,.7,.2,1) .2s}
+.sys.in .sys-line i{transform:scaleX(1)}
+.sys-st{position:relative;display:flex;flex-direction:column;gap:8px;padding:0 4px}
+.sys-n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--navy-deep);border:2px solid var(--ac);color:var(--ac);font-weight:700;font-size:17px;position:relative;z-index:1;margin-bottom:10px}
+.sys-st small{font-size:12px;letter-spacing:.12em;color:var(--slate);font-weight:600}
+.sys-st h3{margin:0;font-size:21px;font-weight:700}
+.sys-st p{margin:0;color:var(--body);font-size:15px;line-height:1.6}
+.sys-st em{font-style:normal;margin-top:6px;font-size:13px;color:var(--slate);border-top:1px solid var(--line);padding-top:10px}
+.sys-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);color:var(--slate);font-size:15px}
+.sys-foot span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ac);margin-inline-end:8px;vertical-align:middle}
+.sys-foot .btn{margin-inline-start:auto}
+@media (max-width:900px){
+ .sys{grid-template-columns:1fr;gap:28px}
+ .sys-line{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}
+ .sys-line i{transform:scaleY(0);transform-origin:top;background:linear-gradient(180deg,var(--ac),var(--green-dark))}
+ .sys.in .sys-line i{transform:scaleY(1)}
+ .sys-st{display:grid;grid-template-columns:56px 1fr;column-gap:18px;row-gap:6px}
+ .sys-n{grid-row:1/span 4;margin:0}
+ .sys-foot .btn{margin-inline-start:0;width:100%;justify-content:center}
+}
+/* logos monochrome */
+.lt .tile img,.lt .logo-wall img{filter:grayscale(1);opacity:.62;transition:filter .3s,opacity .3s}
+.lt .tile:hover img{filter:none;opacity:1}
+.lt .tile{background:transparent;border-color:var(--line)}
+/* contact */
+.big-t{font-size:clamp(32px,4.6vw,56px)!important;line-height:1.1!important}
+.big-t .hl{color:var(--ac)}
+.fcta{border-radius:10px!important}
+.wins b{color:var(--ac)}
+[data-r]{transform:translateY(18px)}
+.chip,.live{border-radius:12px!important;box-shadow:0 10px 24px rgba(0,0,0,.25)!important;animation:none!important}
+.chip.a b,.chip.a small{color:#0A1020!important}
+.lt .h2,.lt h3,.lt h4{color:var(--tx)}
+.slide-t h3 .hl{color:var(--green-dark)}
+.slide-t h3{font-size:clamp(28px,3vw,40px)!important;line-height:1.12!important}
+.lt .big .lg img{filter:grayscale(1);opacity:.65;transition:filter .3s,opacity .3s}
+.lt .big:hover .lg img{filter:none;opacity:1}
+.big{transform:none!important}
+.gold-badge{align-self:flex-start;width:fit-content}
+.sys-line{left:28px;right:calc((100% - 64px)/5 - 28px)}
+@media (max-width:900px){.sys-line{left:27px;right:auto}}
+.lt .big.more{background:var(--navy);color:#fff}.lt .big.more b{color:#3DF58A}.lt .big.more span{color:#fff}
+.mba{background:var(--navy)!important;color:#fff!important;border-radius:16px!important}
+.mba h3,.mba p,.mba b,.mba span,.mba small{color:#fff}
+.mba .eyebrow,.mba .tagrow small{color:var(--gold)!important}
+.mba .pill,.mba li{border-color:#3A4664!important;color:#E3E7EF!important}
+.mq-band,.fmq{background:var(--card)!important;color:#E3E7EF!important;transform:none!important;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.slide-v .blk{background:#E3E8F0!important;border-radius:16px!important}
+.sector::after{background:var(--line)!important}
+.cs-cta{background:var(--navy)!important;color:#fff;border-radius:12px!important}
+.cs-cta h3,.cs-cta p{color:#fff}
+.mba-t>p:first-child,.mba-t .kick{color:var(--gold)!important}
+.mba-t h3{font-size:clamp(28px,3vw,40px)!important;line-height:1.1!important}
+.mba-t .mfoot{border-color:#2A3550!important;color:#97A1B4!important}
+.mba-p{background:var(--navy)!important}
+.cs-cta .btn-dk{background:#3DF58A!important;color:#0A1020!important}
+.cs-cta .btn-ol{color:#fff!important;border-color:#3A4664!important}
+.mba-t .eyebrow,.mba-t>.k,.mba-t .k{color:var(--gold)!important}
+figcaption .k{color:var(--gold)!important}
+.mba-t>span:first-child{color:var(--gold)!important}
 
 /* ---------- Arabic / RTL */
 html[dir=rtl] *{letter-spacing:0!important}
@@ -614,9 +727,10 @@ html[dir=rtl] .cs-track,html[dir=rtl] .cs-tabs,html[dir=rtl] .cs-nav,html[dir=rt
 html[dir=rtl] .cs-track>*,html[dir=rtl] .cs-tabs>*,html[dir=rtl] .dtabs>*{direction:rtl}
 html[dir=rtl] .cs-count{direction:ltr}
 html[dir=rtl] .cg b{display:inline-block;direction:ltr;unicode-bidi:isolate}
-html[dir=rtl] .name{font-size:clamp(50px,7.4vw,100px);line-height:1.22}
-html[dir=rtl] .name .ln{padding-bottom:0}
-html[dir=rtl] .name .ln:nth-child(2)>span{color:var(--ac);-webkit-text-stroke:0}
+html[dir=rtl] .name::after{left:auto;right:0}
+html[dir=rtl] .sys-line{left:calc((100% - 64px)/5 - 28px);right:28px}
+html[dir=rtl] .sys-line i{transform-origin:right}
+@media (max-width:900px){html[dir=rtl] .sys-line{right:27px;left:auto}}
 html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[dir=rtl] .lead-more svg{transform:scaleX(-1)}
 </style>
 </head>
@@ -627,14 +741,14 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 <header class="nav"><div class="wrap nav-in">
 <a class="logo" href="#top">مصطفى سيد درويش<span>.</span></a>
 <nav aria-label="الأقسام" class="nav-links">
-<a href="#services">الخدمات</a><a href="#experience">الخبرة</a><a href="#mba">الماجستير</a><a href="#funnel">قمع النمو</a><a href="#work">دراسات الحالة</a><a href="#clients">العملاء</a><a href="#faq">الأسئلة الشائعة</a>
+<a href="#services">الخدمات</a><a href="#system">المنظومة</a><a href="#work">دراسات الحالة</a><a href="#clients">العملاء</a><a href="#experience">الخبرة</a><a href="#faq">الأسئلة الشائعة</a>
 </nav>
 <div class="nav-act"><a class="lang-sw" href="./" hreflang="en" lang="en">English</a>
-<a class="btn btn-ac nav-cta mag" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" style="min-height:44px;padding:10px 20px;font-size:15px" target="_blank">احجز مكالمة</a>
+<a class="btn btn-ac nav-cta" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" style="min-height:44px;padding:10px 20px;font-size:15px" target="_blank">احجز مكالمة</a>
 <button aria-expanded="false" aria-label="افتح القائمة" class="burger"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button></div>
 </div></header>
 <nav aria-label="الجوال" class="mnav">
-<a href="#services">الخدمات</a><a href="#experience">الخبرة</a><a href="#mba">الماجستير والجوائز</a><a href="#funnel">قمع النمو</a><a href="#range">القطاعات</a><a href="#work">دراسات الحالة</a><a href="#clients">العملاء</a><a href="#us">السوق الأمريكي</a><a href="#process">كيف سنعمل معاً</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact" style="color:var(--ac)">لنتحدث ←</a><a href="./" hreflang="en" lang="en">English version</a>
+<a href="#services">الخدمات</a><a href="#system">المنظومة</a><a href="#work">دراسات الحالة</a><a href="#clients">العملاء</a><a href="#experience">الخبرة</a><a href="#mba">الماجستير والجوائز</a><a href="#funnel">قمع النمو</a><a href="#us">السوق الأمريكي</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact" style="color:var(--ac)">لنتحدث ←</a><a href="./" hreflang="en" lang="en">English version</a>
 </nav>
 <main id="main">
 <!-- HERO -->
@@ -643,12 +757,13 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 <div class="wrap hero-in">
 <div class="hero-l">
 <p class="status"><span class="dot"></span>استشاري تسويق رقمي · خبير نمو</p>
-<h1 aria-label="مصطفى سيد درويش" class="name"><span class="ln"><span>مصطفى</span></span><span class="ln"><span>سيد</span></span><span class="ln"><span>درويش</span></span></h1>
-<p class="role">أقود نمو العلامات التجارية عبر <span aria-live="polite" class="rot"><span class="on">الإعلانات المدفوعة.</span><span>أقماع نمو مدروسة.</span><span>البيانات والاختبار.</span><span>إبداع إعلاني يبيع.</span></span></p>
-<p class="lead" style="max-width:640px">استشاري تسويق رقمي وقائد للتسويق بالأداء والنمو، بخبرة 11 عاماً مع أكثر من 250 علامة تجارية في التجارة الإلكترونية وB2B والمطاعم والسلع الاستهلاكية والتطبيقات والرعاية الصحية. أدرت ميزانيات تبدأ من اختبارات محدودة وتصل إلى 1.9 مليون دولار، لعملاء في مصر والخليج والولايات المتحدة.</p>
+<h1 class="name">مصطفى سيد درويش</h1>
+<p class="headline">أبني منظومات نمو، <span>لا مجرد حملات.</span></p>
+<p class="lead hero-sub">أحوّل ميزانيتك الإعلانية إلى مبيعات حقيقية، بمنظومة واضحة تبدأ بالتدقيق وتنتهي بالتوسع. أكثر من 11 عاماً، وأكثر من 250 علامة تجارية، وإدارة إنفاق إعلاني يصل إلى 1.9 مليون دولار في مصر والخليج والولايات المتحدة.</p>
+<p class="gold-badge"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"></path></svg>أفضل مسوّق 2025 — مستشفيات السعودي الألماني</p>
 <div class="hero-cta">
-<a class="btn btn-ac mag" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">احجز استشارة <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
-<a class="btn btn-gh mag" href="#services">كيف أساعدك</a>
+<a class="btn btn-ac" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">احجز استشارة <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a class="btn btn-gh" href="#services">كيف أساعدك</a>
 </div>
 <div class="hero-meta"><span>القاهرة، مصر</span><span class="sep">·</span><span>متاح للاستشارات والمشاريع والمناصب بدوام كامل</span><span class="sep">·</span><a href="https://www.linkedin.com/in/mostafa-1-done/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
 </div>
@@ -659,7 +774,7 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 <div aria-hidden="true" class="live">
 <span class="lbl"><span class="dot" style="width:6px;height:6px"></span>أعلى عائد إعلاني ROAS</span>
 <span class="val"><span class="cnt" data-dec="0" data-dur="2600" data-from="4" data-suf="×" data-to="16">4×</span></span>
-<svg preserveaspectratio="none" viewbox="0 0 200 52"><defs><lineargradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#D4FF3A" stop-opacity=".35"></stop><stop offset="1" stop-color="#D4FF3A" stop-opacity="0"></stop></lineargradient></defs><path class="spark-a" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4 L200 52 L0 52Z"></path><path class="spark" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4"></path></svg>
+<svg preserveaspectratio="none" viewbox="0 0 200 52"><defs><lineargradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3DF58A" stop-opacity=".35"></stop><stop offset="1" stop-color="#3DF58A" stop-opacity="0"></stop></lineargradient></defs><path class="spark-a" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4 L200 52 L0 52Z"></path><path class="spark" d="M0 46 L20 44 L40 45 L60 38 L80 40 L100 30 L120 32 L140 20 L160 22 L180 10 L200 4"></path></svg>
 </div>
 </div>
 </div>
@@ -667,148 +782,33 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 </section>
 <!-- STATS -->
 <section aria-label="أرقام رئيسية" class="stats"><div class="wrap stats-in">
-<div class="stat" data-r=""><b class="cnt" data-to="11">0</b><span>سنوات من الخبرة</span></div>
-<div class="stat" data-d="80" data-r=""><b class="cnt" data-suf="+" data-to="250">0</b><span>علامة تجارية وعميل</span></div>
-<div class="stat" data-d="160" data-r=""><b class="cnt" data-dec="1" data-pre="$" data-suf="M" data-to="1.9">$0</b><span>أعلى إنفاق إعلاني تمت إدارته</span></div>
-<div class="stat" data-d="240" data-r=""><b class="cnt" data-suf="+" data-to="10">0</b><span>منصة إعلانية</span></div>
-<div class="stat" data-d="320" data-r=""><b class="cnt" data-to="4">0</b><span>أسواق · مصر · السعودية · الإمارات · أمريكا</span></div>
+<div class="stat" data-r=""><span>سنوات من الخبرة</span><b class="cnt" data-suf="+" data-to="11">0</b></div>
+<div class="stat" data-d="80" data-r=""><span>علامة تجارية وعميل</span><b class="cnt" data-suf="+" data-to="250">0</b></div>
+<div class="stat" data-d="160" data-r=""><span>ميزانية إعلانية تحت إدارتي</span><b class="cnt" data-dec="1" data-pre="$" data-suf="M" data-to="1.9">$0</b></div>
+<div class="stat" data-d="240" data-r=""><span>منصة إعلانية</span><b class="cnt" data-suf="+" data-to="10">0</b></div>
+<div class="stat" data-d="320" data-r=""><span>أسواق · مصر · السعودية · الإمارات · أمريكا</span><b class="cnt" data-to="4">0</b></div>
 </div></section>
 <!-- SERVICES -->
-<section class="sec" id="services" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">اعمل معي</p><h2 class="h2" data-d="80" data-r="">اعمل مع خبير نمو<br/><em>صنع النتائج لأكثر من 250 علامة.</em></h2></div><p class="lead" data-d="160" data-r="">اختر ما يناسبك: تدقيق شامل لمرة واحدة، أو إدارة كاملة لحملاتك، أو استراتيجية واضحة ينفذها فريقك، أو قائد يتولى ملف النمو بالكامل.</p></div>
+<section class="sec lt" id="services" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">الخدمات</p><h2 class="h2" data-d="80" data-r="">أربع طرق للعمل معاً.<br/><em>ومنظومة واحدة وراءها جميعاً.</em></h2></div><p class="lead" data-d="160" data-r="">اختر ما يناسبك: تدقيق شامل لمرة واحدة، أو إدارة كاملة لحملاتك، أو استراتيجية واضحة ينفذها فريقك، أو شريك نمو يتحمّل مسؤولية الأرقام.</p></div>
 <div class="why" data-r=""><span><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg>أعمل بنفسي داخل الحسابات الإعلانية، لا من خلف العروض التقديمية</span><span><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg>لكل القطاعات، ولكل الميزانيات</span><span><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg>أقيس النجاح بالإيرادات، لا بالإعجابات</span><span><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg>استراتيجية بمنهجية أكاديمية (MBA)</span></div>
 <div class="svcs">
-<div class="card svc" data-r=""><span class="ic"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"></path></svg></span><h3>تدقيق شامل للنمو والإعلانات</h3><p>اعرف أين تتسرب ميزانيتك، وما الذي يجب إصلاحه أولاً.</p><ul><li>تدقيق الحسابات الإعلانية والتتبع (Meta وGoogle وTikTok)</li><li>مراجعة القمع وصفحة الهبوط والعرض</li><li>خطة عمل مرتبة بالأولوية، تبدأ بالمكاسب السريعة</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">اطلب تدقيقاً <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
-<div class="card svc hot" data-d="80" data-r=""><span class="badge">الأكثر طلباً</span><span class="ic"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg></span><h3>إدارة التسويق بالأداء</h3><p>أخطط لإعلاناتك وأطلقها وأوسّعها، وأقدّم لك تقريراً بالعائد الفعلي.</p><ul><li>Meta وGoogle وTikTok وSnapchat وLinkedIn</li><li>اختبار الإبداعات والجماهير كل أسبوع</li><li>تقرير شهري واضح بالخطوات القادمة</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">ابدأ مشروعاً <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
-<div class="card svc" data-d="160" data-r=""><span class="ic"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"></path><circle cx="12" cy="12" r="3"></circle></svg></span><h3>استشارة تسويق رقمي</h3><p>استراتيجية وخطة إعلامية قابلة للتنفيذ فعلاً.</p><ul><li>استراتيجية تسويق رقمي بمنهجية SOSTAC</li><li>خطة إعلامية، وتوزيع الميزانية، ومؤشرات الأداء</li><li>جلسات فردية مع فريقك أو المؤسسين</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">احجز جلسة <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
-<div class="card svc" data-d="240" data-r=""><span class="ic"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"></path></svg></span><h3>قائد نمو — بدوام جزئي أو كامل</h3><p>قائد يتولى ملف النمو، ويدير الفريق، ويرفع تقاريره للإدارة.</p><ul><li>قيادة الفريق وإدارة الوكالات</li><li>مسؤولية الاستحواذ والاحتفاظ وقيمة العميل LTV</li><li>تقارير للإدارة العليا وضبط وتيرة الإنفاق</li></ul><a class="go" href="#contact">لنتناقش حول الدور <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+<div class="card svc" data-r=""><span class="num">01</span><h3>تدقيق شامل للنمو والإعلانات</h3><p>اعرف أين تتسرب ميزانيتك، وما الذي يجب إصلاحه أولاً.</p><ul><li>تدقيق الحسابات الإعلانية والتتبع (Meta وGoogle وTikTok)</li><li>مراجعة القمع وصفحة الهبوط والعرض</li><li>خطة عمل مرتبة بالأولوية، تبدأ بالمكاسب السريعة</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">اطلب تدقيقاً <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+<div class="card svc hot" data-d="80" data-r=""><span class="badge">الأكثر طلباً</span><span class="num">02</span><h3>إدارة التسويق بالأداء</h3><p>أخطط لإعلاناتك وأطلقها وأوسّعها، وأقدّم لك تقريراً بالعائد الفعلي.</p><ul><li>Meta وGoogle وTikTok وSnapchat وLinkedIn</li><li>اختبار الإبداعات والجماهير كل أسبوع</li><li>تقرير شهري واضح بالخطوات القادمة</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">ابدأ مشروعاً <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+<div class="card svc" data-d="160" data-r=""><span class="num">03</span><h3>استشارة تسويق رقمي</h3><p>استراتيجية وخطة إعلامية قابلة للتنفيذ فعلاً.</p><ul><li>استراتيجية تسويق رقمي بمنهجية SOSTAC</li><li>خطة إعلامية، وتوزيع الميزانية، ومؤشرات الأداء</li><li>جلسات فردية مع فريقك أو المؤسسين</li></ul><a class="go" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">احجز جلسة <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+<div class="card svc" data-d="240" data-r=""><span class="num">04</span><h3>شريك نمو — بدوام جزئي أو كامل</h3><p>شخص يتحمّل مسؤولية النمو من البداية إلى النهاية، ويرفع النتائج للإدارة.</p><ul><li>العمل مع فريقك الداخلي ووكالاتك</li><li>مسؤولية الاستحواذ والاحتفاظ وقيمة العميل LTV</li><li>تقارير للإدارة العليا وضبط وتيرة الإنفاق</li></ul><a class="go" href="#contact">لنتناقش حول الدور <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
 </div>
 </div></section>
-<div class="bridge" data-r=""><i></i><p><span>ما أقدمه</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>بخبرة 11 عاماً</strong></p></div>
-<!-- EXPERIENCE -->
-<section class="sec" id="experience" style="padding-top:60px"><div class="wrap xp">
-<div class="xp-l">
-<p class="eyebrow" data-r="">الخبرة</p>
-<h2 class="h2" data-d="80" data-r="">11 عاماً.<br/><em>في الوكالات والشركات وقطاع SaaS.</em></h2>
-<p class="lead" data-d="160" data-r="">أقود فرق التسويق الرقمي دون أن أبتعد عن الحسابات الإعلانية — من التخطيط والاستهداف إلى الإبداع وصفحات الهبوط والتتبع — ليتحول كل ريال تنفقه إلى إيراد حقيقي.</p>
-<div class="mini">
-<div class="card" data-d="200" data-r=""><b>قيادة الفرق</b><span>بنيت وقدت فرقاً متعددة التخصصات وفرقاً للتحليلات</span></div>
-<div class="card" data-d="280" data-r=""><b>مسؤولية الأرباح والخسائر</b><span>الاستحواذ والاحتفاظ وقيمة العميل في 3 أسواق</span></div>
-<div class="card" data-d="360" data-r=""><b>تقارير للإدارة العليا</b><span>مراجعات أعمال شهرية وربع سنوية</span></div>
-</div>
-</div>
-<div class="xp-r"><span class="tl-line"></span><span class="tl-fill"></span>
-<ol class="tl"><li data-d="0" data-r=""><span class="yr">2026 – الآن</span><h4>أخصائي تسويق أول — العلامة التجارية والأداء</h4><p>Idea Network · وكالة متعددة القطاعات · السعودية والإمارات ومصر</p></li><li data-d="60" data-r=""><span class="yr">2021 – 2025</span><h4>أخصائي تسويق أول — النمو والعلامة التجارية</h4><p>مجموعة السعودي الألماني الصحية · إقليمي، 3 أسواق · أفضل مسوّق 2025</p></li><li data-d="120" data-r=""><span class="yr">2019 – 2021</span><h4>أخصائي تسويق رقمي</h4><p>Sahl Solutions · SaaS وتقنية مالية وتطبيقات</p></li><li data-d="180" data-r=""><span class="yr">2019</span><h4>أخصائي تسويق رقمي</h4><p>Magnet Marketing Agency · تجزئة وضيافة</p></li><li data-d="240" data-r=""><span class="yr">2018 – 2019</span><h4>أخصائي تسويق رقمي وقائد التحليلات</h4><p>Advertizer · وكالة</p></li><li data-d="300" data-r=""><span class="yr">2017 – 2018</span><h4>أخصائي تجارة إلكترونية</h4><p>o2morny.com · تجارة إلكترونية</p></li><li data-d="360" data-r=""><span class="yr">2014 – 2017</span><h4>أدوار في التسويق الرقمي</h4><p>حملات ومحتوى وأداء</p></li></ol>
-</div>
+<div class="bridge" data-r=""><i></i><p><span>ما أقدمه</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>تعمل بمنظومة واحدة واضحة</strong></p></div>
+<!-- SYSTEM -->
+<section class="sec deep" id="system"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">المنظومة</p><h2 class="h2" data-d="80" data-r="">منظومة SOSTAC للاستراتيجية التسويقية.<br/><em>النمو عملية مدروسة، لا ضربة حظ.</em></h2></div><p class="lead" data-d="160" data-r="">كل مشروع يمر بالمراحل الخمس نفسها، فتعرف دائماً ما الذي يحدث هذا الأسبوع، وكم يكلّف، وما العائد المتوقع منه.</p></div>
+<ol aria-label="مراحل منظومة النمو" class="sys" data-r=""><span aria-hidden="true" class="sys-line"><i></i></span><li class="sys-st" data-d="0" data-r=""><span class="sys-n">01</span><small>الأسبوع 1</small><h3>التدقيق</h3><p>الحسابات والتتبع والقمع والمنافسون. أين تتسرب الميزانية؟</p><em>تقرير تدقيق + مكاسب سريعة</em></li><li class="sys-st" data-d="90" data-r=""><span class="sys-n">02</span><small>الأسبوع 2</small><h3>الاستراتيجية</h3><p>خطة SOSTAC: الأهداف، والجمهور، والقنوات، وتوزيع الميزانية، ومؤشرات الأداء.</p><em>الاستراتيجية والخطة الإعلامية</em></li><li class="sys-st" data-d="180" data-r=""><span class="sys-n">03</span><small>الأسبوع 3</small><h3>الإطلاق</h3><p>إطلاق الحملات والزوايا الإبداعية وصفحات الهبوط مع تتبع دقيق.</p><em>حملات فعّالة وتتبع دقيق</em></li><li class="sys-st" data-d="270" data-r=""><span class="sys-n">04</span><small>أسبوعياً</small><h3>التحسين</h3><p>اختبارات على الإبداع والجماهير والمزايدات. نوقف الخاسر ونموّل الرابح.</p><em>سجل اختبارات أسبوعي</em></li><li class="sys-st" data-d="360" data-r=""><span class="sys-n">05</span><small>الشهر الثاني فما بعد</small><h3>التوسّع</h3><p>ضخ الميزانية فيما ينجح، وإضافة قنوات وأسواق جديدة، مع الحفاظ على العائد.</p><em>تقرير نمو شهري</em></li></ol>
+<div class="sys-foot" data-r=""><span>تحسين أسبوعي</span><span>تقارير شهرية</span><span>خطوات تالية واضحة</span><a class="btn btn-ac" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">ابدأ بالتدقيق <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
 </div></section>
-<div class="bridge" data-r=""><i></i><p><span>11 عاماً من العمل</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>وتكريمات على طول الطريق</strong></p></div>
-<!-- MBA & AWARDS -->
-<section class="sec" id="mba" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">ماجستير · جوائز · شهادات</p><h2 class="h2" data-d="80" data-r="">خبرة ميدانية يومية.<br/><em>ورؤية استراتيجية أكاديمية.</em></h2></div></div>
-<article class="mba" data-r="s">
-<div class="mba-t">
-<span style="font-size:13px;font-weight:700;letter-spacing:.16em">مرشح لماجستير إدارة الأعمال · دفعة 2027</span>
-<h3>ماجستير إدارة الأعمال في إدارة التسويق</h3>
-<p>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AASTMT). التخرج المتوقع في أبريل 2027 — ليجتمع لدي 11 عاماً من إدارة الحملات مع تأهيل أكاديمي في الاستراتيجية والبحث والقيادة.</p>
-<div class="tags"><span>إدارة التسويق المتقدمة</span><span>بحوث التسويق</span><span>استراتيجية SOSTAC</span><span>التوسع في الأسواق العالمية</span></div>
-<p class="mfoot">بكالوريوس التجارة · جامعة القاهرة · 2017</p>
-</div>
-<div class="mba-p">
-<img alt="مصطفى يعرض استراتيجية توسع في الأسواق العالمية" class="zoomable" loading="lazy" src="assets/mba-presenting.jpg"/>
-<img alt="مصطفى مع أستاذ في الأكاديمية العربية" class="zoomable" loading="lazy" src="assets/mba-professor.jpg" style="object-position:50% 25%"/>
-<img alt="مصطفى مع زملاء دفعة الماجستير" class="zoomable" loading="lazy" src="assets/mba-cohort.jpg"/>
-</div>
-</article>
-<div class="awards">
-<figure class="card award" data-r="" style="margin:0"><div class="ph"><img alt="مصطفى يحمل جائزة أفضل مسوّق" class="zoomable" loading="lazy" src="assets/award-trophy.jpg" style="object-position:50% 20%"/></div><figcaption><span class="k">جائزة · 2025</span><b>أفضل مسوّق</b><span class="muted" style="font-size:14px">مستشفيات السعودي الألماني، الشرق الأوسط</span></figcaption></figure>
-<figure class="card award" data-d="100" data-r="" style="margin:0"><div class="ph"><img alt="مصطفى يتسلم شهادة تقدير" class="zoomable" loading="lazy" src="assets/award-ceremony.jpg"/></div><figcaption><span class="k">تكريم</span><b>تكريم من الإدارة</b><span class="muted" style="font-size:14px">شهادة تقدير للأداء والأثر في النمو</span></figcaption></figure>
-<div class="card certs" data-d="200" data-r=""><span class="k">شهادات وإنجازات</span><ul><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>شراء إعلامي متقدم · Pearson · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>الشراء الإعلامي · Pearson · 2021</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>تحليل البيانات · ITIDA · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>Power BI · Pro Marquee · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>كتابة إعلانية للاستجابة المباشرة · Digital Marketer · 2017</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>فائز · Money Experts Club · 2017</span></li></ul></div>
-</div>
-</div></section>
-<!-- ABOUT -->
-<section class="sec" id="about" style="padding-top:60px"><div class="wrap about">
-<div class="about-p" data-r="l">
-<img alt="مصطفى سيد درويش" class="zoomable" loading="lazy" src="assets/mostafa-cafe.jpg" style="object-position:40% 30%"/>
-<img alt="مصطفى عند أهرامات الجيزة وقت الغروب" class="zoomable" loading="lazy" src="assets/mostafa-pyramids.jpg" style="object-position:30% 40%"/>
-<img alt="صورة مصطفى سيد درويش" class="zoomable" loading="lazy" src="assets/mostafa-sea.jpg" style="object-position:50% 30%"/>
-</div>
-<div class="about-t">
-<p class="eyebrow" data-r="">ما وراء الأرقام</p>
-<p class="quote" data-d="80" data-r="">"أتعامل مع كل ريال في ميزانيتك كأنه من مالي الخاص — <span>فما لا يُقاس، لا يمكن مضاعفته.</span>"</p>
-<p class="lead" data-d="160" data-r="">أنا مصطفى، خبير نمو من القاهرة. بدأت رحلتي في التجارة الإلكترونية عام 2014، ثم أدرت حملات لمطاعم ومتاجر ومطورين عقاريين ومستشفيات وتطبيقات وشركات أمريكية. تستهويني الحسابات المعقدة، والأرقام الواضحة، والفرق التي تطمح إلى النمو السريع.</p>
-<div class="cta-row" data-d="220" data-r=""><a class="btn btn-ac mag" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">تواصل معي على واتساب <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn btn-gh mag" href="https://www.linkedin.com/in/mostafa-1-done/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
-</div>
-</div></section>
-<!-- IN THE ROOM -->
-<section class="sec" id="room" style="padding-top:20px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">في قلب الحدث</p><h2 class="h2" data-d="80" data-r="">حيث تكشف المنصات<br/><em>ملامح المرحلة القادمة.</em></h2></div><p class="lead" data-d="160" data-r="">الشراء الإعلامي الناجح يبدأ قبل فتح الحساب الإعلاني: في لقاءات المنصات، والفعاليات المتخصصة، وطاولات الصفقات. أحرص على الحضور، ليعرف عملائي ما هو قادم قبل غيرهم.</p></div>
-<div class="room">
-<figure data-r="s"><img alt='مصطفى في فعالية TikTok for Business وMBC Media Solutions "Better Together" رمضان 2025' class="zoomable" loading="lazy" src="assets/event-tiktok.jpg" style="object-position:50% 20%"/><figcaption><small>شركاء المنصات</small><b>TikTok for Business × MBC Media Solutions</b><span>فعالية "Better Together" في رمضان 2025 — استراتيجية الموسم مباشرة من المنصة.</span></figcaption></figure>
-<figure data-d="80" data-r=""><img alt="مصطفى في مؤتمر أعمال" class="zoomable" loading="lazy" src="assets/event-conference.jpg" style="object-position:50% 25%"/><figcaption><small>مؤتمرات</small><b>مؤتمرات الأعمال واجتماعات العملاء</b></figcaption></figure>
-<figure data-d="160" data-r=""><img alt="مصطفى في فعالية تقنية وشركات ناشئة" class="zoomable" loading="lazy" src="assets/event-tech.jpg" style="object-position:50% 60%"/><figcaption><small>منظومة الأعمال</small><b>فعاليات التقنية والشركات الناشئة</b></figcaption></figure>
-<figure data-d="240" data-r=""><img alt="مصطفى في فعالية بالمتحف المصري الكبير" class="zoomable" loading="lazy" src="assets/event-gem.jpg" style="object-position:62% 55%"/><figcaption><small>فعاليات</small><b>المتحف المصري الكبير</b></figcaption></figure>
-<figure data-d="320" data-r=""><img alt="مصطفى في أمسية تواصل مهني" class="zoomable" loading="lazy" src="assets/event-meetup.jpg" style="object-position:45% 30%"/><figcaption><small>علاقات</small><b>لقاءات الشركاء والقطاع</b></figcaption></figure>
-</div>
-</div></section>
-<div aria-label="منصة إعلانية" class="mq-band mq-wrap"><div class="mq"><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span></div></div>
-<div class="bridge" data-r=""><i></i><p><span>الخبرات والمؤهلات</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>وهكذا أصنع النمو فعلياً</strong></p></div>
-<!-- FUNNEL -->
-<section class="sec" id="funnel" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">قمع النمو</p><h2 class="h2" data-d="80" data-r="">منظومة واحدة.<br/><em>تغطي رحلة العميل كاملة.</em></h2></div><p class="lead" data-d="160" data-r="">مرّر المؤشر أو اضغط على أي مرحلة لترى القنوات والأساليب ومؤشرات الأداء التي أعتمدها في كل خطوة من رحلة العميل.</p></div>
-<div class="fun">
-<div aria-label="مراحل القمع" class="fun-l" data-r="l" role="tablist">
-<button class="stage" role="tab" style="--w:100%"><span><b>الوعي</b><br/><small>الوصول للأشخاص المناسبين</small></span><span>01</span></button>
-<button class="stage" role="tab" style="--w:88%"><span><b>الاهتمام</b><br/><small>تحويل الانتباه إلى اهتمام</small></span><span>02</span></button>
-<button class="stage" role="tab" style="--w:76%"><span><b>التحويل</b><br/><small>إتمام البيع</small></span><span>03</span></button>
-<button class="stage" role="tab" style="--w:64%"><span><b>الاحتفاظ</b><br/><small>زيادة قيمة العميل</small></span><span>04</span></button>
-</div>
-<div aria-live="polite" class="card fun-r" data-r="r" role="tabpanel"></div>
-</div>
-</div></section>
-<div class="bridge" data-r=""><i></i><p><span>المنظومة نفسها</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>تنجح في كل سوق</strong></p></div>
-<!-- RANGE -->
-<section class="sec" id="range" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">نطاق العمل</p><h2 class="h2" data-d="80" data-r="">لا أعمل في مجال واحد.<br/><em>بل في كل الأسواق.</em></h2></div><p class="lead" data-d="160" data-r="">لكل قطاع قمع يناسبه. بنيت أقماع النمو لمتاجر إلكترونية، ومسارات مبيعات B2B، ومطاعم، وسلع استهلاكية، وتطبيقات، ومطورين عقاريين، وعيادات.</p></div>
-<div class="sectors"><div class="card sector" data-d="0" data-r=""><span class="n">01</span><b>التجارة الإلكترونية</b><p>حملات مبيعات وROAS، وإعلانات الكتالوج، وإعادة الاستهداف، وتحسين معدل التحويل.</p></div><div class="card sector" data-d="70" data-r=""><span class="n">02</span><b>B2B</b><p>بحث بنية شراء عالية، واستهداف على LinkedIn، ومسارات عملاء مؤهلين لفرق المبيعات.</p></div><div class="card sector" data-d="140" data-r=""><span class="n">03</span><b>المطاعم والأغذية</b><p>الطلبات والتوصيل وزيارات الفروع — بحملات يقودها الإبداع ويحكمها العائد.</p></div><div class="card sector" data-d="210" data-r=""><span class="n">04</span><b>السلع الاستهلاكية FMCG</b><p>حملات وصول وتكرار ترافق المنتج من الإعلان حتى رف المتجر.</p></div><div class="card sector" data-d="0" data-r=""><span class="n">05</span><b>تطبيقات الجوال</b><p>التثبيت والتفعيل وإعادة الاستهداف داخل التطبيق باستخدام Mixpanel وAppsFlyer.</p></div><div class="card sector" data-d="70" data-r=""><span class="n">06</span><b>العقارات</b><p>توليد عملاء محتملين للمشاريع وصالات العرض والمطورين.</p></div><div class="card sector" data-d="140" data-r=""><span class="n">07</span><b>SaaS والتقنية المالية</b><p>إطلاق المنتجات والتسجيلات والتفعيل للبرمجيات.</p></div><div class="card sector" data-d="210" data-r=""><span class="n">08</span><b>الرعاية الصحية</b><p>استقطاب المرضى والاحتفاظ بهم للمستشفيات والعيادات.</p></div></div>
-</div></section>
-<div class="bridge" data-r=""><i></i><p><span>كل الأسواق</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>وكل الميزانيات</strong></p></div>
-<!-- BUDGET -->
-<section class="sec" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">أي ميزانية</p><h2 class="h2" data-d="80" data-r="">من ميزانيات الاختبار<br/>حتى <em>$1.9M</em> من الإنفاق.</h2></div><p class="lead" data-d="160" data-r="">حرّك المؤشر لترى كيف تتغير استراتيجيتي مع نمو الميزانية.</p></div>
-<div class="card bud" data-r="s">
-<div class="bud-l">
-<span class="bud-tier">نمو</span>
-<label class="muted" for="bud" style="font-size:14px">الميزانية الإعلانية</label>
-<div class="bud-amt">$50K</div>
-<input aria-label="الميزانية الإعلانية" id="bud" max="100" min="0" type="range" value="58"/>
-<div class="bud-scale"><span>$500</span><span>$30K</span><span>$1.9M</span></div>
-<ul class="bud-plan"></ul>
-</div>
-<div class="bud-r">
-<p class="k">توزيع القنوات المعتاد</p>
-<div class="mix">
-<div class="mix-row"><span>Meta</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>Google</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>TikTok / Snap</span><span class="bar"><i></i></span><em>0%</em></div>
-<div class="mix-row"><span>LinkedIn / أخرى</span><span class="bar"><i></i></span><em>0%</em></div>
-</div>
-<p class="muted" style="font-size:13px;margin:6px 0 0">للتوضيح فقط — كل خطة تُبنى على بيانات العلامة التجارية نفسها.</p>
-</div>
-</div>
-</div></section>
-<div class="bridge" data-r=""><i></i><p><span>أي ميزانية</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>وكل المنصات</strong></p></div>
-<!-- PLATFORMS -->
-<section class="sec" id="platforms" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">أدواتي</p><h2 class="h2" data-d="80" data-r="">أكثر من 10 منصات إعلانية.<br/><em>أديرها جميعاً بنفسي.</em></h2></div></div>
-<div class="plats"><div class="card plat" data-d="0" data-r=""><b>Facebook Ads</b><small>عملاء محتملون، مبيعات، كتالوج</small></div><div class="card plat" data-d="60" data-r=""><b>Instagram Ads</b><small>Reels، قصص، تسوق</small></div><div class="card plat" data-d="120" data-r=""><b>Google Ads</b><small>بحث، PMax، YouTube</small></div><div class="card plat" data-d="180" data-r=""><b>Microsoft Ads</b><small>بحث Bing والجماهير</small></div><div class="card plat" data-d="240" data-r=""><b>LinkedIn Ads</b><small>صناع القرار في B2B</small></div><div class="card plat" data-d="0" data-r=""><b>X Ads</b><small>المحادثات والوصول</small></div><div class="card plat" data-d="60" data-r=""><b>TikTok Ads</b><small>أداء الفيديو القصير</small></div><div class="card plat" data-d="120" data-r=""><b>Snapchat Ads</b><small>الوصول لشباب الخليج</small></div><div class="card plat" data-d="180" data-r=""><b>Programmatic</b><small>إعلانات عرض وفيديو على نطاق واسع</small></div><div class="card plat" data-d="240" data-r=""><b>Apple Search Ads</b><small>تثبيت التطبيقات من البحث</small></div></div>
-<div class="app">
-<div class="ac" data-r=""><p class="k" style="color:var(--bg)">نمو تطبيقات الجوال</p><h4>إعادة استهداف مستخدمي التطبيق عبر Mixpanel وAppsFlyer</h4><p style="margin:0;line-height:1.6">جماهير مبنية على سلوك المستخدم، وقياس دقيق للإسناد، وحملات إعادة تفاعل تحوّل من ثبّت التطبيق إلى عميل نشط يدفع.</p></div>
-<div class="card" data-d="120" data-r=""><p class="k">التحليلات وتقنيات التسويق</p><div class="tags"><span>GA4</span><span>GTM</span><span>Mixpanel</span><span>AppsFlyer</span><span>Power BI</span><span>HubSpot</span><span>Salesforce</span><span>Zoho</span><span>Zapier</span><span>Unbounce</span><span>Meta CAPI</span><span>اختبارات A/B وتحسين التحويل</span></div></div>
-</div>
-</div></section>
-<div class="bridge" data-r=""><i></i><p><span>أدواتي</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>والنتائج التي صنعتها</strong></p></div>
+<div class="bridge" data-r=""><i></i><p><span>المنظومة</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>والنتائج التي حققتها</strong></p></div>
 <!-- CASE STUDIES -->
-<section class="sec" id="work" style="padding-top:60px"><div class="wrap">
+<section class="sec lt" id="work" style="padding-top:60px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r="">دراسات حالة مختارة</p><h2 class="h2" data-d="80" data-r="">نتائج مثبتة، <em>لا وعود.</em></h2></div><p class="lead" data-d="160" data-r="">عيّنة مختارة من بين أكثر من 250 علامة تجارية: خمس شركات وخمسة تحديات مختلفة في التجارة الإلكترونية والأغذية والأزياء وتوليد العملاء والرعاية الصحية. اختر حالة، وتصفّح تفاصيلها، واضغط على أي صورة لتكبيرها.</p></div>
 <div class="csum" data-r=""><div><b>250+</b><small>علامة تجارية · نعرض منها 5</small></div><div><b>~16×</b><small>أفضل عائد على الإنفاق الإعلاني</small></div><div><b>×17.6</b><small>أسرع نمو في المبيعات خلال 90 يوماً</small></div><div><b>مصر · السعودية</b><small>Meta وGoogle وTikTok</small></div></div>
 <div class="cs" data-r="">
@@ -927,11 +927,136 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 </div></section>
 <div class="bridge" data-r=""><i></i><p><span>نتائج كهذه</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>صنعت ثقة كبرى المؤسسات</strong></p></div>
 <!-- BIG PLAYERS -->
-<section class="sec" id="clients" style="padding-top:60px"><div class="wrap">
+<section class="sec lt" id="clients" style="padding-top:60px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r="">ثقة كبرى المؤسسات</p><h2 class="h2" data-d="80" data-r="">مجموعات مستشفيات وجامعات<br/><em>وروّاد في قطاعاتهم.</em></h2></div><p class="lead" data-d="160" data-r="">مؤسسات إقليمية ودولية ائتمنتني على نموها في الرعاية الصحية والتعليم والصناعة والتجزئة والضيافة والخدمات المالية الأمريكية.</p></div>
 <div class="bigs"><div class="big tilt" data-d="0" data-r=""><div class="lg"><img alt="مستشفى السعودي الألماني" loading="lazy" src="assets/logo-m-sgh.png"/></div><div class="cap"><b>مستشفى السعودي الألماني</b><small>الرعاية الصحية · السعودية</small></div></div><div class="big tilt" data-d="70" data-r=""><div class="lg"><img alt="الجامعة العربية المفتوحة" loading="lazy" src="assets/logo-s21-03.png"/></div><div class="cap"><b>الجامعة العربية المفتوحة</b><small>التعليم · الشرق الأوسط</small></div></div><div class="big tilt" data-d="140" data-r=""><div class="lg"><img alt="المصاعد العامة" loading="lazy" src="assets/logo-s20-09.png"/></div><div class="cap"><b>المصاعد العامة</b><small>صناعة · مصر</small></div></div><div class="big tilt" data-d="210" data-r=""><div class="lg"><img alt="Hölzer" loading="lazy" src="assets/logo-s20-03.png"/></div><div class="cap"><b>Hölzer</b><small>تجزئة · مصر</small></div></div><div class="big tilt" data-d="0" data-r=""><div class="lg"><img alt="The Guard Hotel" loading="lazy" src="assets/logo-s23-03.png"/></div><div class="cap"><b>The Guard Hotel</b><small>ضيافة · مصر</small></div></div><div class="big tilt" data-d="70" data-r=""><div class="lg"><img alt="Experts Care Medical Group" loading="lazy" src="assets/logo-s23-04.png"/></div><div class="cap"><b>Experts Care Medical Group</b><small>مجموعة طبية · السعودية</small></div></div><div class="big tilt" data-d="140" data-r=""><div class="lg"><img alt="Integrity Home Mortgage" loading="lazy" src="assets/logo-m-integrity.png"/></div><div class="cap"><b>Integrity Home Mortgage</b><small>تمويل عقاري · أمريكا</small></div></div><a class="big more tilt" data-d="210" data-r="" href="#us"><b>250+</b><span style="font-weight:600">علامة تجارية في مصر والخليج وأمريكا ←</span></a></div>
 </div></section>
-<div class="bridge" data-r=""><i></i><p><span>من مصر والخليج</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>إلى الولايات المتحدة</strong></p></div>
+<!-- LOGO WALL -->
+<section aria-label="شعارات العملاء" class="sec lt" style="padding-top:20px">
+<div class="wrap"><div class="sec-head" style="margin-bottom:28px"><div><h2 class="h2" data-r="" style="font-size:clamp(30px,3.6vw,42px)">وغيرها الكثير <em>من العلامات التي نمت معي.</em></h2></div><p class="muted" data-r="">مطاعم · تجزئة · عقارات · تجارة إلكترونية · رعاية صحية · سفر</p></div></div>
+<div class="lw">
+<div class="lw-wrap"><div class="mq"><div class="tile"><img alt="Fit Fuel by Diet Delight" decoding="async" loading="lazy" src="assets/logo-fitfuel.png"/></div><div class="tile"><img alt="Nayrah" decoding="async" loading="lazy" src="assets/logo-nayrah.png"/></div><div class="tile"><img alt="What The Truck" decoding="async" loading="lazy" src="assets/logo-s19-01.png"/></div><div class="tile"><img alt="Steakery" decoding="async" loading="lazy" src="assets/logo-m-steakery.png"/></div><div class="tile"><img alt="CAI" decoding="async" loading="lazy" src="assets/logo-s19-03.png"/></div><div class="tile"><img alt="Little Ocean" decoding="async" loading="lazy" src="assets/logo-s19-04.png"/></div><div class="tile"><img alt="Brisk &amp; Brew" decoding="async" loading="lazy" src="assets/logo-s19-05.png"/></div><div class="tile"><img alt="B7rini Shop" decoding="async" loading="lazy" src="assets/logo-s19-06.png"/></div><div class="tile"><img alt="COC Cairo Optical Center" decoding="async" loading="lazy" src="assets/logo-s20-02.png"/></div><div class="tile"><img alt="German Pest Control Co." decoding="async" loading="lazy" src="assets/logo-s20-01.png"/></div><div class="tile"><img alt="Terra" decoding="async" loading="lazy" src="assets/logo-s20-04.png"/></div><div class="tile"><img alt="Doctor Textile" decoding="async" loading="lazy" src="assets/logo-s20-05.png"/></div><div class="tile"><img alt="Noor Al Qamar" decoding="async" loading="lazy" src="assets/logo-s20-06.png"/></div><div class="tile"><img alt="Balkan's" decoding="async" loading="lazy" src="assets/logo-s20-07.png"/></div><div class="tile"><img alt="Imola" decoding="async" loading="lazy" src="assets/logo-s20-08.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-fitfuel.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-nayrah.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-m-steakery.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-03.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-07.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-08.png"/></div></div></div>
+<div class="lw-wrap"><div class="mq rev"><div class="tile"><img alt="Rose" decoding="async" loading="lazy" src="assets/logo-s21-01.png"/></div><div class="tile"><img alt="Mutahed" decoding="async" loading="lazy" src="assets/logo-s21-02.png"/></div><div class="tile"><img alt="Misr Modern Clinics" decoding="async" loading="lazy" src="assets/logo-s21-05.png"/></div><div class="tile"><img alt="Techno Build Group" decoding="async" loading="lazy" src="assets/logo-s21-06.png"/></div><div class="tile"><img alt="Ghina" decoding="async" loading="lazy" src="assets/logo-s21-07.png"/></div><div class="tile"><img alt="Spider Bees" decoding="async" loading="lazy" src="assets/logo-s21-12.png"/></div><div class="tile"><img alt="Al Sokkaria" decoding="async" loading="lazy" src="assets/logo-s21-11.png"/></div><div class="tile"><img alt="Shop Design" decoding="async" loading="lazy" src="assets/logo-s22-02.png"/></div><div class="tile"><img alt="Experts Opticals" decoding="async" loading="lazy" src="assets/logo-s22-03.png"/></div><div class="tile"><img alt="Al Share3 Al Sharqi" decoding="async" loading="lazy" src="assets/logo-s22-04.png"/></div><div class="tile"><img alt="Tickets &amp; Hotels" decoding="async" loading="lazy" src="assets/logo-s22-05.png"/></div><div class="tile"><img alt="El-Khayyat Red Bricks" decoding="async" loading="lazy" src="assets/logo-s22-06.png"/></div><div class="tile"><img alt="Meras" decoding="async" loading="lazy" src="assets/logo-s22-08.png"/></div><div class="tile"><img alt="Hicare" decoding="async" loading="lazy" src="assets/logo-s22-10.png"/></div><div class="tile"><img alt="eSehha" decoding="async" loading="lazy" src="assets/logo-s23-01.png"/></div><div class="tile"><img alt="Ramla Terraza" decoding="async" loading="lazy" src="assets/logo-s23-02.png"/></div><div class="tile"><img alt="Anaqa" decoding="async" loading="lazy" src="assets/logo-s23-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-07.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-12.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-11.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-03.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-08.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-10.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-06.png"/></div></div></div>
+</div>
+</section>
+<div class="bridge" data-r=""><i></i><p><span>وراء هذه النتائج</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>أكثر من 11 عاماً من الخبرة</strong></p></div>
+<!-- EXPERIENCE -->
+<section class="sec" id="experience" style="padding-top:60px"><div class="wrap xp">
+<div class="xp-l">
+<p class="eyebrow" data-r="">الخبرة</p>
+<h2 class="h2" data-d="80" data-r="">11 عاماً.<br/><em>في الوكالات والشركات وقطاع SaaS.</em></h2>
+<p class="lead" data-d="160" data-r="">أدير ميزانيات في أسواق متعددة وأعمل بنفسي داخل الحسابات الإعلانية — من التخطيط والاستهداف إلى الإبداع وصفحات الهبوط والتتبع — ليتحول كل ريال تنفقه إلى إيراد حقيقي.</p>
+<div class="mini">
+<div class="card" data-d="200" data-r=""><b>ميزانية 1.9 مليون دولار</b><span>أعلى إنفاق إعلاني خططت له وأدرته وحسّنته</span></div>
+<div class="card" data-d="280" data-r=""><b>4 أسواق</b><span>مصر والسعودية والإمارات والولايات المتحدة</span></div>
+<div class="card" data-d="360" data-r=""><b>تقارير للإدارة العليا</b><span>مراجعات أعمال شهرية وربع سنوية</span></div>
+</div>
+</div>
+<div class="xp-r"><span class="tl-line"></span><span class="tl-fill"></span>
+<ol class="tl"><li data-d="0" data-r=""><span class="yr">2026 – الآن</span><h4>أخصائي تسويق أول — العلامة التجارية والأداء</h4><p>Idea Network · وكالة متعددة القطاعات · السعودية والإمارات ومصر</p></li><li data-d="60" data-r=""><span class="yr">2021 – 2025</span><h4>أخصائي تسويق أول — النمو والعلامة التجارية</h4><p>مجموعة السعودي الألماني الصحية · إقليمي، 3 أسواق · أفضل مسوّق 2025</p></li><li data-d="120" data-r=""><span class="yr">2019 – 2021</span><h4>أخصائي تسويق رقمي</h4><p>Sahl Solutions · SaaS وتقنية مالية وتطبيقات</p></li><li data-d="180" data-r=""><span class="yr">2019</span><h4>أخصائي تسويق رقمي</h4><p>Magnet Marketing Agency · تجزئة وضيافة</p></li><li data-d="240" data-r=""><span class="yr">2018 – 2019</span><h4>أخصائي تسويق رقمي وقائد التحليلات</h4><p>Advertizer · وكالة</p></li><li data-d="300" data-r=""><span class="yr">2017 – 2018</span><h4>أخصائي تجارة إلكترونية</h4><p>o2morny.com · تجارة إلكترونية</p></li><li data-d="360" data-r=""><span class="yr">2014 – 2017</span><h4>أدوار في التسويق الرقمي</h4><p>حملات ومحتوى وأداء</p></li></ol>
+</div>
+</div></section>
+<!-- MBA & AWARDS -->
+<section class="sec lt" id="mba" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">ماجستير · جوائز · شهادات</p><h2 class="h2" data-d="80" data-r="">خبرة ميدانية يومية.<br/><em>ورؤية استراتيجية أكاديمية.</em></h2></div></div>
+<article class="mba" data-r="s">
+<div class="mba-t">
+<span style="font-size:13px;font-weight:700;letter-spacing:.16em">مرشح لماجستير إدارة الأعمال · دفعة 2027</span>
+<h3>ماجستير إدارة الأعمال في إدارة التسويق</h3>
+<p>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AASTMT). التخرج المتوقع في أبريل 2027 — ليجتمع لدي 11 عاماً من إدارة الحملات مع تأهيل أكاديمي في الاستراتيجية والبحث والقيادة.</p>
+<div class="tags"><span>إدارة التسويق المتقدمة</span><span>بحوث التسويق</span><span>استراتيجية SOSTAC</span><span>التوسع في الأسواق العالمية</span></div>
+<p class="mfoot">بكالوريوس التجارة · جامعة القاهرة · 2017</p>
+</div>
+<div class="mba-p">
+<img alt="مصطفى يعرض استراتيجية توسع في الأسواق العالمية" class="zoomable" loading="lazy" src="assets/mba-presenting.jpg"/>
+<img alt="مصطفى مع أستاذ في الأكاديمية العربية" class="zoomable" loading="lazy" src="assets/mba-professor.jpg" style="object-position:50% 25%"/>
+<img alt="مصطفى مع زملاء دفعة الماجستير" class="zoomable" loading="lazy" src="assets/mba-cohort.jpg"/>
+</div>
+</article>
+<div class="awards">
+<figure class="card award" data-r="" style="margin:0"><div class="ph"><img alt="مصطفى يحمل جائزة أفضل مسوّق" class="zoomable" loading="lazy" src="assets/award-trophy.jpg" style="object-position:50% 20%"/></div><figcaption><span class="k">جائزة · 2025</span><b>أفضل مسوّق</b><span class="muted" style="font-size:14px">مستشفيات السعودي الألماني، الشرق الأوسط</span></figcaption></figure>
+<figure class="card award" data-d="100" data-r="" style="margin:0"><div class="ph"><img alt="مصطفى يتسلم شهادة تقدير" class="zoomable" loading="lazy" src="assets/award-ceremony.jpg"/></div><figcaption><span class="k">تكريم</span><b>تكريم من الإدارة</b><span class="muted" style="font-size:14px">شهادة تقدير للأداء والأثر في النمو</span></figcaption></figure>
+<div class="card certs" data-d="200" data-r=""><span class="k">شهادات وإنجازات</span><ul><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>شراء إعلامي متقدم · Pearson · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>الشراء الإعلامي · Pearson · 2021</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>تحليل البيانات · ITIDA · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>Power BI · Pro Marquee · 2022</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>كتابة إعلانية للاستجابة المباشرة · Digital Marketer · 2017</span></li><li><svg aria-hidden="true" fill="none" height="18" stroke-width="2.2" viewbox="0 0 24 24" width="18"><path d="M5 12l5 5L20 7"></path></svg><span>فائز · Money Experts Club · 2017</span></li></ul></div>
+</div>
+</div></section>
+<!-- ABOUT -->
+<section class="sec" id="about" style="padding-top:60px"><div class="wrap about">
+<div class="about-p" data-r="l">
+<img alt="مصطفى سيد درويش" class="zoomable" loading="lazy" src="assets/mostafa-cafe.jpg" style="object-position:40% 30%"/>
+<img alt="مصطفى عند أهرامات الجيزة وقت الغروب" class="zoomable" loading="lazy" src="assets/mostafa-pyramids.jpg" style="object-position:30% 40%"/>
+<img alt="صورة مصطفى سيد درويش" class="zoomable" loading="lazy" src="assets/mostafa-sea.jpg" style="object-position:50% 30%"/>
+</div>
+<div class="about-t">
+<p class="eyebrow" data-r="">ما وراء الأرقام</p>
+<p class="quote" data-d="80" data-r="">"أتعامل مع كل ريال في ميزانيتك كأنه من مالي الخاص — <span>فما لا يُقاس، لا يمكن مضاعفته.</span>"</p>
+<p class="lead" data-d="160" data-r="">أنا مصطفى، خبير نمو من القاهرة. بدأت رحلتي في التجارة الإلكترونية عام 2014، ثم أدرت حملات لمطاعم ومتاجر ومطورين عقاريين ومستشفيات وتطبيقات وشركات أمريكية. تستهويني الحسابات المعقدة، والأرقام الواضحة، والفرق التي تطمح إلى النمو السريع.</p>
+<div class="cta-row" data-d="220" data-r=""><a class="btn btn-ac mag" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">تواصل معي على واتساب <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn btn-gh mag" href="https://www.linkedin.com/in/mostafa-1-done/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
+</div>
+</div></section>
+<!-- IN THE ROOM -->
+<section class="sec" id="room" style="padding-top:20px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">في قلب الحدث</p><h2 class="h2" data-d="80" data-r="">حيث تكشف المنصات<br/><em>ملامح المرحلة القادمة.</em></h2></div><p class="lead" data-d="160" data-r="">الشراء الإعلامي الناجح يبدأ قبل فتح الحساب الإعلاني: في لقاءات المنصات، والفعاليات المتخصصة، وطاولات الصفقات. أحرص على الحضور، ليعرف عملائي ما هو قادم قبل غيرهم.</p></div>
+<div class="room">
+<figure data-r="s"><img alt='مصطفى في فعالية TikTok for Business وMBC Media Solutions "Better Together" رمضان 2025' class="zoomable" loading="lazy" src="assets/event-tiktok.jpg" style="object-position:50% 20%"/><figcaption><small>شركاء المنصات</small><b>TikTok for Business × MBC Media Solutions</b><span>فعالية "Better Together" في رمضان 2025 — استراتيجية الموسم مباشرة من المنصة.</span></figcaption></figure>
+<figure data-d="80" data-r=""><img alt="مصطفى في مؤتمر أعمال" class="zoomable" loading="lazy" src="assets/event-conference.jpg" style="object-position:50% 25%"/><figcaption><small>مؤتمرات</small><b>مؤتمرات الأعمال واجتماعات العملاء</b></figcaption></figure>
+<figure data-d="160" data-r=""><img alt="مصطفى في فعالية تقنية وشركات ناشئة" class="zoomable" loading="lazy" src="assets/event-tech.jpg" style="object-position:50% 60%"/><figcaption><small>منظومة الأعمال</small><b>فعاليات التقنية والشركات الناشئة</b></figcaption></figure>
+<figure data-d="240" data-r=""><img alt="مصطفى في فعالية بالمتحف المصري الكبير" class="zoomable" loading="lazy" src="assets/event-gem.jpg" style="object-position:62% 55%"/><figcaption><small>فعاليات</small><b>المتحف المصري الكبير</b></figcaption></figure>
+<figure data-d="320" data-r=""><img alt="مصطفى في أمسية تواصل مهني" class="zoomable" loading="lazy" src="assets/event-meetup.jpg" style="object-position:45% 30%"/><figcaption><small>علاقات</small><b>لقاءات الشركاء والقطاع</b></figcaption></figure>
+</div>
+</div></section>
+<div aria-label="منصة إعلانية" class="mq-band mq-wrap"><div class="mq"><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span><span>META ADS ✦</span><span>GOOGLE ADS ✦</span><span>TIKTOK ADS ✦</span><span>SNAPCHAT ADS ✦</span><span>LINKEDIN ADS ✦</span><span>MICROSOFT ADS ✦</span><span>X ADS ✦</span><span>PROGRAMMATIC ✦</span><span>APPLE SEARCH ADS ✦</span></div></div>
+<div class="bridge" data-r=""><i></i><p><span>الخبرات والمؤهلات</span><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><strong>وهكذا أصنع النمو</strong></p></div>
+<!-- FUNNEL -->
+<section class="sec" id="funnel" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">قمع النمو</p><h2 class="h2" data-d="80" data-r="">منظومة واحدة.<br/><em>تغطي رحلة العميل كاملة.</em></h2></div><p class="lead" data-d="160" data-r="">مرّر المؤشر أو اضغط على أي مرحلة لترى القنوات والأساليب ومؤشرات الأداء التي أعتمدها في كل خطوة من رحلة العميل.</p></div>
+<div class="fun">
+<div aria-label="مراحل القمع" class="fun-l" data-r="l" role="tablist">
+<button class="stage" role="tab" style="--w:100%"><span><b>الوعي</b><br/><small>الوصول للأشخاص المناسبين</small></span><span>01</span></button>
+<button class="stage" role="tab" style="--w:88%"><span><b>الاهتمام</b><br/><small>تحويل الانتباه إلى اهتمام</small></span><span>02</span></button>
+<button class="stage" role="tab" style="--w:76%"><span><b>التحويل</b><br/><small>إتمام البيع</small></span><span>03</span></button>
+<button class="stage" role="tab" style="--w:64%"><span><b>الاحتفاظ</b><br/><small>زيادة قيمة العميل</small></span><span>04</span></button>
+</div>
+<div aria-live="polite" class="card fun-r" data-r="r" role="tabpanel"></div>
+</div>
+</div></section>
+<!-- RANGE -->
+<section class="sec lt" id="range" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">نطاق العمل</p><h2 class="h2" data-d="80" data-r="">لا أعمل في مجال واحد.<br/><em>بل في كل الأسواق.</em></h2></div><p class="lead" data-d="160" data-r="">لكل قطاع قمع يناسبه. بنيت أقماع النمو لمتاجر إلكترونية، ومسارات مبيعات B2B، ومطاعم، وسلع استهلاكية، وتطبيقات، ومطورين عقاريين، وعيادات.</p></div>
+<div class="sectors"><div class="card sector" data-d="0" data-r=""><span class="n">01</span><b>التجارة الإلكترونية</b><p>حملات مبيعات وROAS، وإعلانات الكتالوج، وإعادة الاستهداف، وتحسين معدل التحويل.</p></div><div class="card sector" data-d="70" data-r=""><span class="n">02</span><b>B2B</b><p>بحث بنية شراء عالية، واستهداف على LinkedIn، ومسارات عملاء مؤهلين لفرق المبيعات.</p></div><div class="card sector" data-d="140" data-r=""><span class="n">03</span><b>المطاعم والأغذية</b><p>الطلبات والتوصيل وزيارات الفروع — بحملات يقودها الإبداع ويحكمها العائد.</p></div><div class="card sector" data-d="210" data-r=""><span class="n">04</span><b>السلع الاستهلاكية FMCG</b><p>حملات وصول وتكرار ترافق المنتج من الإعلان حتى رف المتجر.</p></div><div class="card sector" data-d="0" data-r=""><span class="n">05</span><b>تطبيقات الجوال</b><p>التثبيت والتفعيل وإعادة الاستهداف داخل التطبيق باستخدام Mixpanel وAppsFlyer.</p></div><div class="card sector" data-d="70" data-r=""><span class="n">06</span><b>العقارات</b><p>توليد عملاء محتملين للمشاريع وصالات العرض والمطورين.</p></div><div class="card sector" data-d="140" data-r=""><span class="n">07</span><b>SaaS والتقنية المالية</b><p>إطلاق المنتجات والتسجيلات والتفعيل للبرمجيات.</p></div><div class="card sector" data-d="210" data-r=""><span class="n">08</span><b>الرعاية الصحية</b><p>استقطاب المرضى والاحتفاظ بهم للمستشفيات والعيادات.</p></div></div>
+</div></section>
+<!-- BUDGET -->
+<section class="sec lt" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">أي ميزانية</p><h2 class="h2" data-d="80" data-r="">من ميزانيات الاختبار<br/>حتى <em>$1.9M</em> من الإنفاق.</h2></div><p class="lead" data-d="160" data-r="">حرّك المؤشر لترى كيف تتغير استراتيجيتي مع نمو الميزانية.</p></div>
+<div class="card bud" data-r="s">
+<div class="bud-l">
+<span class="bud-tier">نمو</span>
+<label class="muted" for="bud" style="font-size:14px">الميزانية الإعلانية</label>
+<div class="bud-amt">$50K</div>
+<input aria-label="الميزانية الإعلانية" id="bud" max="100" min="0" type="range" value="58"/>
+<div class="bud-scale"><span>$500</span><span>$30K</span><span>$1.9M</span></div>
+<ul class="bud-plan"></ul>
+</div>
+<div class="bud-r">
+<p class="k">توزيع القنوات المعتاد</p>
+<div class="mix">
+<div class="mix-row"><span>Meta</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>Google</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>TikTok / Snap</span><span class="bar"><i></i></span><em>0%</em></div>
+<div class="mix-row"><span>LinkedIn / أخرى</span><span class="bar"><i></i></span><em>0%</em></div>
+</div>
+<p class="muted" style="font-size:13px;margin:6px 0 0">للتوضيح فقط — كل خطة تُبنى على بيانات العلامة التجارية نفسها.</p>
+</div>
+</div>
+</div></section>
+<!-- PLATFORMS -->
+<section class="sec" id="platforms" style="padding-top:60px"><div class="wrap">
+<div class="sec-head"><div><p class="eyebrow" data-r="">أدواتي</p><h2 class="h2" data-d="80" data-r="">أكثر من 10 منصات إعلانية.<br/><em>أديرها جميعاً بنفسي.</em></h2></div></div>
+<div class="plats"><div class="card plat" data-d="0" data-r=""><b>Facebook Ads</b><small>عملاء محتملون، مبيعات، كتالوج</small></div><div class="card plat" data-d="60" data-r=""><b>Instagram Ads</b><small>Reels، قصص، تسوق</small></div><div class="card plat" data-d="120" data-r=""><b>Google Ads</b><small>بحث، PMax، YouTube</small></div><div class="card plat" data-d="180" data-r=""><b>Microsoft Ads</b><small>بحث Bing والجماهير</small></div><div class="card plat" data-d="240" data-r=""><b>LinkedIn Ads</b><small>صناع القرار في B2B</small></div><div class="card plat" data-d="0" data-r=""><b>X Ads</b><small>المحادثات والوصول</small></div><div class="card plat" data-d="60" data-r=""><b>TikTok Ads</b><small>أداء الفيديو القصير</small></div><div class="card plat" data-d="120" data-r=""><b>Snapchat Ads</b><small>الوصول لشباب الخليج</small></div><div class="card plat" data-d="180" data-r=""><b>Programmatic</b><small>إعلانات عرض وفيديو على نطاق واسع</small></div><div class="card plat" data-d="240" data-r=""><b>Apple Search Ads</b><small>تثبيت التطبيقات من البحث</small></div></div>
+<div class="app">
+<div class="ac" data-r=""><p class="k" style="color:var(--bg)">نمو تطبيقات الجوال</p><h4>إعادة استهداف مستخدمي التطبيق عبر Mixpanel وAppsFlyer</h4><p style="margin:0;line-height:1.6">جماهير مبنية على سلوك المستخدم، وقياس دقيق للإسناد، وحملات إعادة تفاعل تحوّل من ثبّت التطبيق إلى عميل نشط يدفع.</p></div>
+<div class="card" data-d="120" data-r=""><p class="k">التحليلات وتقنيات التسويق</p><div class="tags"><span>GA4</span><span>GTM</span><span>Mixpanel</span><span>AppsFlyer</span><span>Power BI</span><span>HubSpot</span><span>Salesforce</span><span>Zoho</span><span>Zapier</span><span>Unbounce</span><span>Meta CAPI</span><span>اختبارات A/B وتحسين التحويل</span></div></div>
+</div>
+</div></section>
 <!-- US -->
 <section class="sec" id="us" style="padding-top:60px"><div class="wrap">
 <div class="card us" data-r="s">
@@ -945,33 +1070,15 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 <div class="us-l"><div class="tile"><img alt="Integrity Home Mortgage" decoding="async" loading="lazy" src="assets/logo-m-integrity.png"/></div><div class="tile"><img alt="Lufkin Mobile" decoding="async" loading="lazy" src="assets/logo-m-lufkin.png"/></div><div class="tile"><img alt="Oxford Landings" decoding="async" loading="lazy" src="assets/logo-m-oxford.png"/></div><div class="tile"><img alt="Athens Family Vision" decoding="async" loading="lazy" src="assets/logo-m-athens.png"/></div><div class="tile"><img alt="Eclipse Car Wash" decoding="async" loading="lazy" src="assets/logo-m-eclipse.png"/></div></div>
 </div>
 </div></section>
-<!-- LOGO WALL -->
-<section aria-label="شعارات العملاء" class="sec" style="padding-top:20px">
-<div class="wrap"><div class="sec-head" style="margin-bottom:28px"><div><h2 class="h2" data-r="" style="font-size:clamp(30px,3.6vw,42px)">وغيرها الكثير <em>من العلامات التي نمت معي.</em></h2></div><p class="muted" data-r="">مطاعم · تجزئة · عقارات · تجارة إلكترونية · رعاية صحية · سفر</p></div></div>
-<div class="lw">
-<div class="lw-wrap"><div class="mq"><div class="tile"><img alt="Fit Fuel by Diet Delight" decoding="async" loading="lazy" src="assets/logo-fitfuel.png"/></div><div class="tile"><img alt="Nayrah" decoding="async" loading="lazy" src="assets/logo-nayrah.png"/></div><div class="tile"><img alt="What The Truck" decoding="async" loading="lazy" src="assets/logo-s19-01.png"/></div><div class="tile"><img alt="Steakery" decoding="async" loading="lazy" src="assets/logo-m-steakery.png"/></div><div class="tile"><img alt="CAI" decoding="async" loading="lazy" src="assets/logo-s19-03.png"/></div><div class="tile"><img alt="Little Ocean" decoding="async" loading="lazy" src="assets/logo-s19-04.png"/></div><div class="tile"><img alt="Brisk &amp; Brew" decoding="async" loading="lazy" src="assets/logo-s19-05.png"/></div><div class="tile"><img alt="B7rini Shop" decoding="async" loading="lazy" src="assets/logo-s19-06.png"/></div><div class="tile"><img alt="COC Cairo Optical Center" decoding="async" loading="lazy" src="assets/logo-s20-02.png"/></div><div class="tile"><img alt="German Pest Control Co." decoding="async" loading="lazy" src="assets/logo-s20-01.png"/></div><div class="tile"><img alt="Terra" decoding="async" loading="lazy" src="assets/logo-s20-04.png"/></div><div class="tile"><img alt="Doctor Textile" decoding="async" loading="lazy" src="assets/logo-s20-05.png"/></div><div class="tile"><img alt="Noor Al Qamar" decoding="async" loading="lazy" src="assets/logo-s20-06.png"/></div><div class="tile"><img alt="Balkan's" decoding="async" loading="lazy" src="assets/logo-s20-07.png"/></div><div class="tile"><img alt="Imola" decoding="async" loading="lazy" src="assets/logo-s20-08.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-fitfuel.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-nayrah.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-m-steakery.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-03.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s19-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-07.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s20-08.png"/></div></div></div>
-<div class="lw-wrap"><div class="mq rev"><div class="tile"><img alt="Rose" decoding="async" loading="lazy" src="assets/logo-s21-01.png"/></div><div class="tile"><img alt="Mutahed" decoding="async" loading="lazy" src="assets/logo-s21-02.png"/></div><div class="tile"><img alt="Misr Modern Clinics" decoding="async" loading="lazy" src="assets/logo-s21-05.png"/></div><div class="tile"><img alt="Techno Build Group" decoding="async" loading="lazy" src="assets/logo-s21-06.png"/></div><div class="tile"><img alt="Ghina" decoding="async" loading="lazy" src="assets/logo-s21-07.png"/></div><div class="tile"><img alt="Spider Bees" decoding="async" loading="lazy" src="assets/logo-s21-12.png"/></div><div class="tile"><img alt="Al Sokkaria" decoding="async" loading="lazy" src="assets/logo-s21-11.png"/></div><div class="tile"><img alt="Shop Design" decoding="async" loading="lazy" src="assets/logo-s22-02.png"/></div><div class="tile"><img alt="Experts Opticals" decoding="async" loading="lazy" src="assets/logo-s22-03.png"/></div><div class="tile"><img alt="Al Share3 Al Sharqi" decoding="async" loading="lazy" src="assets/logo-s22-04.png"/></div><div class="tile"><img alt="Tickets &amp; Hotels" decoding="async" loading="lazy" src="assets/logo-s22-05.png"/></div><div class="tile"><img alt="El-Khayyat Red Bricks" decoding="async" loading="lazy" src="assets/logo-s22-06.png"/></div><div class="tile"><img alt="Meras" decoding="async" loading="lazy" src="assets/logo-s22-08.png"/></div><div class="tile"><img alt="Hicare" decoding="async" loading="lazy" src="assets/logo-s22-10.png"/></div><div class="tile"><img alt="eSehha" decoding="async" loading="lazy" src="assets/logo-s23-01.png"/></div><div class="tile"><img alt="Ramla Terraza" decoding="async" loading="lazy" src="assets/logo-s23-02.png"/></div><div class="tile"><img alt="Anaqa" decoding="async" loading="lazy" src="assets/logo-s23-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-07.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-12.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s21-11.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-03.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-04.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-05.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-06.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-08.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s22-10.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-01.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-02.png"/></div><div class="tile"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/logo-s23-06.png"/></div></div></div>
-</div>
-</section>
-<!-- PROCESS -->
-<section class="sec" id="process" style="padding-top:60px"><div class="wrap">
-<div class="sec-head"><div><p class="eyebrow" data-r="">كيف سنعمل معاً</p><h2 class="h2" data-d="80" data-r="">من المكالمة الأولى<br/><em>إلى مرحلة التوسع.</em></h2></div><p class="lead" data-d="160" data-r="">خطوات بسيطة وشفافة، مبنية على أرقامك أنت.</p></div>
-<div class="steps">
-<div class="card step" data-r=""><span class="n">01</span><small>الأسبوع 0</small><b>مكالمة تعارف</b><p>30 دقيقة نناقش فيها أهدافك وأرقامك وسوقك وما جرّبته سابقاً.</p></div>
-<div class="card step" data-d="80" data-r=""><span class="n">02</span><small>الأسبوع 1</small><b>التدقيق والفرص</b><p>أراجع حساباتك والتتبع ومسار العميل، وأحدد لك أين تكمن فرص النمو.</p></div>
-<div class="card step" data-d="160" data-r=""><span class="n">03</span><small>الأسبوع 2</small><b>الاستراتيجية والخطة الإعلامية</b><p>القنوات، وتوزيع الميزانية، والزوايا الإبداعية، ومؤشرات الأداء التي نُحاسَب عليها.</p></div>
-<div class="card step" data-d="240" data-r=""><span class="n">04</span><small>مستمر</small><b>إطلاق، فاختبار، فتوسّع</b><p>تحسين أسبوعي، وتقارير شهرية، ومضاعفة ما ينجح.</p></div>
-</div>
-</div></section>
 <!-- FAQ -->
-<section class="sec" id="faq" style="padding-top:20px"><div class="wrap">
+<section class="sec lt" id="faq" style="padding-top:20px"><div class="wrap">
 <div class="sec-head"><div><p class="eyebrow" data-r="">الأسئلة الشائعة</p><h2 class="h2" data-d="80" data-r="">لديك أسئلة<br/><em>قبل أن نبدأ؟</em></h2></div></div>
 <div class="faq" data-r="">
 <details open=""><summary>هل تعمل مع شركات خارج مصر؟</summary><p>نعم. أدرت حملات لعملاء في مصر والسعودية والإمارات والولايات المتحدة، وأعمل عن بُعد مع فرق من أي مكان.</p></details>
 <details><summary>ما الميزانية التي أحتاجها للبدء؟</summary><p>لا يوجد حد أدنى ثابت. أدرت ميزانيات تبدأ من اختبارات محدودة وتصل إلى 1.9 مليون دولار، ونحدد حجم الخطة المناسب لأهدافك وهوامش ربحك في المكالمة الأولى.</p></details>
 <details><summary>ما المنصات التي تديرها؟</summary><p>Meta (فيسبوك وإنستغرام) وGoogle وTikTok وSnapchat وLinkedIn وMicrosoft وX والإعلانات البرمجية وApple Search Ads — بالإضافة إلى GA4 وGTM وMixpanel وAppsFlyer للتتبع.</p></details>
-<details><summary>هل يمكنك العمل مع فريقي الداخلي أو وكالتي؟</summary><p>نعم. يمكنني قيادة الفريق، أو العمل معه بصفة استشارية، أو تدقيق أداء وكالتك الحالية وتوجيهها — أيّها يحقق النتائج أسرع.</p></details>
-<details><summary>هل أنت متاح لمناصب بدوام كامل؟</summary><p>نعم، للمناصب القيادية في النمو والتسويق بالأداء. تواصل معي عبر واتساب أو البريد الإلكتروني أو LinkedIn.</p></details>
+<details><summary>هل يمكنك العمل مع فريقي الداخلي أو وكالتي؟</summary><p>نعم. يمكنني إدارة الحسابات مع فريقك، أو العمل معه بصفة استشارية، أو تدقيق أداء وكالتك الحالية وتوجيهها — أيّها يحقق النتائج أسرع.</p></details>
+<details><summary>هل أنت متاح لمناصب بدوام كامل؟</summary><p>نعم، للمناصب العليا في النمو والتسويق بالأداء. تواصل معي عبر واتساب أو البريد الإلكتروني أو LinkedIn.</p></details>
 <details><summary>كيف نبدأ؟</summary><p>أرسل لي رسالة عبر واتساب أو البريد الإلكتروني تتضمن موقعك الإلكتروني وهدفك، وسنحدد موعداً لمكالمة تعارف وننطلق من هناك.</p></details>
 </div>
 </div></section>
@@ -980,7 +1087,7 @@ html[dir=rtl] .bridge svg,html[dir=rtl] .btn svg,html[dir=rtl] .fcta svg,html[di
 <section class="contact" id="contact" style="margin-top:40px"><div class="wrap">
 <p class="eyebrow" data-r="">تواصل معي</p>
 <h2 class="big-t" data-d="80" data-r="" style="margin-top:20px">أي قطاع.<br/><span class="hl">فلنبدأ النمو.</span></h2>
-<p class="lead" data-d="160" data-r="" style="margin-top:28px;max-width:640px">تبحث عن استشاري تسويق رقمي، أو عن خبير يصلح إعلاناتك المدفوعة ويضاعف نتائجها، أو عن قائد نمو لفريقك؟ أرسل رسالتك، وسأرد عليك سريعاً.</p>
+<p class="lead" data-d="160" data-r="" style="margin-top:28px;max-width:640px">تبحث عن استشاري تسويق رقمي، أو خبير يصلح إعلاناتك المدفوعة ويضاعف نتائجها، أو شريك نمو يتحمّل مسؤولية الأرقام؟ أرسل رسالتك.</p>
 <div class="cta-row" data-d="200" data-r=""><a class="btn btn-ac mag" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank">احجز استشارة عبر واتساب <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn btn-gh mag" href="mailto:Advertizer.darwish@gmail.com?subject=Digital%20marketing%20consultation">راسلني بالبريد</a></div>
 <div class="cgrid">
 <a class="cg" data-r="" href="https://wa.me/201055577669?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." rel="noopener" target="_blank"><small>واتساب · أسرع رد</small><b>+20 105 557 7669</b></a>
